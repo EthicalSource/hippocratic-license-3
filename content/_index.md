@@ -1,8 +1,10 @@
 +++
 title = "An Ethical License for Open Source"
+summary = "TODO"
 +++
 
 ## An Ethical License for Open Source Projects
+
 For too long, we as software developers have divorced ourselves from the consequences of the code that we write. We have told ourselves that development is a pure and abstract pursuit, and have spent our careers writing programs with the goals of clarity, conciseness, readability, performance, and elegance.
 
 But we are starting to realize that the software that we create has a real and lasting impact on the world in which we live.
@@ -17,12 +19,12 @@ Open source licenses have long been the primary tool for promoting the use of ou
 
 Introducing the Hippocratic License: an Ethical Source license that specifically prohibits the use of software to violate universal standards of human rights, and embodying the principles of [Ethical Source Software](https://ethicalsource.dev/definition).
 
-## Hippocratic License 2.1
+## Hippocratic License 3.0
 
 You can view and download the latest version of the Hippocratic License here:
 
-- [Markdown]({{< ref "/version/2/1/license.md" "markdown" >}})
-- [HTML version]({{< ref "/version/2/1/license.md" >}})
+- [Markdown]({{< ref "/version/3/0/license.md" "markdown" >}})
+- [HTML version]({{< ref "/version/3/0/license.md" >}})
 
 ## Using the Hippocratic License
 

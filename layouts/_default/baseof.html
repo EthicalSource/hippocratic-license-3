@@ -5,9 +5,13 @@
     <title>{{ .Site.Title }}: {{ .Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="https://firstdonoharm.dev/images/logo.png">
+    <meta property="og:title" content="{{ .Params.Title }}">
+    <meta property="og:description" content="{{ .Params.Summary}}">
+
     <meta property="og:title" content="The Hippocratic License 3.0: An Ethical License for Open Source.">
     <meta property="og:url" content="https://firstdonoharm.dev">
-    <meta property="og:image" content="https://firstdonoharm.dev/images/logo.png">
 
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57.png">
@@ -22,27 +26,19 @@
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/main.css">
   </head>
-  <body>
 
-    {{ partial "navigation" }}
+  <body{{ with .Section }} id="{{ . }}"{{ end }}>
 
     <header>
-      {{ partial "header" }}
+      {{ partial "header"}}
+      {{ partial "navigation"}}
     </header>
 
-    <div id="veil">
-      {{ block "main" . }}
-      {{ end }}
-      {{ partial "footer" }}
-    </div>
-
-    {{ if .Site.BuildDrafts }}
-      <script src="/scripts/base.js"></script>
-    {{ else }}
-      <script>
-        {{ readFile "static/scripts/base.js" | safeJS }}
-      </script>
+    {{ block "main" . }}
     {{ end }}
 
+    <footer>
+      {{ partial "footer" }}
+    </footer>
   </body>
 </html>
