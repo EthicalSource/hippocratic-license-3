@@ -1,5 +1,6 @@
 +++
-title = "Adopters"
+title = "Hippocratic License Adopters"
+breadcrumb = "Adopters"
 +++
 
 ## Adopters of the Hippocratic License

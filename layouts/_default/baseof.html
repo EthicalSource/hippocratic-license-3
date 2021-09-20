@@ -34,6 +34,8 @@
       {{ partial "navigation"}}
     </header>
 
+    {{ partial "breadcrumbs" . }}
+
     {{ block "main" . }}
     {{ end }}
 
