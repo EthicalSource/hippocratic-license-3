@@ -1,14 +1,15 @@
 +++
-title = "Contribute"
+title = "Contribute to the Evolution of HL3"
 breadcrumb = "Contribute"
+summary = "TODO"
 +++
 
 ## Contribute to the Evolution of the Hippocratic License
 
-<p>
-  Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum.
-</p>
+The Hippocratic License is a living document, and has been released under a Creative Commons license. [Source](https://github.com/EthicalSource/hippocratic-license "Hippocratic License source code"). Contributions in the form of issues and pull requests are welcomed and encouraged.
 
-<p>
-  Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit.
-</p>
+### Financial Support
+You can support our work with a one-time or recurring donation via <a href="https://opencollective.com/ethical-source">Open Collective</a>.
+
+### Special Thanks
+We are grateful for the contributions of [Matt Boehm](https://twitter.com/bigolewannabe), Greg McMullen, [Brad Simon](https://bradsimonlaw.com), David Heinemeier Hansson ([DHH](https://twitter.com/dhh)), [Luis Villa](https://twitter.com/luis_in_brief), the members of the [Ethical Source Working Group](https://ethicalsource.dev), and our contributors on [GitHub](https://github.com/EthicalSource/hippocratic-license), without whom this license would not exist.

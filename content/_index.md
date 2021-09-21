@@ -3,7 +3,7 @@ title = "An Ethical License for Open Source"
 summary = "TODO"
 +++
 
-## An Ethical License for Open Source Projects
+## HL3: An Ethical License for Open Source Communities
 
 For too long, we as software developers have divorced ourselves from the consequences of the code that we write. We have told ourselves that development is a pure and abstract pursuit, and have spent our careers writing programs with the goals of clarity, conciseness, readability, performance, and elegance.
 
@@ -19,20 +19,6 @@ Open source licenses have long been the primary tool for promoting the use of ou
 
 Introducing the Hippocratic License: an Ethical Source license that specifically prohibits the use of software to violate universal standards of human rights, and embodying the principles of [Ethical Source Software](https://ethicalsource.dev/definition).
 
-## Hippocratic License 3.0
-
-You can view and download the latest version of the Hippocratic License here:
-
-- [Markdown]({{< ref "/version/3/0/license.md" "markdown" >}})
-- [HTML version]({{< ref "/version/3/0/license.md" >}})
-
 ## Using the Hippocratic License
 
 Simply make a copy of the text of the license and enter the copyright date and name of the copyright holder. Put this license file (e.g. LICENSE.md) in the root directory of your project repository and include it with the distribution of your software.
-
-## How to Contribute
-
-The Hippocratic License is a living document, and has been released under a Creative Commons license. [Source](https://github.com/ContributorCovenant/hippocratic-license "Hippocratic License source code"). Contributions in the form of issues and pull requests are welcomed and encouraged.
-
-## Special Thanks
-We are grateful for the contributions of [Matt Boehm](https://twitter.com/bigolewannabe), Greg McMullen, [Brad Simon](https://bradsimonlaw.com), David Heinemeier Hansson ([DHH](https://twitter.com/dhh)), [Luis Villa](https://twitter.com/luis_in_brief), the members of the [Ethical Source Working Group](https://ethicalsource.dev), and our contributors on [GitHub](https://github.com/ContributorCovenant/hippocratic-license), without whom this license would not exist.
