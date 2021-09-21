@@ -71,4 +71,4 @@ brew install hugo
 From the repository's root directory, start the development server:
 ```
 hugo server -D
-```
+
