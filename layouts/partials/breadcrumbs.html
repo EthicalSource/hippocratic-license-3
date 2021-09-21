@@ -1,0 +1,14 @@
+<section>
+  {{ if .Params.Breadcrumb }}
+    <nav aria-label="Breadcrumb" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/">Home</a> /
+        </li>
+        <li>
+          <a href="{{ .Permalink }}" aria-current="page">{{ .Params.Breadcrumb }}</a>
+        </li>
+      </ol>
+    </nav>
+  {{ end }}
+</section>

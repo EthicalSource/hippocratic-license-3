@@ -1,0 +1,28 @@
+baseURL = "https://firstdonoharm.dev"
+canonifyURLs = false
+languageCode = "en-us"
+title = "The Hippocratic License"
+disableKinds = ["RSS"]
+
+DefaultContentLanguage = "en"
+hasCJKLanguage = true
+EnableMissingTranslationPlaceholders = true
+
+uglyURLs = false
+
+[mediaTypes]
+[mediaTypes."text/markdown"]
+suffixes = ["md"]
+
+[mediaTypes."text/plain"]
+suffixes = ["txt"]
+
+[outputFormats]
+[outputFormats.Markdown]
+mediaType = "text/markdown"
+isPlainText = true
+baseName = "LICENSE"
+
+[outputs]
+home = ["html"]
+page = ["html", "markdown"]

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ .Site.Title }}: {{ .Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="https://firstdonoharm.dev/images/logo.png">
+    <meta property="og:title" content="{{ .Params.Title }}">
+    <meta property="og:description" content="{{ .Params.Summary}}">
+
+    <meta property="og:title" content="The Hippocratic License 3.0: An Ethical License for Open Source.">
+    <meta property="og:url" content="https://firstdonoharm.dev">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180.png">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+
+  <body{{ with .Section }} id="{{ . }}"{{ end }}>
+
+    <header>
+      {{ partial "header"}}
+      {{ partial "navigation"}}
+    </header>
+
+    {{ partial "breadcrumbs" . }}
+
+    {{ block "main" . }}
+    {{ end }}
+
+    <footer>
+      {{ partial "footer" }}
+    </footer>
+
+  </body>
+</html>
