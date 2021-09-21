@@ -13,22 +13,28 @@
   --color-orange-darker: #C33E1B; /* "terracotta darker" */
   --color-green: #BFD4CB; /* "quiet green" */
 
-  --font-size-regular: 1.1rem;
-  --font-size-xlarge: 2.25rem;
-  --font-size-large: 2rem;
-  --font-size-medium: 1.75rem;
-  --font-size-small: .9rem;
+  /* Setting 62.5%, makes it easier to
+  set rem units (which are relative to the
+  root font-size). This let's us convert 14px = 1.4rem.
+  See also: https://snook.ca/archives/html_and_css/font-size-with-rem 
+  */
+  --font-size-base: 62.5%;
+  --font-size-regular: 1.6rem;
+  --font-size-xlarge: 2.6rem;
+  --font-size-large: 2.2rem;
+  --font-size-medium: 1.8rem;
+  --font-size-small: 1.2rem;
 
   --font-weight-regular: 300;
-  --font-weight-medium: 400;
-  --font-weight-heavy: 500;
+  --font-weight-medium: 500;
+  --font-weight-heavy: 700;
 }
 
 /* Semantic Elements */
 
 html {
   height: 100%;
-  font-size: var(--font-size-regular);
+  font-size: var(--font-size-base);
 }
 
 body {
@@ -50,7 +56,7 @@ footer,
 section {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 45rem;
+  max-width: 600px;
   padding: 1.5rem;
 }
 
@@ -317,7 +323,7 @@ abbr {
 
 @media (min-width: 640px) {
   html {
-    font-size: var(--font-size-regular);
+    font-size: var(--font-size-base);
   }
 
   nav {
