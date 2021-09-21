@@ -302,7 +302,7 @@ abbr {
   nav {
     width: 100%;
     margin-top: 2rem;
-    text-align: right;
+    text-align: left;
   }
 
   header {
@@ -323,6 +323,12 @@ abbr {
 @media (min-width: 640px) {
   html {
     font-size: var(--font-size-regular);
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 2rem;
+    text-align: right;
   }
 
   header nav li {
