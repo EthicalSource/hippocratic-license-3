@@ -16,7 +16,7 @@ a useful resource.
 * Open a pull request.
 
 ## We value your effort and contributions
-If your financial or other circumstances are a barrier to your participation in this project, please [contact us](https://ethicalsource.dev/contact/) to discuss the possibility of compensation.
+If your financial or other circumstances are a barrier to your participation in this project, please [contact us](https://ethicalsource.dev/contact/) to discuss the possibility of sponsorship.
 
 ## Standards and norms
 
