@@ -15,6 +15,9 @@ a useful resource.
   with the project name in the first column, and the project URL in the second column.
 * Open a pull request.
 
+## We value your effort and contributions
+If your financial or other circumstances are a barrier to your participation in this project, please [contact us](https://ethicalsource.dev/contact/) to discuss potential compensation.
+
 ## Standards and norms
 
 ### Code of conduct
@@ -23,9 +26,6 @@ All participants in this project agree to abide by the terms of our code of cond
 ### Accessibility
 - [Accessibility is a human right](https://ethicalsource.dev/principles).
 - Test any CSS or HTML changes with the [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org)
-
-## We value your effort and contributions
-If your financial or other circumstances are a barrier to your participation in this project, please [contact us](https://ethicalsource.dev/contact/) to discuss potential compensation.
 
 ### Code Style
 - Use spaces for indentation
