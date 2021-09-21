@@ -15,30 +15,6 @@ a useful resource.
   with the project name in the first column, and the project URL in the second column.
 * Open a pull request.
 
-## Building the website for local development
-To build the website locally, first [install Hugo](https://gohugo.io/getting-started/installing)
-using your package manager of choice.
-For example, on Debian/Ubuntu:
-```
-apt-get install hugo
-```
-
-If you are using Arch Linux:
-```
-pacman -S hugo
-```
-
-If you are using [Homebrew](https://brew.sh) on macOS:
-```
-brew install hugo
-```
-
-#### Start the server
-From the repository's root directory, start the development server:
-```
-hugo server -D
-```
-
 ## Standards and norms
 
 ### Code of conduct
@@ -72,3 +48,27 @@ If your financial or other circumstances are a barrier to your participation in 
 
 ### Markdown
 - You do not need to use smart quotes, em- or en-dashes, etc.; the Markdown processor will handle that.
+
+## Building the website for local development
+To build the website locally, first [install Hugo](https://gohugo.io/getting-started/installing)
+using your package manager of choice.
+For example, on Debian/Ubuntu:
+```
+apt-get install hugo
+```
+
+If you are using Arch Linux:
+```
+pacman -S hugo
+```
+
+If you are using [Homebrew](https://brew.sh) on macOS:
+```
+brew install hugo
+```
+
+#### Start the server
+From the repository's root directory, start the development server:
+```
+hugo server -D
+```
