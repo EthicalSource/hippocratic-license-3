@@ -1,5 +1,5 @@
 baseURL = "https://firstdonoharm.dev"
-canonifyURLs = true
+canonifyURLs = false
 languageCode = "en-us"
 title = "The Hippocratic License"
 disableKinds = ["RSS"]

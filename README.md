@@ -2,9 +2,9 @@
 
 (Temporarily private) working repo for HL3 site with license builder.
 
-Public repo: https://github.com/EthicalSource/hippocratic-license
+HL2 repo: https://github.com/EthicalSource/hippocratic-license
 
-Public site: https://firstdonoharm.dev
+HL2 site: https://firstdonoharm.dev
 
 ## Setup
 

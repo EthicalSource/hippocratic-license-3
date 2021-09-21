@@ -1,6 +1,7 @@
 +++
 title = "Learn More about the Hippocratic License"
 breadcrumb = "Learn"
+summary = "TODO"
 +++
 
 ## Has the Hippocratic License been subject to legal review?

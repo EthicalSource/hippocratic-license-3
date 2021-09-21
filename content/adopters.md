@@ -1,6 +1,7 @@
 +++
 title = "Hippocratic License Adopters"
 breadcrumb = "Adopters"
+summary = "TODO"
 +++
 
 ## Adopters of the Hippocratic License
