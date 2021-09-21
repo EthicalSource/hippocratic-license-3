@@ -2,7 +2,7 @@
 
 ## Getting started
 Please check the [issues](https://github.com/EthicalSource/hippocratic-license/issues)
-for the latest discussions involving the current and future iterations of the Hippocratic License.
+for the latest discussions, questions, and ideas for the Hippocratic License and this site.
 
 ## What you need to know
 If you're new to contributing to projects hosted on Github, or need a refresher,
