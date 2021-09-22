@@ -63,6 +63,9 @@ section {
 header {
   background-color: var(--color-orange);
   color: var(--color-white);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 header figure {
@@ -76,6 +79,15 @@ header a {
   text-decoration: none;
 }
 
+header h1 {
+  flex: 1 0 auto;
+}
+
+header nav {
+  flex: 1 1 auto;
+  text-align: right;
+}
+
 nav a:focus,
 nav a:hover {
   text-decoration: underline;
@@ -85,11 +97,12 @@ nav ul {
   display: inline-flex;
   list-style-type: none;
   margin: auto;
+  gap: 0.8rem;
 }
 
 nav li {
   margin: 0rem 0.5rem;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-regular);
 }
 
 nav ol {
@@ -301,18 +314,11 @@ abbr {
   }
 
   nav {
-    width: 100%;
     margin-top: 2rem;
-    text-align: left;
   }
 
   header {
     margin-top: -8rem;
-    text-align: center;
-  }
-
-  header nav li:first-child {
-    display: initial;
   }
 
   header figcaption {
@@ -327,9 +333,7 @@ abbr {
   }
 
   nav {
-    width: 100%;
     margin-top: 2rem;
-    text-align: right;
   }
 
   header nav li {
