@@ -156,7 +156,7 @@ p {
 
 a {
   color: var(--color-orange);
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--font-weight-regular);
   text-decoration: underline;
 }
 
