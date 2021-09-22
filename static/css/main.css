@@ -65,11 +65,7 @@ header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-}
-
-header figure {
-  line-height: 3rem;
-  margin-bottom: 1.5rem;
+  align-items: baseline;
 }
 
 header a {
@@ -80,6 +76,7 @@ header a {
 
 header h1 {
   flex: 1 0 auto;
+  margin-right: 2.4rem;
 }
 
 header nav {
@@ -312,16 +309,8 @@ abbr {
     border-top: 8rem solid var(--color-orange);
   }
 
-  nav {
-    margin-top: 2rem;
-  }
-
   header {
     margin-top: -8rem;
-  }
-
-  header figcaption {
-    font-size: 2rem;
   }
 
 }
@@ -329,14 +318,6 @@ abbr {
 @media (min-width: 640px) {
   html {
     font-size: var(--font-size-base);
-  }
-
-  nav {
-    margin-top: 2rem;
-  }
-
-  header nav li {
-    font-size: var(--font-size-regular);
   }
 
   .data-list {
