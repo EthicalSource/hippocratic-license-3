@@ -1,16 +1,14 @@
 +++
 title = "Hippocratic License Adopters"
 breadcrumb = "Adopters"
-summary = "TODO"
+summary = "The Hippocratic License has been adopted by hundreds of open source projects."
 +++
 
-## Adopters of the Hippocratic License
+## Hippocratic License Adopters
 
-The Hippocratic License has been adopted by over [250+ projects](https://github.com/search?l=&q=%22Hippocratic+License%22+filename%3ALICENSE&type=Code) including:
+The Hippocratic License has been adopted by over [300 projects](https://github.com/search?l=&q=%22Hippocratic+License%22+filename%3ALICENSE&type=Code) including:
 
 {{< data-list "static/adopters.csv" >}}
 
-In addition, [WeTransfer](https://github.com/wetransfer/) is adopting the Hippocratic License for all of its open source projects.
-
-To add your project to this list, [submit a pull
-request](https://github.com/ContributorCovenant/hippocratic-license/blob/release/README.md#adding-a-project-to-the-list-of-adopters "Hippocratic License source code").
+To add your project to this list, please [submit a pull
+request](https://github.com/EthicalSource/hippocratic-license/blob/release/CONTRIBUTING.md#adding-a-project-to-the-list-of-adopters "Hippocratic License source code").

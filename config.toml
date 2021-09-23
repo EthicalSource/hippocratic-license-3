@@ -17,12 +17,25 @@ suffixes = ["md"]
 [mediaTypes."text/plain"]
 suffixes = ["txt"]
 
+[mediaTypes."text/asciidoc"]
+suffixes = ["adoc"]
+
 [outputFormats]
 [outputFormats.Markdown]
 mediaType = "text/markdown"
 isPlainText = true
-baseName = "LICENSE"
+baseName = "CODE_OF_CONDUCT"
+
+[outputFormats.PlainText]
+mediaType = "text/plain"
+isPlainText = true
+baseName = "CODE_OF_CONDUCT"
+
+[outputFormats.AsciiDoc]
+mediaType = "text/asciidoc"
+isPlainText = true
+baseName = "CODE_OF_CONDUCT"
 
 [outputs]
 home = ["html"]
-page = ["html", "markdown"]
+page = ["html", "markdown", "plaintext", "asciidoc"]
