@@ -4,12 +4,6 @@ breadcrumb = "Learn"
 summary = "TODO"
 +++
 
-## Where can I see previous versions of the Hippocratic License?
-
-The Hippocratic License uses semantic versioning, and URLs for all versions are permanent:
-
-{{< previous-versions >}}
-
 ## Has the Hippocratic License been subject to legal review?
 Yes. We worked with a team of talented and specialized IP lawyers to create versions 2.0 and later of the license.
 
@@ -39,6 +33,14 @@ The Hippocratic License was designed to cause friction when another party (such 
 An example of this scenario in the real world is the software consultancy Palantir using open source in providing services to the Immigration and Customs Enforcement Agency (ICE) in the US, responsible for human rights violations at the border. Even then, the license can't outright prevent the abuses— it can only create friction and make material support more expensive for the contractor, while also empowering the developer of the licensed software to prevent their work to be used for unethical purposes.
 
 In a way, this is similar to digital security precautions. We have a variety of tools and techniques that are combined and layered in such a way as to create as many hurdles or obstacles to would-be attackers as possible, without ever being able to guarantee 100% security.
+
+## What projects have adopted the Hippocratic License?
+You can view a list of featured adopters [here](/adopters).
+
+## Where can I see previous versions of the Hippocratic License?
+The Hippocratic License uses semantic versioning, and URLs for all versions are permanent:
+
+{{< previous-versions >}}
 
 ## Is the Hippocratic License registered with SPDX?
 Yes, and you can find its entry at [https://spdx.org/licenses/Hippocratic-3.0.html](https://spdx.org/licenses/Hippocratic-3.0.html).
