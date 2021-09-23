@@ -1,7 +1,7 @@
 +++
 title = "Hippocratic License Adopters"
 breadcrumb = "Adopters"
-summary = "The Hippocratic License has been adopted by hundreds of open source projects."
+summary = "The Hippocratic License has been adopted by over 300 open source projects."
 +++
 
 ## Hippocratic License Adopters
