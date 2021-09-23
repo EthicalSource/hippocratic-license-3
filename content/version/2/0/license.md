@@ -1,6 +1,12 @@
++++
+title = "Hippocratic License 2.0"
+breadcrumb = "Hippocratic License 2.0"
+summary = "Version 2.0 of the Hippocratic License, an Ethical Source license created by the Organization for Ethical Source."
++++
+
 Copyright (YEAR) (COPYRIGHT HOLDER)
 
-Hippocratic License Version 2.0.  
+Hippocratic License Version 2.0.
 
 Licensor hereby grants permission by this license ("License"), free of charge, to any person or entity (the "Licensee") obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

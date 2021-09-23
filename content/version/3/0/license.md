@@ -1,3 +1,9 @@
++++
+title = "Hippocratic License 3.0"
+breadcrumb = "Hippocratic License 3.0"
+summary = "Version 3.0 of the Hippocratic License, an Ethical Source license created by the Organization for Ethical Source."
++++
+
 [SOFTWARE NAME] Copyright (YEAR) (COPYRIGHT HOLDER(S)/AUTHOR(S))(“Licensor”)
 
 Hippocratic License Version Number: 2.1.

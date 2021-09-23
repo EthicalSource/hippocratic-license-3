@@ -17,3 +17,13 @@ You can view and download the latest version of the Hippocratic License here:
 - [Markdown]({{< ref "/version/3/0/license.md" "markdown" >}})
 - [HTML version]({{< ref "/version/3/0/license.md" >}})
 
+## Badges
+
+We encourage you to display this badge in your README:
+
+![https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO&color=D44F2C](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO&color=D44F2C)
+
+For markdown files, use this code:
+```
+![https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO&color=D44F2C](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO&color=D44F2C)](![https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO&color=D44F2C](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO&color=D44F2C)
+```

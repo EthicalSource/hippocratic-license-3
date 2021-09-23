@@ -243,7 +243,7 @@ abbr {
 }
 
 .icon {
-  background: var(--color-primary);
+  background: var(--color-orange);
   border-radius: .25rem;
   color: var(--color-white);
   display: inline-block;
@@ -255,21 +255,13 @@ abbr {
   text-transform: uppercase;
 }
 
-.icon-md {
-  background: var(--color-green);
-}
-
-.icon-txt {
-  background: var(--color-orange);
-}
-
-.icon-adoc {
-  background: var(--color-blue);
-}
-
 .icon:hover {
-  background-color: var(--color-green);
+  background-color: var(--color-orange-darker);
   color: var(--color-white);
+}
+
+.icon a {
+  text-decoration: none !important;
 }
 
 .formats {
