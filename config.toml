@@ -10,9 +10,6 @@ EnableMissingTranslationPlaceholders = true
 
 uglyURLs = false
 
-[params]
-  IconFontDirectory = "/static/fonts/heroicons/"
-
 [mediaTypes]
 [mediaTypes."text/markdown"]
 suffixes = ["md"]

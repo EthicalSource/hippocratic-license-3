@@ -1,9 +1,3 @@
-+++
-title = "Hippocratic License 3.0"
-breadcrumb = "Hippocratic License 3.0"
-summary = "Version 3.0 of the Hippocratic License, an Ethical Source license created by the Organization for Ethical Source."
-+++
-
 **HIPPOCRATIC LICENSE**
 
 **Version 3.0, August 2021**
@@ -56,19 +50,6 @@ The rights granted to the Licensee stated within this License are expressly made
     10. Subject any person to arbitrary interference with a person&#39;s privacy, family, home, or correspondence without the express written consent of the person (_See_ Article 12, _United Nations Universal Declaration of Human Rights_; Article 17, _International Covenant on Civil and Political Rights_);
     11. Arbitrarily deprive any person of his/her/their property (_See_ Article 17, _United Nations Universal Declaration of Human Rights_);
     12. Forcibly remove indigenous peoples from their lands or territories or take any action with the aim or effect of dispossessing indigenous peoples from their lands, territories, or resources without the free, prior, and informed consent of indigenous peoples concerned (_See_ Articles 8 and 10, _United Nations Declaration on the Rights of Indigenous Peoples_).
-    13. Interfere with Workers&#39; free exercise of the right to organize and associate (_See_ Article 20, _United Nations Universal Declaration of Human Rights_; _C087 - Freedom of Association and Protection of the Right to Organise Convention, 1948 (No. 87)_, International Labour Organization; Article 8, _International Covenant on Economic, Social and Cultural Rights_); [and]
-    14. Harm the environment in a manner inconsistent with local, state, national, or international law;
-    15. Be an individual or entity, or a representative, agent, affiliate, successor, attorney, or assign of an individual or entity on FFI Solutions Carbon Underground 200 list;
-    16. Commit ecocide:
-      1. For the purpose of this section, &quot;ecocide&quot; means unlawful or wanton acts committed with knowledge that there is a substantial likelihood of severe and either widespread or long-term damage to the environment being caused by those acts;
-      2. For the purpose of further defining ecocide and the terms contained in the previous paragraph:
-        1. &quot;Wanton&quot; means with reckless disregard for damage which would be clearly excessive in relation to the social and economic benefits anticipated;
-        2. &quot;Severe&quot; means damage which involves very serious adverse changes, disruption, or harm to any element of the environment, including grave impacts on human life or natural, cultural, or economic resources;
-        3. &quot;Widespread&quot; means damage which extends beyond a limited geographic area, crosses state boundaries, or is suffered by an entire ecosystem or species or a large number of human beings;
-        4. &quot;Long-term&quot; means damage which is irreversible or which cannot be redressed through natural recovery within a reasonable period of time; and
-        5. &quot;Environment&quot; means the earth, its biosphere, cryosphere, lithosphere, hydrosphere, and atmosphere, as well as outer space
-
-(_See_ Section II, _Independent Expert Panel for the Legal Definition of Ecocide_ Stop Ecocide Foundation and the Promise Institute for Human Rights at UCLA School of Law, June 2021); and
 
   1. The Licensee SHALL:
     1. Recognize all people as equal before the law (_See_ Article 6, _United Nations Universal Declaration of Human Rights_; Article 26, _International Covenant on Civil and Political Rights_);
