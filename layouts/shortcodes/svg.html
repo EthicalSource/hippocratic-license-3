@@ -1,4 +1,0 @@
-{{ with .Get 0 }}
-  {{$svg := delimit (slice $.Site.Params.IconFontDirectory . ".svg") ""  }}
-  {{ readFile $svg | safeHTML  }}
-{{ end }}

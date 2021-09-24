@@ -1,0 +1,6 @@
+{{ with .Get 0 }}
+  <figure class="icon">
+    {{$icon := delimit (slice $.Site.Params.IconFontDirectory . ".svg") ""  }}
+    {{ readFile $icon | safeHTML  }}
+  </figure>
+{{ end }}
