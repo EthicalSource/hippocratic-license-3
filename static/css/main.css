@@ -347,11 +347,19 @@ abbr {
     margin-top: -8rem;
   }
 
+  header nav {
+    text-align: left;
+  }
+
 }
 
 @media (min-width: 640px) {
   html {
     font-size: var(--font-size-base);
+  }
+
+  header nav {
+    text-align: right;
   }
 
   .data-list {
