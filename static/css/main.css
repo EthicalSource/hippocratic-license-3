@@ -81,7 +81,6 @@ header h1 {
 
 header nav {
   flex: 1 1 auto;
-  text-align: right;
 }
 
 nav a:focus,
@@ -90,7 +89,7 @@ nav a:hover {
 }
 
 nav ul {
-  display: inline-flex;
+  display: flex;
   list-style-type: none;
   margin: auto;
   gap: 0.8rem;
@@ -310,6 +309,9 @@ abbr {
 @media (min-width: 640px) {
   html {
     font-size: var(--font-size-base);
+  }
+  nav ul {
+    justify-content: end;
   }
 
   .data-list {
