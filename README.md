@@ -10,3 +10,6 @@ Preview of release branch: https://hl3.netlify.app
 ## Reference
 * HL2 repo: https://github.com/EthicalSource/hippocratic-license
 * HL2 site: https://firstdonoharm.dev
+
+## Attribution
+* Uses icon SVGs from [heroicons](https://heroicons.com)

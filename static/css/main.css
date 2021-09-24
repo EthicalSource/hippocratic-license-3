@@ -223,6 +223,12 @@ abbr {
 
 /* Named Classes */
 
+.builder-icon {
+  height: 2rem;
+  width: 2rem;
+  fill: var(--color-orange);
+}
+
 .data-list {
   list-style: none;
   -moz-column-count: 1;
