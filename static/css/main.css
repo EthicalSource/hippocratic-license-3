@@ -13,22 +13,27 @@
   --color-orange-darker: #C33E1B; /* "terracotta darker" */
   --color-green: #BFD4CB; /* "quiet green" */
 
-  --font-size-regular: 1.1rem;
-  --font-size-xlarge: 2.25rem;
-  --font-size-large: 2rem;
-  --font-size-medium: 1.75rem;
-  --font-size-small: .9rem;
+  /* Setting 62.5%, makes it easier to
+  set rem units (which are relative to the
+  root font-size). This let's us convert 14px = 1.4rem.
+  See also: https://snook.ca/archives/html_and_css/font-size-with-rem 
+  */
+  --font-size-base: 62.5%;
+  --font-size-regular: 1.6rem;
+  --font-size-xlarge: 2.6rem;
+  --font-size-large: 2.2rem;
+  --font-size-medium: 1.8rem;
+  --font-size-small: 1.2rem;
 
-  --font-weight-regular: 300;
-  --font-weight-medium: 400;
-  --font-weight-heavy: 500;
+  --font-weight-regular: 400;
+  --font-weight-heavy: 700;
 }
 
 /* Semantic Elements */
 
 html {
   height: 100%;
-  font-size: var(--font-size-regular);
+  font-size: var(--font-size-base);
 }
 
 body {
@@ -50,24 +55,33 @@ footer,
 section {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 45rem;
+  max-width: 60rem;
   padding: 1.5rem;
 }
 
 header {
   background-color: var(--color-orange);
   color: var(--color-white);
-}
-
-header figure {
-  line-height: 3rem;
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 header a {
   color: var(--color-white);
   font-weight: var(--font-weight-heavy);
   text-decoration: none;
+}
+
+header h1 {
+  flex: 1 0 auto;
+  margin-right: 2.4rem;
+}
+
+header nav {
+  flex: 1 1 auto;
+  text-align: right;
 }
 
 nav a:focus,
@@ -79,11 +93,12 @@ nav ul {
   display: inline-flex;
   list-style-type: none;
   margin: auto;
+  gap: 0.8rem;
 }
 
 nav li {
   margin: 0rem 0.5rem;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-regular);
 }
 
 nav ol {
@@ -141,7 +156,7 @@ p {
 
 a {
   color: var(--color-orange);
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--font-weight-regular);
   text-decoration: underline;
 }
 
@@ -159,8 +174,8 @@ aside {} /* FIXME: intended for sidebar on "Build" page */
 
 footer {
   font-size: var(--font-size-small);
-  padding: 0rem 1rem 1rem 0rem;
   border-top: 1px solid var(--color-orange);
+  padding-top: 0;
 }
 
 blockquote {
@@ -286,40 +301,15 @@ abbr {
     border-top: 8rem solid var(--color-orange);
   }
 
-  nav {
-    width: 100%;
-    margin-top: 2rem;
-    text-align: left;
-  }
-
   header {
     margin-top: -8rem;
-    text-align: center;
-  }
-
-  header nav li:first-child {
-    display: initial;
-  }
-
-  header figcaption {
-    font-size: 2rem;
   }
 
 }
 
 @media (min-width: 640px) {
   html {
-    font-size: var(--font-size-regular);
-  }
-
-  nav {
-    width: 100%;
-    margin-top: 2rem;
-    text-align: right;
-  }
-
-  header nav li {
-    font-size: var(--font-size-regular);
+    font-size: var(--font-size-base);
   }
 
   .data-list {
