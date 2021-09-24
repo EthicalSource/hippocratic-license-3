@@ -48,6 +48,7 @@ body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  border-top: 8rem solid var(--color-orange);
 }
 
 header,
@@ -60,6 +61,7 @@ section {
 }
 
 header {
+  margin-top: -8rem;
   background-color: var(--color-orange);
   color: var(--color-white);
   display: flex;
@@ -81,7 +83,6 @@ header h1 {
 
 header nav {
   flex: 1 1 auto;
-  text-align: right;
 }
 
 nav a:focus,
@@ -90,7 +91,7 @@ nav a:hover {
 }
 
 nav ul {
-  display: inline-flex;
+  display: flex;
   list-style-type: none;
   margin: auto;
   gap: 0.8rem;
@@ -295,21 +296,9 @@ abbr {
 
 /* Responsive layout */
 
-@media (min-width: 300px) {
-
-  body {
-    border-top: 8rem solid var(--color-orange);
-  }
-
-  header {
-    margin-top: -8rem;
-  }
-
-}
-
 @media (min-width: 640px) {
-  html {
-    font-size: var(--font-size-base);
+  nav ul {
+    justify-content: end;
   }
 
   .data-list {
