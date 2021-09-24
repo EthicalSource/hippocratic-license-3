@@ -55,7 +55,7 @@ footer,
 section {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 60rem;
   padding: 1.5rem;
 }
 
