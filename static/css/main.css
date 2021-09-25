@@ -256,6 +256,10 @@ abbr {
 
 /* Named Classes */
 
+.badge-inline {
+  vertical-align: text-top;
+}
+
 .data-list {
   list-style: none;
   -moz-column-count: 1;
@@ -281,6 +285,7 @@ abbr {
   width: var(--font-size-regular);
   margin-right: .125rem;
   padding: .25rem .25rem .25rem .375rem;
+  vertical-align: text-top;
 }
 
 .icon a {
