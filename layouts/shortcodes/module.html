@@ -1,0 +1,28 @@
+{{ $id := .Get "id" }}
+<article id="{{ $id }}" class="link-target">
+  <h3>
+    {{ .Get "title" }} Module
+    <a href="#summary"><figure class="icon fill-black">{{ readFile "/static/icons/arrow-circle-up.svg" | safeHTML }}</figure></a>
+    <figure class="icon fill-black">{{ readFile "/static/icons/annotation.svg" | safeHTML }}</figure>
+    <figure class="icon fill-orange selected-module">{{ readFile "/static/icons/minus-circle.svg" | safeHTML }}</figure>
+    <figure class="icon fill-orange available-module">{{ readFile "/static/icons/plus-circle.svg" | safeHTML }}</figure>
+  </h3>
+
+  <article class="module-body">
+    {{ if ne $id "HL3" }}
+      The Licensee SHALL NOT, whether directly or indirectly, through agents or assigns:
+    {{ end }}
+    {{$moduleURL := delimit (slice "/version/3/0/" (.Get "filename") "/module.md") ""  }}
+    {{ readFile $moduleURL | markdownify }}
+  </article>
+
+  <article class="module-help">
+    <h4>
+      <figure class="icon fill-black">{{ readFile "/static/icons/annotation.svg" | safeHTML }}</figure>
+      Explanation
+    </h4>
+    {{$helpURL := delimit (slice "/version/3/0/" (.Get "filename") "/help.md") ""  }}
+    {{ readFile $helpURL | markdownify }}
+  </article>
+
+</article>

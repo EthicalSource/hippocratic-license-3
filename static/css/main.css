@@ -8,6 +8,7 @@
 :root {
   --color-primary: #462921; /* "ground" */
   --color-white: #FDF6EC; /* "soft white" */
+  --color-grey: #eee; /* "light grey" */
   --color-black: #1A1A1A; /* "off black" */
   --color-orange: #D44F2C; /* "terracotta" */
   --color-orange-darker: #C33E1B; /* "terracotta darker" */
@@ -16,7 +17,7 @@
   /* Setting 62.5%, makes it easier to
   set rem units (which are relative to the
   root font-size). This let's us convert 14px = 1.4rem.
-  See also: https://snook.ca/archives/html_and_css/font-size-with-rem 
+  See also: https://snook.ca/archives/html_and_css/font-size-with-rem
   */
   --font-size-base: 62.5%;
   --font-size-regular: 1.6rem;
@@ -149,6 +150,14 @@ h3 {
   color: var(--color-black);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-heavy);
+  margin-bottom: 1rem;
+}
+
+h4 {
+  color: var(--color-black);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-heavy);
+  margin-bottom: 1rem;
 }
 
 p {
@@ -171,7 +180,15 @@ li {
   margin-bottom: .375rem;
 }
 
-aside {} /* FIXME: intended for sidebar on "Build" page */
+aside {
+  border: 3px solid var(--color-orange);
+  padding: 1rem;
+  margin: 1rem 0rem;
+}
+
+article {
+  margin: 1rem 0rem;
+}
 
 footer {
   font-size: var(--font-size-small);
@@ -259,25 +276,28 @@ abbr {
 }
 
 .icon {
-  background: var(--color-orange);
-  border-radius: .25rem;
-  color: var(--color-white);
   display: inline-block;
-  font-size: var(--font-weight-large);
-  font-weight: var(--font-weight-heavy);
-  line-height: 1em;
+  height: var(--font-size-regular);
+  width: var(--font-size-regular);
   margin-right: .125rem;
   padding: .25rem .25rem .25rem .375rem;
-  text-transform: uppercase;
-}
-
-.icon:hover {
-  background-color: var(--color-orange-darker);
-  color: var(--color-white);
 }
 
 .icon a {
   text-decoration: none !important;
+}
+
+.icon-large {
+  height: var(--font-size-medium);
+  width: var(--font-size-medium);
+}
+
+.fill-black svg {
+  fill: var(--color-black);
+}
+
+.fill-orange svg {
+  fill: var(--color-orange);
 }
 
 .formats {
@@ -294,11 +314,30 @@ abbr {
   display: inline-block;
 }
 
+.module-body {
+  padding: 1.5rem;
+  background-color: var(--color-grey);
+}
+
+.module-help {
+  padding: 1.5rem;
+  background-color: var(--color-green);
+}
+
+.no-bullet {
+  list-style-type: none;
+  margin: 1rem;
+}
+
 /* Responsive layout */
 
 @media (min-width: 640px) {
   nav ul {
     justify-content: end;
+  }
+
+  header nav {
+    text-align: right;
   }
 
   .data-list {
