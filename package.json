@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "test": "ava",
+    "test:watch": "ava --watch"
+  },
+  "private": true,
+  "type": "module",
+  "node": ">=14.x",
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "cheerio": "1.0.0-rc.10",
+    "combinations": "1.0.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  }
+}
