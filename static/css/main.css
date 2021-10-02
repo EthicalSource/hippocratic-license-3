@@ -7,12 +7,12 @@
 
 :root {
   --color-primary: #462921; /* "ground" */
-  --color-white: #FDF6EC; /* "soft white" */
+  --color-white: #fdf6ec; /* "soft white" */
   --color-grey: #eee; /* "light grey" */
-  --color-black: #1A1A1A; /* "off black" */
-  --color-orange: #D44F2C; /* "terracotta" */
-  --color-orange-darker: #C33E1B; /* "terracotta darker" */
-  --color-green: #BFD4CB; /* "quiet green" */
+  --color-black: #1a1a1a; /* "off black" */
+  --color-orange: #d44f2c; /* "terracotta" */
+  --color-orange-darker: #c33e1b; /* "terracotta darker" */
+  --color-green: #bfd4cb; /* "quiet green" */
 
   /* Setting 62.5%, makes it easier to
   set rem units (which are relative to the
@@ -42,7 +42,7 @@ body {
   color: var(--color-black);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-regular);
-  font-family: "source-sans-pro", sans-serif;
+  font-family: 'source-sans-pro', sans-serif;
   font-synthesis: none;
   min-height: 100%;
   -moz-text-size-adjust: 100%;
@@ -110,7 +110,7 @@ nav ol {
 }
 
 nav ol li {
-  margin: 0rem .1rem;
+  margin: 0rem 0.1rem;
   padding: 0rem;
   font-size: var(--font-size-small);
   color: var(--font-color-orange);
@@ -177,7 +177,7 @@ ol {
 }
 
 li {
-  margin-bottom: .375rem;
+  margin-bottom: 0.375rem;
 }
 
 aside {
@@ -197,7 +197,7 @@ footer {
 }
 
 blockquote {
-  border-left: .25rem solid var(--color-green);
+  border-left: 0.25rem solid var(--color-green);
   padding-left: 1.25rem;
 }
 
@@ -223,7 +223,7 @@ table {
 th {
   font-size: inherit;
   font-weight: var(--font-weight-heavy);
-  padding: 0 1.5rem .75rem 0;
+  padding: 0 1.5rem 0.75rem 0;
   text-align: left;
 }
 
@@ -239,7 +239,7 @@ strong {
 
 code,
 kbd {
-  letter-spacing: .0625rem;
+  letter-spacing: 0.0625rem;
 }
 
 cite {
@@ -247,7 +247,7 @@ cite {
 }
 
 cite::before {
-  content: "— ";
+  content: '— ';
 }
 
 abbr {
@@ -283,8 +283,8 @@ abbr {
   display: inline-block;
   height: var(--font-size-regular);
   width: var(--font-size-regular);
-  margin-right: .125rem;
-  padding: .25rem .25rem .25rem .375rem;
+  margin-right: 0.125rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.375rem;
   vertical-align: text-top;
 }
 
@@ -308,8 +308,8 @@ abbr {
 .formats {
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-heavy);
-  letter-spacing: .125rem;
-  line-height: .625rem;
+  letter-spacing: 0.125rem;
+  line-height: 0.625rem;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -327,6 +327,16 @@ abbr {
 .module-help {
   padding: 1.5rem;
   background-color: var(--color-green);
+}
+
+.list-of-lists ol {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+.list-of-lists li::before {
+  counter-increment: section;
+  content: counters(section, '.') ' ';
 }
 
 .no-bullet {

@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "build": "node scripts/licenseGenerator.js",
+    "clear": "NODE_ENV=clear node scripts/licenseGenerator.js",
     "test": "ava",
     "test:watch": "ava --watch"
   },
