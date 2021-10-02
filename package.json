@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "node scripts/licenseGenerator.js",
+    "build:watch": "nodemon -w content/version/3/0/license.html -w scripts scripts/licenseGenerator.js",
     "clear": "NODE_ENV=clear node scripts/licenseGenerator.js",
     "test": "ava",
     "test:watch": "ava --watch"
@@ -10,6 +11,7 @@
   "node": ">=14.x",
   "devDependencies": {
     "ava": "^3.15.0",
+    "nodemon": "^2.0.13",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2"
   },
