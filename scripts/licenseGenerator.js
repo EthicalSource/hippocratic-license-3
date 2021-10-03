@@ -74,7 +74,7 @@ const buildOutVersions = async ({
  */
 export const getCombinations = (modules = []) => {
   return combinations(modules.map((m) => m.toUpperCase())).map((comb) =>
-    comb.join('-')
+    comb.slice().sort().join('-')
   )
 }
 
