@@ -1,1 +1,0 @@
-* Interfere with Workers&#39; free exercise of the right to organize and associate (_See_ Article 20, _United Nations Universal Declaration of Human Rights_; _C087 - Freedom of Association and Protection of the Right to Organise Convention, 1948 (No. 87)_, International Labour Organization; Article 8, _International Covenant on Economic, Social and Cultural Rights_);

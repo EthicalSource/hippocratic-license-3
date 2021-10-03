@@ -5,12 +5,18 @@ import * as cheerio from 'cheerio'
 import rimraf from 'rimraf'
 import util from 'util'
 
+const defaultDirectory = './content/version/3/0'
+const defaultLicenseSource = 'license-with-all-modules.html'
+
 /**
  * loadBaseLicenseHTML loads the base HTML License file
  * @returns String HTML
  */
-export const loadBaseLicenseHTML = async () => {
-  const filePath = path.resolve('./content/version/3/0/license.html')
+export const loadBaseLicenseHTML = async ({
+  directory = defaultDirectory,
+  license = defaultLicenseSource,
+} = {}) => {
+  const filePath = path.resolve(directory, license)
   return readFile(filePath, { encoding: 'utf-8' }).catch((err) => {
     console.log('Failed to read base license', err)
   })
@@ -35,25 +41,31 @@ export const findAvailableModules = (html) => {
   return modules
 }
 
-const removeLicenseVersions = async () => {
-  const target = path.resolve('./content/version/3/0/HL-*')
+const removeLicenseVersions = async ({ directory = defaultDirectory } = {}) => {
+  const target = path.resolve(directory, 'HL*')
   const rm = util.promisify(rimraf)
   return rm(target).catch((err) =>
     console.error('Failed to delete license versions', err)
   )
 }
 
-const buildOutVersions = async ({ versions = [] }) => {
-  const basePath = './content/version/3/0'
-  const source = path.resolve(basePath, 'license.html')
+const buildOutVersions = async ({
+  basePath = defaultDirectory,
+  licenseSource = defaultLicenseSource,
+  versions = [],
+} = {}) => {
+  const source = path.resolve(basePath, licenseSource)
+  // Write the HL.html itself.
+  const baseLicenseDestination = path.resolve(basePath, `HL.html`)
+  await copyFile(source, baseLicenseDestination)
+    .then(() => console.log('Wrote:', path.basename(baseLicenseDestination)))
+    .catch((err) => console.error('Failed to write file', err))
+  // Write all the versions
   for (const version of versions) {
     const destination = path.resolve(basePath, `HL-${version}.html`)
-    try {
-      await copyFile(source, destination)
-      console.log('Wrote:', path.basename(destination))
-    } catch (err) {
-      console.error('Failed to write file', err)
-    }
+    await copyFile(source, destination)
+      .then(() => console.log('Wrote:', path.basename(destination)))
+      .catch((err) => console.error('Failed to write file', err))
   }
 }
 
@@ -79,7 +91,7 @@ const main = async () => {
   console.log('Done with work')
 }
 
-if (process.env.NODE_ENV === 'clear') {
+if (process.env.NODE_ENV === 'clean') {
   console.log('Clearing license versions')
   await removeLicenseVersions()
 } else if (process.env.NODE_ENV !== 'test') {

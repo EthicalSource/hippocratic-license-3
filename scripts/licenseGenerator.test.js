@@ -6,8 +6,8 @@ import {
 } from './licenseGenerator.js'
 
 test('combining three modules', (t) => {
-  const modules = ['a', 'b', 'c']
-  const result = ['a', 'b', 'c', 'a-b', 'a-c', 'b-c', 'a-b-c']
+  const modules = ['a', 'B', 'c']
+  const result = ['A', 'B', 'C', 'A-B', 'A-C', 'B-C', 'A-B-C']
   t.deepEqual(getCombinations(modules), result)
 })
 

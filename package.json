@@ -2,7 +2,7 @@
   "scripts": {
     "build": "node scripts/licenseGenerator.js",
     "build:watch": "nodemon -w content/version/3/0/license.html -w scripts scripts/licenseGenerator.js",
-    "clear": "NODE_ENV=clear node scripts/licenseGenerator.js",
+    "clean": "NODE_ENV=clean node scripts/licenseGenerator.js",
     "test": "ava",
     "test:watch": "ava --watch"
   },
