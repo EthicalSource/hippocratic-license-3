@@ -21,9 +21,15 @@ test('can parse available modules from license text', (t) => {
     <html>
       <body>
         <h1>Example</h1>
-        <div data-module-id="123"></div>
-        <div data-module-id="abc"></div>
-        <div data-module-id="321"></div>
+        {{< mod id="123" title="example" helpText=\`Plain text explanation\` >}}
+        <li></li>
+        {{< /mod >}}
+        {{< mod title="example" id="abc" helpText=\`Plain text explanation\` >}}
+        <li></li>
+        {{< /mod >}}
+        {{< mod id="321" title="example" helpText=\`Plain text explanation\` >}}
+        <li></li>
+        {{< /mod >}}
       </body>
     </html>
   `

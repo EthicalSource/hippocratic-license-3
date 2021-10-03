@@ -23,21 +23,19 @@ export const loadBaseLicenseHTML = async ({
 }
 
 /**
- * findAvailableModules parses HTML in search of HTML elements
- * marked with the data-attribute 'data-module-id' signifying an
- * individual module.
- * Learn more about data attributes here:
- * https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+ * findAvailableModules parses HTML in search of modules
+ * defined using a Hugo shortcode.
  * @param html text
  * @returns array of available modules
  */
 export const findAvailableModules = (html) => {
-  const $ = cheerio.load(html)
+  // Find shortcode 'mod' and locate 'id' attributes
+  const re = /{{< mod [\w|\s|\"|\=]*id=\"([\w|\s|\-]*)\"/gi
   const modules = []
-  const moduleKey = 'data-module-id'
-  $(`[${moduleKey}]`).each((i, elem) => {
-    modules[i] = elem.attribs[moduleKey]
-  })
+  let matches
+  while ((matches = re.exec(html)) !== null) {
+    modules.push(matches[1])
+  }
   return modules
 }
 

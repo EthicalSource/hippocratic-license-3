@@ -1,0 +1,7 @@
+{{ $id := lower (.Get "id") }}
+{{ $title := .Get "title" }}
+{{ $helpText := default "" (.Get "helpText") }}
+{{ $fileName := lower $.Page.File.BaseFileName }}
+{{ if in $fileName $id }}
+  {{ .Inner }}
+{{ end }}
