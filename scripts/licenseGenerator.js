@@ -1,7 +1,6 @@
 import { readFile, copyFile } from 'fs/promises'
 import path from 'path'
 import combinations from 'combinations'
-import * as cheerio from 'cheerio'
 import rimraf from 'rimraf'
 import util from 'util'
 

@@ -16,7 +16,6 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "cheerio": "1.0.0-rc.10",
     "combinations": "1.0.0"
   },
   "prettier": {
