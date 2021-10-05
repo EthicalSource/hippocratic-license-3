@@ -52,13 +52,8 @@ const buildOutVersions = async ({
   versions = [],
 } = {}) => {
   const source = path.resolve(basePath, licenseSource)
-  // Write the HL.html itself.
-  const baseLicenseDestination = path.resolve(basePath, `HL.html`)
-  await copyFile(source, baseLicenseDestination)
-    .then(() => console.log('Wrote:', path.basename(baseLicenseDestination)))
-    .catch((err) => console.error('Failed to write file', err))
-  // Write all the versions
-  for (const version of versions) {
+  const amendedVersions = ['CORE', 'FULL', ...versions]
+  for (const version of amendedVersions) {
     const destination = path.resolve(basePath, `HL-${version}.html`)
     await copyFile(source, destination)
       .then(() => console.log('Wrote:', path.basename(destination)))
@@ -72,14 +67,13 @@ const buildOutVersions = async ({
  * @returns array of all possible module combinations.
  */
 export const getCombinations = (modules = []) => {
-  return combinations(modules.map((m) => m.toUpperCase())).map((comb) =>
-    comb.slice().sort().join('-')
+  const versions = combinations(modules.map((m) => m.toUpperCase())).map(
+    (comb) => comb.slice().sort().join('-')
   )
+  return versions
 }
 
 const main = async () => {
-  console.log('Clearing license versions')
-  await removeLicenseVersions()
   console.log('Generating license versions')
   const text = await loadBaseLicenseHTML()
   const modules = findAvailableModules(text)

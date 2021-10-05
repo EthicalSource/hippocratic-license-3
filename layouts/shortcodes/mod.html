@@ -2,6 +2,6 @@
 {{ $title := .Get "title" }}
 {{ $helpText := default "" (.Get "helpText") }}
 {{ $fileName := lower $.Page.File.BaseFileName }}
-{{ if in $fileName $id }}
+{{ if (or (in $fileName $id) (eq $fileName "hl-full"))}}
   {{ .Inner }}
 {{ end }}
