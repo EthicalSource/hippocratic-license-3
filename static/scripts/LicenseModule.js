@@ -17,7 +17,7 @@ class LicenseModule extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['mod-id']
+    return ['mod-id', 'title', 'help-text']
   }
 
   shouldIDisplay() {

@@ -61,10 +61,10 @@ test('find active modules', (t) => {
 test('creating module links', (t) => {
   t.is(
     createModuleLink({
-      sourceUrl: 'http://localhost:1313/version/3/0/hl#fsl',
+      sourceUrl: 'http://localhost:1313/version/3/0/hl/#fsl',
       addModule: 'bsd',
     }),
-    'http://localhost:1313/version/3/0/hl#bsd-fsl'
+    'http://localhost:1313/version/3/0/hl/#bsd-fsl'
   )
   t.is(
     createModuleLink({
@@ -75,10 +75,10 @@ test('creating module links', (t) => {
   )
   t.is(
     createModuleLink({
-      sourceUrl: 'http://localhost:1313/version/3/0/hl#bsd-fsl',
+      sourceUrl: 'http://localhost:1313/version/3/0/hl/#bsd-fsl',
       removeModule: 'bsd',
     }),
-    'http://localhost:1313/version/3/0/hl#fsl'
+    'http://localhost:1313/version/3/0/hl/#fsl'
   )
   t.is(
     createModuleLink({

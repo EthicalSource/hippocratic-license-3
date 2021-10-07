@@ -1,13 +1,21 @@
-import { isModuleActive, cr } from './licenseBuilder.helpers.js'
+import {
+  isModuleActive,
+  createModuleLink,
+  cr,
+} from './licenseBuilder.helpers.js'
 
-const isLocalhost = window.location.hostname === 'localhost'
-
-const removeModuleLink = (id) => {
-  return `#`
-}
-
-const addModuleLink = (id) => {
-  return `#${id}`
+const buildLink = ({ id, title }) => {
+  const a = cr('a')
+  if (isModuleActive({ id })) {
+    a.innerHTML = `Remove ${title}`
+    const link = createModuleLink({ removeModule: id })
+    a.href = link
+    return a
+  }
+  a.innerHTML = `Add ${title}`
+  const link = createModuleLink({ addModule: id })
+  a.href = link
+  return a
 }
 
 class LicenseModuleList extends HTMLElement {
@@ -16,6 +24,8 @@ class LicenseModuleList extends HTMLElement {
     this.root = this.attachShadow({ mode: 'open' })
     this.list = cr('ul')
     this.root.appendChild(this.list)
+    this.renderModuleOptions()
+    this.onUrlChange = this.onUrlChange.bind(this)
   }
 
   renderModuleOptions() {
@@ -30,23 +40,23 @@ class LicenseModuleList extends HTMLElement {
     const list = cr('ul')
     modules.forEach((m) => {
       const li = cr('li')
-      const a = cr('a')
-      if (isModuleActive(m.id)) {
-        a.innerHTML = `Remove ${m.title}`
-        a.href = `${removeModuleLink(m.id)}`
-      } else {
-        a.innerHTML = `Add ${m.title}`
-        a.href = `${addModuleLink(m.id)}`
-      }
-      li.appendChild(a)
+      li.appendChild(buildLink(m))
       list.appendChild(li)
     })
     this.list.replaceWith(list)
     this.list = list
   }
 
-  connectedCallback() {
+  onUrlChange() {
     this.renderModuleOptions()
+  }
+
+  connectedCallback() {
+    window.addEventListener('locationchange', this.onUrlChange)
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('locationchange', this.onUrlChange)
   }
 }
 

@@ -43,7 +43,7 @@ export const createModuleLink = ({
   if (addModule) {
     modules.push(addModule)
     firstSegments.push(
-      [`hl${isLocalhost ? '#' : '-'}`, modules.sort().join('-')].join('')
+      [`${isLocalhost ? '#' : 'hl-'}`, modules.sort().join('-')].join('')
     )
     return firstSegments.join('/')
   }
@@ -51,7 +51,7 @@ export const createModuleLink = ({
     .filter((m) => m !== removeModule)
     .sort()
     .join('-')
-  firstSegments.push([`hl${isLocalhost ? '#' : '-'}`, filteredModules].join(''))
+  firstSegments.push([`${isLocalhost ? '#' : 'hl-'}`, filteredModules].join(''))
   return firstSegments.join('/')
 }
 
