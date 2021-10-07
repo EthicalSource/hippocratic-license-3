@@ -1,36 +1,55 @@
 import test from 'ava'
 import { isModuleActive, getActiveModules } from './licenseBuilder.helpers.js'
 
-test('on localhost: should be able to detect active module', (t) => {
+test('should be able to detect active module', (t) => {
   const id = 'myan'
-  const sourceUrl = 'http://localhost:1313/version/3/0/hl/#myan'
-  t.true(isModuleActive({ sourceUrl, id }))
+  t.true(
+    isModuleActive({
+      sourceUrl: 'http://localhost:1313/version/3/0/hl/#myan',
+      id,
+    }),
+    'production: failed to detect active module'
+  )
+  t.true(
+    isModuleActive({
+      sourceUrl: 'http://example.org/version/3/0/hl-fsl-myan-bsd',
+      id,
+    }),
+    'production: failed to detect active module'
+  )
 })
 
-test('when deployed: should be able to detect active module', (t) => {
+test('should be able to detect inactive module', (t) => {
   const id = 'myan'
-  const sourceUrl = 'http://example.org/version/3/0/hl-fsl-myan-bsd'
-  t.true(isModuleActive({ sourceUrl, id }))
+  t.false(
+    isModuleActive({
+      sourceUrl: 'http://localhost:1313/version/3/0/hl#fsl-bsd',
+      id,
+    }),
+    'localhost: failed to detect inactive module'
+  )
+  t.false(
+    isModuleActive({
+      sourceUrl: 'http://example.org/version/3/0/hl-fsl-bsd',
+      id,
+    }),
+    'production: failed to detect inactive module'
+  )
 })
 
-test('when deployed should be able to detect inactive module', (t) => {
-  const id = 'myan'
-  const sourceUrl = 'http://example.org/version/3/0/hl-fsl-bsd'
-  t.false(isModuleActive({ sourceUrl, id }))
-})
-
-test('on localhost: should be able to detect inactive module', (t) => {
-  const id = 'myan'
-  const sourceUrl = 'http://localhost:1313/version/3/0/hl#fsl-bsd'
-  t.false(isModuleActive({ sourceUrl, id }))
-})
-
-test('localhost: find active modules', (t) => {
-  const sourceUrl = 'http://localhost:1313/version/3/0/hl#fsl-bsd'
-  t.deepEqual(getActiveModules({ sourceUrl }), ['fsl', 'bsd'])
-})
-
-test('in-prod: find active modules', (t) => {
-  const sourceUrl = 'http://example.org/version/3/0/hl-fsl-bsd'
-  t.deepEqual(getActiveModules({ sourceUrl }), ['fsl', 'bsd'])
+test('find active modules', (t) => {
+  t.deepEqual(
+    getActiveModules({
+      sourceUrl: 'http://localhost:1313/version/3/0/hl#fsl-bsd',
+    }),
+    ['fsl', 'bsd'],
+    'failed to find active modules on localhost'
+  )
+  t.deepEqual(
+    getActiveModules({
+      sourceUrl: 'http://example.org/version/3/0/hl-fsl-bsd',
+    }),
+    ['fsl', 'bsd'],
+    'failed to find active modules when deployed'
+  )
 })

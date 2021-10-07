@@ -16,5 +16,11 @@ export const getActiveModules = ({ sourceUrl = window.location.href } = {}) => {
   return lastSegment.split('-').slice(1)
 }
 
+export const createModuleLink = ({
+  sourceUrl = window.location.href,
+  addModule,
+  removeModule,
+} = {}) => {}
+
 // cr is just a shortform for document.createElement
 export const cr = (...args) => document.createElement(...args)
