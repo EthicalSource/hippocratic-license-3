@@ -17,11 +17,9 @@ class LicenseModule extends HTMLElement {
   shouldIDisplay() {
     const id = this.getAttribute('mod-id')
     if (isModuleActive({ id })) {
-      console.log('Displaying module', id)
       this.children[0].style = 'display: block;'
       return
     }
-    console.log('Hiding module', id)
     this.children[0].style = 'display: none;'
   }
 
