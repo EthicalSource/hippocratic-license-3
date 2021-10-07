@@ -1,19 +1,13 @@
-import { isModuleActive } from './licenseBuilder.helpers.js'
-
-const template = document.createElement('template')
-template.innerHTML = `
-    <div>
-        <slot></slot>
-    </div>
-`
+import { isModuleActive, cr } from './licenseBuilder.helpers.js'
 
 class LicenseModule extends HTMLElement {
   constructor() {
     super()
     this.root = this.attachShadow({ mode: 'open' })
-    this.root.appendChild(template.content.cloneNode(true))
-    this.wrapper = this.root.querySelector('div')
-    this.wrapper.style = 'display: none;'
+    const slot = cr('slot')
+    this.root.appendChild(slot)
+    this.children[0].style = 'display: none;'
+    this.onUrlChange = this.onUrlChange.bind(this)
   }
 
   static get observedAttributes() {
@@ -21,15 +15,30 @@ class LicenseModule extends HTMLElement {
   }
 
   shouldIDisplay() {
-    const moduleID = this.getAttribute('mod-id')
-    if (isModuleActive(moduleID)) {
-      console.log('Displaying module', moduleID)
-      this.wrapper.style = 'display: block;'
+    const id = this.getAttribute('mod-id')
+    if (isModuleActive({ id })) {
+      console.log('Displaying module', id)
+      this.children[0].style = 'display: block;'
+      return
     }
+    console.log('Hiding module', id)
+    this.children[0].style = 'display: none;'
   }
 
   connectedCallback() {
     this.shouldIDisplay()
+  }
+
+  onUrlChange() {
+    this.shouldIDisplay()
+  }
+
+  connectedCallback() {
+    window.addEventListener('locationchange', this.onUrlChange)
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('locationchange', this.onUrlChange)
   }
 }
 
