@@ -1,5 +1,9 @@
 import test from 'ava'
-import { isModuleActive, getActiveModules } from './licenseBuilder.helpers.js'
+import {
+  isModuleActive,
+  getActiveModules,
+  createModuleLink,
+} from './licenseBuilder.helpers.js'
 
 test('should be able to detect active module', (t) => {
   const id = 'myan'
@@ -51,5 +55,36 @@ test('find active modules', (t) => {
     }),
     ['fsl', 'bsd'],
     'failed to find active modules when deployed'
+  )
+})
+
+test('creating module links', (t) => {
+  t.is(
+    createModuleLink({
+      sourceUrl: 'http://localhost:1313/version/3/0/hl#fsl',
+      addModule: 'bsd',
+    }),
+    'http://localhost:1313/version/3/0/hl#bsd-fsl'
+  )
+  t.is(
+    createModuleLink({
+      sourceUrl: 'http://example.org/version/3/0/hl-fsl',
+      addModule: 'bsd',
+    }),
+    'http://example.org/version/3/0/hl-bsd-fsl'
+  )
+  t.is(
+    createModuleLink({
+      sourceUrl: 'http://localhost:1313/version/3/0/hl#bsd-fsl',
+      removeModule: 'bsd',
+    }),
+    'http://localhost:1313/version/3/0/hl#fsl'
+  )
+  t.is(
+    createModuleLink({
+      sourceUrl: 'http://example.org/version/3/0/hl-fsl',
+      removeModule: 'bsd',
+    }),
+    'http://example.org/version/3/0/hl-fsl'
   )
 })
