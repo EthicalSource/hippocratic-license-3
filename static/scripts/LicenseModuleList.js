@@ -28,15 +28,27 @@ class LicenseModuleList extends HTMLElement {
     this.onUrlChange = this.onUrlChange.bind(this)
   }
 
+  static get observedAttributes() {
+    return ['type']
+  }
+
   renderModuleOptions() {
-    const modules = Array.from(document.querySelectorAll('license-module')).map(
-      (node) => {
+    // Should we show active, inactive or all modules.
+    const listType = this.getAttribute('type') || 'all'
+    const modules = Array.from(document.querySelectorAll('license-module'))
+      .map((node) => {
         return {
           id: node.getAttribute('mod-id'),
           title: node.getAttribute('title'),
         }
-      }
-    )
+      })
+      .filter((m) => {
+        return (
+          listType === 'all' ||
+          (listType === 'active' && isModuleActive(m)) ||
+          (listType === 'inactive' && !isModuleActive(m))
+        )
+      })
     const list = cr('ul')
     modules.forEach((m) => {
       const li = cr('li')
@@ -45,6 +57,10 @@ class LicenseModuleList extends HTMLElement {
     })
     this.list.replaceWith(list)
     this.list = list
+  }
+
+  attributeChangedCallback() {
+    this.renderModuleOptions()
   }
 
   onUrlChange() {
