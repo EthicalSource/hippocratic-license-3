@@ -15,5 +15,11 @@
     "tabWidth": 2,
     "semi": false,
     "singleQuote": true
+  },
+  "ava": {
+    "files": [
+      "static/**/*.test.js",
+      "!public/"
+    ]
   }
 }
