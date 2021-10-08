@@ -4,7 +4,7 @@
 
 [build.environment]
   HUGO_VERSION = "0.88.1"
-  NODE_VERSION = ">=14.x"
+  NODE_VERSION = "14.18.0"
 
 # Enable SPA functionality for License builder page
 # Urls like "/version/3/0/hl-bsd-eco", should always
