@@ -4,6 +4,15 @@ import {
   cr,
 } from './licenseBuilder.helpers.js'
 
+/**
+ * Purpose: This web component searches for all modules on the
+ * page and builds a list of active/inactive modules determined
+ * by the last part of the url.
+ *
+ * Available params:
+ * type can be set to: 'active', 'inactive'. If not set it
+ * will simply list all modules found on the page.
+ */
 export class LicenseModuleList extends HTMLElement {
   constructor() {
     super()
