@@ -4,35 +4,21 @@ import {
   cr,
 } from './licenseBuilder.helpers.js'
 
-const buildLink = ({ id, title }) => {
-  const a = cr('a')
-  if (isModuleActive({ id })) {
-    a.innerHTML = `Remove ${title}`
-    const link = createModuleLink({ removeModule: id })
-    a.href = link
-    return a
-  }
-  a.innerHTML = `Add ${title}`
-  const link = createModuleLink({ addModule: id })
-  a.href = link
-  return a
-}
-
-class LicenseModuleList extends HTMLElement {
+export class LicenseModuleList extends HTMLElement {
   constructor() {
     super()
     this.root = this.attachShadow({ mode: 'open' })
     this.list = cr('ul')
     this.root.appendChild(this.list)
-    this.renderModuleOptions()
-    this.onUrlChange = this.onUrlChange.bind(this)
+    this.render()
+    this.render = this.render.bind(this)
   }
 
   static get observedAttributes() {
     return ['type']
   }
 
-  renderModuleOptions() {
+  render() {
     // Should we show active, inactive or all modules.
     const listType = this.getAttribute('type') || 'all'
     const modules = Array.from(document.querySelectorAll('license-module'))
@@ -60,27 +46,28 @@ class LicenseModuleList extends HTMLElement {
   }
 
   attributeChangedCallback() {
-    this.renderModuleOptions()
-  }
-
-  onUrlChange() {
-    this.renderModuleOptions()
+    this.render()
   }
 
   connectedCallback() {
-    window.addEventListener('locationchange', this.onUrlChange)
+    window.addEventListener('locationchange', this.render)
   }
 
   disconnectedCallback() {
-    window.removeEventListener('locationchange', this.onUrlChange)
+    window.removeEventListener('locationchange', this.render)
   }
 }
 
-export const initializeLicenseModuleListTag = () => {
-  console.log('initializeLicenseModuleList()')
-  const tagName = 'license-module-list'
-  const isDefined = customElements.get(tagName)
-  if (!isDefined) {
-    customElements.define(tagName, LicenseModuleList)
+function buildLink({ id, title }) {
+  const a = cr('a')
+  if (isModuleActive({ id })) {
+    a.innerHTML = `Remove ${title}`
+    const link = createModuleLink({ removeModule: id })
+    a.href = link
+    return a
   }
+  a.innerHTML = `Add ${title}`
+  const link = createModuleLink({ addModule: id })
+  a.href = link
+  return a
 }

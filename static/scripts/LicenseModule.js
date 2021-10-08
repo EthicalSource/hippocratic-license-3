@@ -1,20 +1,33 @@
 import { isModuleActive, cr } from './licenseBuilder.helpers.js'
 
-class LicenseModule extends HTMLElement {
+/**
+ * Purpose: This web component lets us define clauses within
+ * the HL license text that are modules.
+ *
+ * Example:
+ * <license-module mod-id="fsl" title="Fossil">
+ *  <li>The actual license clause</li>
+ * </license-module>
+ *
+ * This component checks the url for changes
+ * and figures out whether or not it should
+ * display its module contents.
+ */
+export class LicenseModule extends HTMLElement {
   constructor() {
     super()
     this.root = this.attachShadow({ mode: 'open' })
     const slot = cr('slot')
     this.root.appendChild(slot)
     this.children[0].style = 'display: none;'
-    this.onUrlChange = this.onUrlChange.bind(this)
+    this.render = this.render.bind(this)
   }
 
   static get observedAttributes() {
-    return ['mod-id', 'title', 'help-text']
+    return ['mod-id', 'title']
   }
 
-  shouldIDisplay() {
+  render() {
     const id = this.getAttribute('mod-id')
     if (isModuleActive({ id })) {
       this.children[0].style = 'display: block;'
@@ -24,27 +37,11 @@ class LicenseModule extends HTMLElement {
   }
 
   connectedCallback() {
-    this.shouldIDisplay()
-  }
-
-  onUrlChange() {
-    this.shouldIDisplay()
-  }
-
-  connectedCallback() {
-    window.addEventListener('locationchange', this.onUrlChange)
+    window.addEventListener('locationchange', this.render)
+    this.render()
   }
 
   disconnectedCallback() {
-    window.removeEventListener('locationchange', this.onUrlChange)
-  }
-}
-
-export const initializeLicenseModuleTag = () => {
-  console.log('initializeLicenseModule()')
-  const tagName = 'license-module'
-  const isDefined = customElements.get(tagName)
-  if (!isDefined) {
-    customElements.define(tagName, LicenseModule)
+    window.removeEventListener('locationchange', this.render)
   }
 }
