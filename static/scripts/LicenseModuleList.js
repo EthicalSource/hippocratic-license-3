@@ -69,6 +69,11 @@ export class LicenseModuleList extends HTMLElement {
 
 function buildLink({ id, title }) {
   const a = cr('a')
+  // Activate / deactivate modules without page refresh.
+  a.onclick = (e) => {
+    e.preventDefault()
+    history.replaceState(null, '', e.target.href)
+  }
   if (isModuleActive({ id })) {
     a.innerHTML = `Remove ${title}`
     const link = createModuleLink({ removeModule: id })
