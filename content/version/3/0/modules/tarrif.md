@@ -1,10 +1,10 @@
 +++
 title = "US Tariff Act module"
 breadcrumb = "US Tariff Act"
-label = "USTA"
+id = "USTA"
 section = "ethical-standards"
 summary = "TODO"
-explainer = "TODO"
+helpText = "TODO"
 +++
 
 3.1.1. Be an individual or entity:

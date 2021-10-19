@@ -1,10 +1,10 @@
 +++
 title = "Taliban module"
 breadcrumb = "Taliban"
-label = "TAL"
+id = "TAL"
 section = "ethical-standards"
 summary = "TODO"
-explainer = "TODO"
+helpText = "TODO"
 +++
 
 3.1.1. Be an individual or entity that:

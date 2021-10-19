@@ -1,10 +1,10 @@
 +++
 title = "Ecocide module"
 breadcrumb = "Ecocide"
-segment = "ECO"
+id = "ECO"
 section = "ethical-standards"
 summary = "TODO"
-explainer = "TODO"
+helpText = "TODO"
 +++
 
 3.1.1. Commit ecocide:

@@ -1,10 +1,10 @@
 +++
 title = "Myanmar module"
 breadcrumb = "Myanmar"
-label = "MY"
+id = "MY"
 section = "ethical-standards"
 summary = "TODO"
-explainer = "TODO"
+helpText = "TODO"
 +++
 
 3.1.1. Be an individual or entity that:

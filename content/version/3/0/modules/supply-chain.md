@@ -1,10 +1,10 @@
 +++
 title = "Supply Chain Transparency module"
 breadcrumb = "Supply Chain Transparency"
-label = "SUP"
+id = "SUP"
 section = "ethical-standards"
 summary = "TODO"
-explainer = "TODO"
+helpText = "TODO"
 +++
 
 3.2.1. Provide clear, accessible supply chain data to the public in accordance with the following conditions:
