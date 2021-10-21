@@ -7,11 +7,11 @@
   NODE_VERSION = "14.18.0"
 
 # Enable SPA functionality for License builder page
-# Urls like "/version/3/0/hl-bsd-eco", should always
+# Urls like "/build/hl-bsd-eco", should always
 # hit the javascript code which will select proper
 # modules to show.
 [[redirects]]
-  from = "/version/3/0/hl*"
-  to = "/version/3/0/hl/index.html"
+  from = "/build/hl*"
+  to = "/build/index.html"
   status = 200
   force = true
