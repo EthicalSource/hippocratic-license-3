@@ -1,7 +1,6 @@
-{{ $id := lower (.Get "id") }}
-{{ $title := .Get "title" }}
-{{ $helpText := default "" (.Get "helpText") }}
-{{ $fileName := lower $.Page.File.BaseFileName }}
-{{ if (or (in $fileName $id) (eq $fileName "hl-full"))}}
-  {{ .Inner }}
+{{ $filename := lower (.Get "file") }}
+{{ with .Site.GetPage (print "version/3/0/modules/" $filename ".md") }}
+  <license-module mod-id="{{ .Params.id }}" title="{{ .Title }}" helpText="{{ .Params.helpText }}">
+    {{ .Content }}
+  </license-module>
 {{ end }}
