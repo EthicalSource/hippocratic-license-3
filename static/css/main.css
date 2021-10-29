@@ -328,19 +328,21 @@ abbr {
   background-color: var(--color-green);
 }
 
-.list-of-lists ol {
-  counter-reset: section;
-  list-style-type: none;
-}
-
-.list-of-lists li::before {
-  counter-increment: section;
-  content: counters(section, '.') ' ';
-}
-
-.no-bullet {
+.no-bullet ul {
   list-style-type: none;
   margin: 1rem;
+}
+
+.no-bullet-wrapper ul {
+  margin-left: 0;
+}
+
+.no-bullet-wrapper ul li {
+  list-style: none;
+}
+
+.no-bullet-wrapper ul li li {
+  margin-left: 1.5rem;
 }
 
 /* Responsive layout */
