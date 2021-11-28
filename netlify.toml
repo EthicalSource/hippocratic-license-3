@@ -17,3 +17,11 @@
   to = "/build/index.html"
   status = 200
   force = true
+
+# Proxy requests to on-demand builder so that
+# we can return configured license texts for
+# markdown and plaintext.
+[[redirects]]
+  from = "/version/3/0/*"
+  to = "/.netlify/functions/download-license"
+  status = 200
