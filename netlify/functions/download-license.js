@@ -14,6 +14,10 @@ async function downloadLicenseHandler(event, context) {
 		      <pre>
             ${JSON.stringify(event, null, 2)}
           </pre>
+          <p>Context object:</p>
+		      <pre>
+            ${JSON.stringify(context, null, 2)}
+          </pre>
 		    </body>
     </html>
     `,
