@@ -7,6 +7,7 @@
   "type": "module",
   "node": ">=14.x",
   "devDependencies": {
+    "@netlify/functions": "^0.10.0",
     "ava": "^3.15.0",
     "prettier": "^2.4.1"
   },
