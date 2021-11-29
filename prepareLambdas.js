@@ -5,6 +5,15 @@ import { URL } from 'url'
 // Sourced from: https://stackoverflow.com/a/66651120
 const __dirname = new URL('.', import.meta.url).pathname
 
+/**
+ * Purpose: The download-license.js handler needs to have
+ * access to the full license text built by Hugo in order
+ * to provide plaintext and markdown versions.
+ *
+ * During deploy Netlify functions including their dependencies
+ * get zipped up and deployed. Learn more about the underlying
+ * module that handles this process: https://github.com/netlify/zip-it-and-ship-it
+ */
 const prepareLambdas = async () => {
   const src = path.resolve(__dirname, 'public/version/3/0/full/index.html')
   const dest = path.resolve(__dirname, 'netlify/functions/hl-full.json')
