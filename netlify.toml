@@ -1,6 +1,6 @@
 [build]
   publish = "public/"
-  command = "npm test && hugo"
+  command = "hugo && npm run build && npm test"
 
 [build.environment]
   HUGO_VERSION = "0.88.1"

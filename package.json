@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "node prepareLambdas.js",
     "test": "ava",
     "test:watch": "ava --watch"
   },
