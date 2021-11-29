@@ -4,7 +4,7 @@ const { builder } = require('@netlify/functions')
  * Purpose: Expose URL for easily learning what data
  * is available on the event and context objects.
  *
- * Example, vist this sub-url to get a debug page:
+ * Example, visit this sub-url to get a debug page:
  * /.netlify/functions/debug
  *
  * @param {*} event information about the inbound request
