@@ -67,7 +67,7 @@ function convertToContentType({ html, contentType }) {
 function getConfiguredLicenseHTML(urlPath) {
   const { isFull, isCore, activeModules } = parseActiveModules(urlPath)
   const $ = cheerio.load(licenseHTML)
-  const licenseSelector = '[data-license-text]'
+  const licenseSelector = '[data-license-text=true]'
   if (isFull) {
     return $(licenseSelector).html()
   } else if (isCore) {
