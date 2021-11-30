@@ -1,4 +1,4 @@
-const { builder } = require('@netlify/functions')
+import { builder } from '@netlify/functions'
 
 /**
  * Purpose: Expose URL for easily learning what data
@@ -35,4 +35,4 @@ async function debugHandler(event, context) {
   }
 }
 
-exports.handler = builder(debugHandler)
+export const handler = builder(debugHandler)

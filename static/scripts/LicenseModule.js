@@ -1,4 +1,4 @@
-import { isModuleActive, cr } from './licenseBuilder.helpers.js'
+import { isModuleActive, cr } from './licenseBuilder.helpers.mjs'
 
 /**
  * Purpose: This web component lets us define clauses within
