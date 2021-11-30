@@ -1,10 +1,12 @@
 import { LicenseModule } from './LicenseModule.js'
 import { LicenseModuleList } from './LicenseModuleList.js'
+import { VerifyCustomElements } from './VerifyCustomElements.js'
 import { enableLocationChangeEvent } from './locationchangePolyfill.js'
 
-const webComponents = {
+export const webComponents = {
   'license-module-list': LicenseModuleList,
   'license-module': LicenseModule,
+  'verify-custom-elements': VerifyCustomElements,
 }
 
 function loadWebComponents() {
