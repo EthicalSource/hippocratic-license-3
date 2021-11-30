@@ -65,9 +65,14 @@ function convertToContentType({ html, contentType }) {
 }
 
 function getConfiguredLicenseHTML(urlPath) {
-  const { isFull, isCore, activeModules } = parseActiveModules(urlPath)
+  const { isFull, isCore, activeModules, fileTypeEnding } =
+    parseActiveModules(urlPath)
   const $ = cheerio.load(licenseHTML)
-  const licenseSelector = '[data-license-text=true]'
+  const licenseSelector = ['.md', '.txt'].includes(fileTypeEnding)
+    ? // For markdown and plaintext we return a subset of the HTML page.
+      '[data-license-text=true]'
+    : // Otherwise return HTML page including top header.
+      '*'
   if (isFull) {
     return $(licenseSelector).html()
   } else if (isCore) {
