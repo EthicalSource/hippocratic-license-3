@@ -8,6 +8,9 @@
   # Netlify functions runtime version
   AWS_LAMBDA_JS_RUNTIME = "nodejs14.x"
 
+[functions]
+  node_bundler = "esbuild"
+
 # Enable SPA functionality for License builder page
 # Urls like "/build/hl-bsd-eco", should always
 # hit the javascript code which will select proper
