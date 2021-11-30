@@ -5,7 +5,8 @@ const { NodeHtmlMarkdown } = require('node-html-markdown')
 const cheerio = require('cheerio')
 
 async function downloadLicenseHandler(event, context) {
-  // Redirect if wrong sub-path
+  // Disallow going to the .netlify function directly,
+  // use the url proxy instead.
   if (event.path.startsWith('/.netlify/functions')) {
     return {
       statusCode: 302,
@@ -66,19 +67,20 @@ function convertToContentType({ html, contentType }) {
 function getConfiguredLicenseHTML(urlPath) {
   const { isFull, isCore, activeModules } = parseActiveModules(urlPath)
   const $ = cheerio.load(licenseHTML)
+  const licenseSelector = '[data-license-text]'
   if (isFull) {
-    return $('[data-license-text="true"]').html()
+    return $(licenseSelector).html()
   } else if (isCore) {
     // Remove all module sections
     $('license-module').remove()
-    return $('[data-license-text="true"]').html()
+    return $(licenseSelector).html()
   }
   $('license-module').each(function (index, elem) {
     if (!activeModules.includes($(this).attr('mod-id'))) {
       $(this).remove()
     }
   })
-  return $('[data-license-text="true"]').html()
+  return $(licenseSelector).html()
 }
 
 function getAvailableModules() {
