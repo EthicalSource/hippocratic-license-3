@@ -14,7 +14,9 @@ async function downloadLicenseHandler(event, context) {
       },
     }
   }
-  const { activeModules, licenseUrlPath } = parseActiveModules(event.path)
+  const { activeModules, licenseUrlPath, fileTypeEnding } = parseActiveModules(
+    event.path
+  )
   const availableModules = getAvailableModules()
   const unknownModule = activeModules.find(
     (mod) => !['core', 'full'].includes(mod) && !availableModules.includes(mod)
@@ -33,7 +35,7 @@ async function downloadLicenseHandler(event, context) {
     return {
       statusCode: 301,
       headers: {
-        Location: `/version/3/0/${activeModules.join('-')}`,
+        Location: `/version/3/0/${activeModules.join('-')}${fileTypeEnding}`,
       },
     }
   }
@@ -42,7 +44,7 @@ async function downloadLicenseHandler(event, context) {
   return {
     statusCode: 200,
     headers: {
-      'Content-Type': contentType,
+      'Content-Type': `${contentType}; charset=utf-8`,
     },
     body: convertToContentType({ html: configuredLicense, contentType }),
   }
@@ -107,6 +109,8 @@ function parseActiveModules(urlPath) {
     .replace('.md', '')
     .replace('.txt', '')
     .toLowerCase()
+  const matches = /(\.\w*)$/gi.exec(urlPath)
+  const fileTypeEnding = matches ? matches[1] : ''
   const isCore = licenseUrlPath.includes('core')
   const isFull = licenseUrlPath.includes('full')
   const moduleIDs = licenseUrlPath
@@ -118,6 +122,7 @@ function parseActiveModules(urlPath) {
     isCore,
     isFull,
     activeModules: isCore ? ['core'] : isFull ? ['full'] : moduleIDs,
+    fileTypeEnding,
   }
 }
 

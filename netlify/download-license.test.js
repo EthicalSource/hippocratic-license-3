@@ -11,9 +11,10 @@ test('we are able to parse active modules from url', async (t) => {
 })
 
 test('wrong module id order gets sorted', async (t) => {
-  const exampleUrlPath = '/version/3/0/ecoside-bds'
-  const { activeModules } = parseActiveModules(exampleUrlPath)
-  t.deepEqual(activeModules, ['bds', 'ecoside'])
+  const result = await downloadLicenseHandler({
+    path: '/version/3/0/eco-bds.txt',
+  })
+  t.is(result.headers.Location, '/version/3/0/bds-eco.txt')
 })
 
 test('using core or full cancels other module IDs', async (t) => {
@@ -32,17 +33,28 @@ test('unknown module id throws 404 error', async (t) => {
 
 test('can handle markdown requests', async (t) => {
   const result = await downloadLicenseHandler({ path: '/version/3/0/core.md' })
-  t.is(result.headers['Content-Type'], 'text/markdown')
+  t.like(result, {
+    statusCode: 200,
+    headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
+  })
 })
 
 test('can handle plaintext requests', async (t) => {
-  const result = await downloadLicenseHandler({ path: '/version/3/0/core.txt' })
-  t.is(result.headers['Content-Type'], 'text/plain')
+  const result = await downloadLicenseHandler({
+    path: '/version/3/0/core.txt',
+  })
+  t.like(result, {
+    statusCode: 200,
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+  })
 })
 
 test('can handle html requests', async (t) => {
   const result = await downloadLicenseHandler({
     path: '/version/3/0/bds-eco',
   })
-  t.is(result.headers['Content-Type'], 'text/html')
+  t.like(result, {
+    statusCode: 200,
+    headers: { 'Content-Type': 'text/html; charset=utf-8' },
+  })
 })
