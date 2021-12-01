@@ -67,7 +67,9 @@ function convertToContentType({ html, contentType }) {
 function getConfiguredLicenseHTML(urlPath) {
   const { isFull, isCore, activeModules, fileTypeEnding } =
     parseActiveModules(urlPath)
-  const $ = cheerio.load(licenseHTML)
+  const licenseURL = `https://firstdonoharm.dev/version/3/0/${activeModules.join()}${fileTypeEnding}`
+  const licenseLink = `<a href="${licenseURL}">${licenseURL}</a>`
+  const $ = cheerio.load(licenseHTML.replace('[Hyperlink]', licenseLink))
   const licenseSelector = ['.md', '.txt'].includes(fileTypeEnding)
     ? // For markdown and plaintext we return a subset of the HTML page.
       '[data-license-text=true]'
