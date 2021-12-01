@@ -10,6 +10,9 @@ export const isModuleActive = ({
 export const getActiveModules = ({ sourceUrl = window.location.href } = {}) => {
   const segments = sourceUrl.split('/')
   const lastSegment = segments[segments.length - 1]
+  if (lastSegment === '#') {
+    return []
+  }
   if (lastSegment.includes('#')) {
     return lastSegment.split('#')[1].split('-')
   }

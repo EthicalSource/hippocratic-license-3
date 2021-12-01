@@ -58,6 +58,23 @@ test('find active modules', (t) => {
   )
 })
 
+test('no active modules should be empty list', (t) => {
+  t.deepEqual(
+    getActiveModules({
+      sourceUrl: 'http://localhost:1313/version/3/0/#',
+    }),
+    [],
+    'Failed to get empty list on localhost'
+  )
+  t.deepEqual(
+    getActiveModules({
+      sourceUrl: 'http://example.org/version/3/0/',
+    }),
+    [],
+    'Failed to get empty list when deployed'
+  )
+})
+
 test('creating module links', (t) => {
   t.is(
     createModuleLink({
