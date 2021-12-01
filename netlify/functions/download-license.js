@@ -18,6 +18,11 @@ async function downloadLicenseHandler(event, context) {
   const { activeModules, licenseUrlPath, fileTypeEnding } = parseActiveModules(
     event.path
   )
+  if (!fileTypeEnding) {
+    return {
+      statusCode: 404,
+    }
+  }
   const availableModules = getAvailableModules()
   const unknownModule = activeModules.find(
     (mod) => !['core', 'full'].includes(mod) && !availableModules.includes(mod)
@@ -120,7 +125,7 @@ function parseActiveModules(urlPath) {
     .replace('.html', '')
     .toLowerCase()
   const matches = /(\.\w*)$/gi.exec(urlPath)
-  const fileTypeEnding = matches ? matches[1] : '.html'
+  const fileTypeEnding = matches ? matches[1] : ''
   const isCore = licenseUrlPath.includes('core')
   const isFull = licenseUrlPath.includes('full')
   const moduleIDs = licenseUrlPath

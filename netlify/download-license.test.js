@@ -51,7 +51,7 @@ test('can handle plaintext requests', async (t) => {
 
 test('can handle html requests', async (t) => {
   const result = await downloadLicenseHandler({
-    path: '/version/3/0/bds-eco',
+    path: '/version/3/0/bds-eco.html',
   })
   t.like(result, {
     statusCode: 200,
