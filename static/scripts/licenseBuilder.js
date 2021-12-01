@@ -20,7 +20,6 @@ function loadWebComponents() {
 }
 
 const main = () => {
-  console.log('Loading main')
   enableLocationChangeEvent()
   loadWebComponents()
 }
