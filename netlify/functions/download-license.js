@@ -115,9 +115,10 @@ function parseActiveModules(urlPath) {
     .replace(/\/version\/3\/0\/?/gi, '')
     .replace('.md', '')
     .replace('.txt', '')
+    .replace('.html', '')
     .toLowerCase()
   const matches = /(\.\w*)$/gi.exec(urlPath)
-  const fileTypeEnding = matches ? matches[1] : ''
+  const fileTypeEnding = matches ? matches[1] : '.html'
   const isCore = licenseUrlPath.includes('core')
   const isFull = licenseUrlPath.includes('full')
   const moduleIDs = licenseUrlPath
