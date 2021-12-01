@@ -1,3 +1,8 @@
++++
+title = "Hippocratic License 3.0"
+builderLicense = true
++++
+
 **HIPPOCRATIC LICENSE**
 
   **Version 3.0, October 2021**
