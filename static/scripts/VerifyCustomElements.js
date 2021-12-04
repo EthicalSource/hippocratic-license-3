@@ -1,4 +1,3 @@
-import { cr } from './licenseBuilder.helpers.js'
 import { webComponents } from './licenseBuilder.js'
 
 /**

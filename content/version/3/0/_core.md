@@ -1,8 +1,13 @@
++++
+title = "Hippocratic License 3.0"
+builderLicense = true
++++
+
 **HIPPOCRATIC LICENSE**
 
-  **Version 3.0, October 2021**
+  **Version 3.0 Core License, October 2021**
 
-  \[Hyperlink\]
+  **\Hyperlink\**
 
   **TERMS AND CONDITIONS**
 
@@ -42,96 +47,66 @@ TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK
 
   The rights granted to the Licensee by this License are expressly made subject to the Licensee's ongoing compliance with the following conditions:
 
-  - 3.1.  The Licensee SHALL NOT, whether directly or indirectly, through agents or assigns:
+  3.1.  The Licensee SHALL NOT, whether directly or indirectly, through agents or assigns:
 
-    - 3.1.1.  Infringe upon any person's right to life or security of person, engage in extrajudicial killings, or commit murder, without lawful cause
+    3.1.1.  Infringe upon any person's right to life or security of person, engage in extrajudicial killings, or commit murder, without lawful cause
     (See Article 3, *United Nations Universal Declaration of Human Rights*; Article 6, *International Covenant on Civil and Political Rights*)
 
-    - 3.1.2.  Hold any person in slavery, servitude, or forced labor
+    3.1.2.  Hold any person in slavery, servitude, or forced labor
     (See Article 4, *United Nations Universal Declaration of Human Rights*; Article 8, *International Covenant on Civil and Political Rights*);
 
-    - 3.1.3.  Contribute to the institution of slavery, slave trading, forced labor, or unlawful child labor
+    3.1.3.  Contribute to the institution of slavery, slave trading, forced labor, or unlawful child labor
     (See Article 4, *United Nations Universal Declaration of Human Rights*; Article 8, *International Covenant on Civil and Political Rights*);
 
-    - 3.1.4.  Torture or subject any person to cruel, inhumane, or degrading treatment or punishment
+    3.1.4.  Torture or subject any person to cruel, inhumane, or degrading treatment or punishment
     (See Article 5, *United Nations Universal Declaration of Human Rights*; Article 7, *International Covenant on Civil and Political Rights*);
 
-    - 3.1.5.  Discriminate on the basis of sex, gender, sexual orientation, race, ethnicity, nationality, religion, caste, age, medical disability or impairment, and/or any other like circumstances
+    3.1.5.  Discriminate on the basis of sex, gender, sexual orientation, race, ethnicity, nationality, religion, caste, age, medical disability or impairment, and/or any other like circumstances
     (See Article 7, *United Nations Universal Declaration of Human Rights*; Article 2, *International Covenant on Economic, Social and Cultural Rights*; Article 26, *International Covenant on Civil and Political Rights*);
 
-    - 3.1.6.  Prevent any person from exercising his/her/their right to seek an effective remedy by a competent court or national tribunal (including domestic judicial systems, international courts, arbitration bodies, and other adjudicating bodies) for actions violating the fundamental rights granted to him/her/them by applicable constitutions, applicable laws, or by this License
+    3.1.6.  Prevent any person from exercising his/her/their right to seek an effective remedy by a competent court or national tribunal (including domestic judicial systems, international courts, arbitration bodies, and other adjudicating bodies) for actions violating the fundamental rights granted to him/her/them by applicable constitutions, applicable laws, or by this License
     (See Article 8, *United Nations Universal Declaration of Human Rights*; Articles 9 and 14, *International Covenant on Civil and Political Rights*);
 
-    - 3.1.7.  Subject any person to arbitrary arrest, detention, or exile
+    3.1.7.  Subject any person to arbitrary arrest, detention, or exile
     (See Article 9, *United Nations Universal Declaration of Human Rights*; Article 9, *International Covenant on Civil and Political Rights*);
 
-    - 3.1.8.  Subject any person to arbitrary interference with a person's privacy, family, home, or correspondence without the express written consent of the person
+    3.1.8.  Subject any person to arbitrary interference with a person's privacy, family, home, or correspondence without the express written consent of the person
     (See Article 12, *United Nations Universal Declaration of Human Rights*; Article 17, *International Covenant on Civil and Political Rights*);
 
-    - 3.1.9.  Arbitrarily deprive any person of his/her/their property
+    3.1.9.  Arbitrarily deprive any person of his/her/their property
     (See Article 17, *United Nations Universal Declaration of Human Rights*);
 
-    - 3.1.10. Forcibly remove indigenous peoples from their lands or territories or take any action with the aim or effect of dispossessing indigenous peoples from their lands, territories, or resources, including without limitation the intellectual property or traditional knowledge of indigenous peoples, without the free, prior, and informed consent of indigenous peoples concerned
+    3.1.10. Forcibly remove indigenous peoples from their lands or territories or take any action with the aim or effect of dispossessing indigenous peoples from their lands, territories, or resources, including without limitation the intellectual property or traditional knowledge of indigenous peoples, without the free, prior, and informed consent of indigenous peoples concerned
     (See Articles 8 and 10, *United Nations Declaration on the Rights of Indigenous Peoples*);
 
-    {{< mod file="carbon" >}}
-
-    {{< mod file="ecocide" >}}
-
-    {{< mod file="extractive-industry" >}}
-
-    {{< mod file="bds" >}}
-
-    {{< mod file="taliban" >}}
-
-    {{< mod file="myanmar" >}}
-
-    {{< mod file="uygur" >}}
-
-    {{< mod file="tarrif" >}}
-
-    {{< mod file="surveillance" >}}
-
-    {{< mod file="military" >}}
-
-    {{< mod file="law-enforcement" >}}
-
-    {{< mod file="media" >}}
-
-    - 3.1.23. Interfere with Workers' free exercise of the right to organize and associate
+    3.1.11. Interfere with Workers' free exercise of the right to organize and associate
     (See Article 20, United Nations Universal Declaration of Human Rights; C087 - Freedom of Association and Protection of the Right to Organise Convention, 1948 (No. 87), International Labour Organization; Article 8, International Covenant on Economic, Social and Cultural Rights); and
 
-    - 3.1.24. Harm the environment in a manner inconsistent with local, state, national, or international law.
+    3.1.12. Harm the environment in a manner inconsistent with local, state, national, or international law.
 
-  - 3.2.  The Licensee SHALL:
+  3.2.  The Licensee SHALL:
 
-    {{< mod file="social-auditing" >}}
+    3.2.1.  Provide equal pay for equal work where the performance of such work requires equal skill, effort, and responsibility, and which are performed under similar working conditions, except where such payment is made pursuant to:
 
-    {{< mod file="workers-on-board" >}}
+      3.2.1.1.  A seniority system;
 
-    {{< mod file="supply-chain" >}}
+      3.2.1.2.  A merit system;
 
-    - 3.2.4.  Provide equal pay for equal work where the performance of such work requires equal skill, effort, and responsibility, and which are performed under similar working conditions, except where such payment is made pursuant to:
+      3.2.1.3.  A system which measures earnings by quantity or quality of production; or
 
-      - 3.2.4.1.  A seniority system;
-
-      - 3.2.4.2.  A merit system;
-
-      - 3.2.4.3.  A system which measures earnings by quantity or quality of production; or
-
-      - 3.2.4.4.  A differential based on any other factor other than sex, gender, sexual orientation, race, ethnicity, nationality, religion, caste, age, medical disability or impairment, and/or any other like circumstances
+      3.2.1.4.  A differential based on any other factor other than sex, gender, sexual orientation, race, ethnicity, nationality, religion, caste, age, medical disability or impairment, and/or any other like circumstances
       (See 29 U.S.C.A. § 206(d)(1); Article 23, *United Nations Universal Declaration of Human Rights*; Article 7, *International Covenant on Economic, Social and Cultural Rights*; Article 26, *International Covenant on Civil and Political Rights*); and
 
-    - 3.2.5.  Allow for reasonable limitation of working hours and periodic holidays with pay
+    3.2.5.  Allow for reasonable limitation of working hours and periodic holidays with pay
     (See Article 24, *United Nations Universal Declaration of Human Rights*; Article 7, *International Covenant on Economic, Social and Cultural Rights*).
 
 4.  **SUPPLY CHAIN IMPACTED PARTIES:**
 
   *This section identifies additional individuals or entities that a Licensee could harm as a result of violating the Ethical Standards section, the condition that the Licensee must voluntarily accept a Duty of Care for those individuals or entities, and the right to a private right of action that those individuals or entities possess as a result of violations of the Ethical Standards section.*
 
-  4.1.  In addition to the above Ethical Standards, Licensee voluntarily accepts a Duty of Care for Supply Chain Impacted Parties of this License, including individuals and communities impacted by violations of the Ethical Standards. The Duty of Care is breached when a provision within the Ethical Standards section is violated by a Licensee, one of its successors or assigns, or by an individual or entity that exists within the Supply Chain prior to a good or service reaching the Licensee.
+    4.1.  In addition to the above Ethical Standards, Licensee voluntarily accepts a Duty of Care for Supply Chain Impacted Parties of this License, including individuals and communities impacted by violations of the Ethical Standards. The Duty of Care is breached when a provision within the Ethical Standards section is violated by a Licensee, one of its successors or assigns, or by an individual or entity that exists within the Supply Chain prior to a good or service reaching the Licensee.
 
-  4.2.  Breaches of the Duty of Care, as stated within this section, shall create a private right of action, allowing any Supply Chain Impacted Party harmed by the Licensee to take legal action against the Licensee in accordance with applicable negligence laws, whether they be in tort law, delict law, and/or similar bodies of law closely related to tort and/or delict law, regardless if Licensee is directly responsible for the harms suffered by a Supply Chain Impacted Party. Nothing in this section shall be interpreted to include acts committed by individuals outside of the scope of his/her/their employment.
+    4.2.  Breaches of the Duty of Care, as stated within this section, shall create a private right of action, allowing any Supply Chain Impacted Party harmed by the Licensee to take legal action against the Licensee in accordance with applicable negligence laws, whether they be in tort law, delict law, and/or similar bodies of law closely related to tort and/or delict law, regardless if Licensee is directly responsible for the harms suffered by a Supply Chain Impacted Party. Nothing in this section shall be interpreted to include acts committed by individuals outside of the scope of his/her/their employment.
 
 5.  **NOTICE:**
   *This section explains when a Licensee must notify others of the License.*
@@ -166,16 +141,14 @@ TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK
 
   8.2.  *Equitable Relief*: Licensor and any Supply Chain Impacted Party shall be entitled to equitable relief, including injunctive relief or specific performance of the terms hereof, in addition to any other remedy to which they are entitled at law or in equity.
 
-  {{< mod file="copyleft" >}}
+  8.3.  *Severability*: If any term or provision of this License is determined to be invalid, illegal, or unenforceable by a court of competent jurisdiction, any such determination of invalidity, illegality, or unenforceability shall not affect any other term or provision of this License or invalidate or render unenforceable such term or provision in any other jurisdiction. If the determination of invalidity, illegality, or unenforceability by a court of competent jurisdiction pertains to the terms or provisions contained in the Ethical Standards section of this License, all rights in the Software granted to Licensee shall be deemed null and void as between Licensor and Licensee.
 
-  8.4.  *Severability*: If any term or provision of this License is determined to be invalid, illegal, or unenforceable by a court of competent jurisdiction, any such determination of invalidity, illegality, or unenforceability shall not affect any other term or provision of this License or invalidate or render unenforceable such term or provision in any other jurisdiction. If the determination of invalidity, illegality, or unenforceability by a court of competent jurisdiction pertains to the terms or provisions contained in the Ethical Standards section of this License, all rights in the Software granted to Licensee shall be deemed null and void as between Licensor and Licensee.
+  8.4.  *Section Titles*: Section titles are solely written for organizational purposes and should not be used to interpret the language within each section.
 
-  8.5.  *Section Titles*: Section titles are solely written for organizational purposes and should not be used to interpret the language within each section.
+  8.5.  *Citations*: Citations are solely written to provide context for the source of the provisions in the Ethical Standards.
 
-  8.6.  *Citations*: Citations are solely written to provide context for the source of the provisions in the Ethical Standards.
+  8.6.  *Section Summaries*: Some sections have a brief *italicized description* which is provided for the sole purpose of briefly describing the section and should not be used to interpret the terms of the License.
 
-  8.7.  *Section Summaries*: Some sections have a brief *italicized description* which is provided for the sole purpose of briefly describing the section and should not be used to interpret the terms of the License.
+  8.7.  *Entire License*: This is the entire License between the Licensor and Licensee with respect to the claims released herein and that the consideration stated herein is the only consideration or compensation to be paid or exchanged between them for this License. This License cannot be modified or amended except in a writing signed by Licensor and Licensee.
 
-  8.8.  *Entire License*: This is the entire License between the Licensor and Licensee with respect to the claims released herein and that the consideration stated herein is the only consideration or compensation to be paid or exchanged between them for this License. This License cannot be modified or amended except in a writing signed by Licensor and Licensee.
-
-  8.9.  *Successors and Assigns*: This License shall be binding upon and inure to the benefit of the Licensor's and Licensee's respective heirs, successors, and assigns.
+  8.8.  *Successors and Assigns*: This License shall be binding upon and inure to the benefit of the Licensor's and Licensee's respective heirs, successors, and assigns.

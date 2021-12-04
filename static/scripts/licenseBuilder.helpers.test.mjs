@@ -3,7 +3,7 @@ import {
   isModuleActive,
   getActiveModules,
   createModuleLink,
-} from './licenseBuilder.helpers.js'
+} from './licenseBuilder.helpers.mjs'
 
 test('should be able to detect active module', (t) => {
   const id = 'myan'
@@ -55,6 +55,23 @@ test('find active modules', (t) => {
     }),
     ['fsl', 'bsd'],
     'failed to find active modules when deployed'
+  )
+})
+
+test('no active modules should be empty list', (t) => {
+  t.deepEqual(
+    getActiveModules({
+      sourceUrl: 'http://localhost:1313/version/3/0/#',
+    }),
+    [],
+    'Failed to get empty list on localhost'
+  )
+  t.deepEqual(
+    getActiveModules({
+      sourceUrl: 'http://example.org/version/3/0/',
+    }),
+    [],
+    'Failed to get empty list when deployed'
   )
 })
 

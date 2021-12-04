@@ -1,9 +1,10 @@
 {{ define "main" }}
-<section{{ with .Language.Get "writingDirection" }} dir="{{ . }}"{{ end }} class="no-bullet-wrapper">
-{{ .Content }}
-</section>
-<section class="formats">
-{{ partial "file-formats.html" . }}
-</section>
+  <section{{ with .Language.Get "writingDirection" }} dir="{{ . }}"{{ end }} class="no-bullet-wrapper" data-license-text="true">
+  {{ .Content }}
+  </section>
+  {{ if not .Params.builderLicense }}
+  <section class="formats">
+  {{ partial "file-formats.html" . }}
+  </section>
+  {{ end }}
 {{ end }}
-
