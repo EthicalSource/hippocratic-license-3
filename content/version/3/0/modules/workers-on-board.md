@@ -1,7 +1,7 @@
 +++
 title = "Workers on Board of Directors module"
 breadcrumb = "Workers on Board of Directors"
-id = "BOD"
+id = "bod"
 section = "ethical-standards"
 helpText = "TODO"
 summary = "TODO"

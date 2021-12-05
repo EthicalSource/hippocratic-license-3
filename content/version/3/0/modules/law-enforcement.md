@@ -1,7 +1,7 @@
 +++
 title = "Law Enforcement module"
 breadcrumb = "Law Enforcement"
-id = "LAW"
+id = "law"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

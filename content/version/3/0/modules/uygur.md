@@ -1,7 +1,7 @@
 +++
 title = "Xinjiang Uygur Autonomous Region module"
 breadcrumb = "Xinjiang Uygur"
-id = "XUAR"
+id = "xuar"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

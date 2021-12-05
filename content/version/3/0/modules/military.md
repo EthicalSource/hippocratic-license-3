@@ -1,7 +1,7 @@
 +++
 title = "Military Activities module"
 breadcrumb = "Military Activities"
-id = "MIL"
+id = "mil"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

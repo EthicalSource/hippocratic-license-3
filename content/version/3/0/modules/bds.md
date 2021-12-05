@@ -1,7 +1,7 @@
 +++
 title = "Boycott/Divestment/Sanctions module"
 breadcrumb = "BDS"
-id = "BDS"
+id = "bds"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

@@ -1,7 +1,7 @@
 +++
 title = "Mass Surveillance module"
 breadcrumb = "Mass Surveillance"
-id = "SV"
+id = "sv"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

@@ -1,7 +1,7 @@
 +++
 title = "Ecocide module"
 breadcrumb = "Ecocide"
-id = "ECO"
+id = "eco"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

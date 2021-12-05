@@ -1,7 +1,7 @@
 +++
 title = "Taliban module"
 breadcrumb = "Taliban"
-id = "TAL"
+id = "tal"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

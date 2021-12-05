@@ -1,7 +1,7 @@
 +++
 title = "Myanmar module"
 breadcrumb = "Myanmar"
-id = "MY"
+id = "my"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

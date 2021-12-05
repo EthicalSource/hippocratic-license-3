@@ -1,7 +1,7 @@
 +++
 title = "Fossil Fuel Divestment module"
 breadcrumb = "Fossil Fuel Divestment"
-id = "FFD"
+id = "ffd"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

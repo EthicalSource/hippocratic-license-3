@@ -1,7 +1,7 @@
 +++
 title = "US Tariff Act module"
 breadcrumb = "US Tariff Act"
-id = "USTA"
+id = "usta"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

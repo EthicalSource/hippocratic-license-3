@@ -1,7 +1,7 @@
 +++
 title = "Copyleft module"
 breadcrumb = "Copyleft"
-id = "CL"
+id = "cl"
 section = "misc"
 summary = "TODO"
 helpText = "TODO"

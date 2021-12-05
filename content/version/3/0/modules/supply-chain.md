@@ -1,7 +1,7 @@
 +++
 title = "Supply Chain Transparency module"
 breadcrumb = "Supply Chain Transparency"
-id = "SUP"
+id = "sup"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"
