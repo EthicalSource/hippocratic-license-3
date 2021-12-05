@@ -1,7 +1,7 @@
 +++
 title = "Extractive Industries module"
 breadcrumb = "Extractive Industries"
-id = "EXTR"
+id = "extr"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

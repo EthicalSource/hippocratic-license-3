@@ -1,7 +1,7 @@
 +++
 title = "Social Auditing module"
 breadcrumb = "Social Auditing"
-id = "SOC"
+id = "soc"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"

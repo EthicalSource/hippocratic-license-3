@@ -1,7 +1,7 @@
 +++
 title = "Media module"
 breadcrumb = "Media Abuse"
-id = "MEDIA"
+id = "media"
 section = "ethical-standards"
 summary = "TODO"
 helpText = "TODO"
