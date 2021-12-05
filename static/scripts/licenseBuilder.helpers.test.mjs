@@ -9,17 +9,10 @@ test('should be able to detect active module', (t) => {
   const id = 'myan'
   t.true(
     isModuleActive({
-      sourceUrl: 'http://localhost:1313/version/3/0/hl/#myan',
+      sourceUrl: 'http://localhost:1313/build/?modules=myan',
       id,
     }),
-    'production: failed to detect active module'
-  )
-  t.true(
-    isModuleActive({
-      sourceUrl: 'http://example.org/version/3/0/hl-fsl-myan-bsd',
-      id,
-    }),
-    'production: failed to detect active module'
+    'failed to detect active module'
   )
 })
 
@@ -27,81 +20,46 @@ test('should be able to detect inactive module', (t) => {
   const id = 'myan'
   t.false(
     isModuleActive({
-      sourceUrl: 'http://localhost:1313/version/3/0/hl#fsl-bsd',
+      sourceUrl: 'http://localhost:1313/build/?modules=fsl,bsd',
       id,
     }),
-    'localhost: failed to detect inactive module'
-  )
-  t.false(
-    isModuleActive({
-      sourceUrl: 'http://example.org/version/3/0/hl-fsl-bsd',
-      id,
-    }),
-    'production: failed to detect inactive module'
+    'failed to detect inactive module'
   )
 })
 
 test('find active modules', (t) => {
   t.deepEqual(
     getActiveModules({
-      sourceUrl: 'http://localhost:1313/version/3/0/hl#fsl-bsd',
+      sourceUrl: 'http://localhost:1313/build/?modules=fsl,bsd',
     }),
     ['fsl', 'bsd'],
     'failed to find active modules on localhost'
-  )
-  t.deepEqual(
-    getActiveModules({
-      sourceUrl: 'http://example.org/version/3/0/hl-fsl-bsd',
-    }),
-    ['fsl', 'bsd'],
-    'failed to find active modules when deployed'
   )
 })
 
 test('no active modules should be empty list', (t) => {
   t.deepEqual(
     getActiveModules({
-      sourceUrl: 'http://localhost:1313/version/3/0/#',
+      sourceUrl: 'http://localhost:1313/build',
     }),
     [],
-    'Failed to get empty list on localhost'
-  )
-  t.deepEqual(
-    getActiveModules({
-      sourceUrl: 'http://example.org/version/3/0/',
-    }),
-    [],
-    'Failed to get empty list when deployed'
+    'Failed to establish empty list'
   )
 })
 
 test('creating module links', (t) => {
   t.is(
     createModuleLink({
-      sourceUrl: 'http://localhost:1313/version/3/0/hl/#fsl',
+      sourceUrl: 'http://localhost:1313/build/?modules=fsl',
       addModule: 'bsd',
     }),
-    'http://localhost:1313/version/3/0/hl/#bsd-fsl'
+    'http://localhost:1313/build/?modules=bsd,fsl'
   )
   t.is(
     createModuleLink({
-      sourceUrl: 'http://example.org/version/3/0/hl-fsl',
-      addModule: 'bsd',
-    }),
-    'http://example.org/version/3/0/hl-bsd-fsl'
-  )
-  t.is(
-    createModuleLink({
-      sourceUrl: 'http://localhost:1313/version/3/0/hl/#bsd-fsl',
+      sourceUrl: 'http://localhost:1313/build/?modules=bsd,fsl',
       removeModule: 'bsd',
     }),
-    'http://localhost:1313/version/3/0/hl/#fsl'
-  )
-  t.is(
-    createModuleLink({
-      sourceUrl: 'http://example.org/version/3/0/hl-fsl',
-      removeModule: 'bsd',
-    }),
-    'http://example.org/version/3/0/hl-fsl'
+    'http://localhost:1313/build/?modules=fsl'
   )
 })
