@@ -23,8 +23,10 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180.png">
-    <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="/css/main.css">
+    {{ $fonts := resources.Get "sass/fonts.scss" | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $fonts.Permalink }}">
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
   </head>
 
   <body{{ with .Section }} id="{{ . }}"{{ end }}>
