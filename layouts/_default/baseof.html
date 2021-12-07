@@ -31,19 +31,24 @@
 
   <body{{ with .Section }} id="{{ . }}"{{ end }}>
 
-    <header>
-      {{ partial "header"}}
-      {{ partial "navigation" . }}
+    <header class="site-header">
+      <div class="site-header__content">
+        {{ partial "header"}}
+        {{ partial "navigation" . }}
+      </div>
     </header>
 
-    {{ partial "breadcrumbs" . }}
+    <div class="site-wrapper">
 
-    {{ block "main" . }}
-    {{ end }}
+      {{ partial "breadcrumbs" . }}
 
-    <footer>
-      {{ partial "footer" }}
-    </footer>
+      {{ block "main" . }}
+      {{ end }}
 
+      <footer class="footer">
+        {{ partial "footer" }}
+      </footer>
+
+    </div>
   </body>
 </html>

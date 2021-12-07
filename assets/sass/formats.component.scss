@@ -1,0 +1,13 @@
+.formats {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-heavy);
+  letter-spacing: 0.125rem;
+  line-height: 0.625rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.formats > * {
+  display: inline-block;
+}

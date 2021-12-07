@@ -1,0 +1,12 @@
+.breadcrumbs {
+  font-size: var(--font-size-small);
+  min-height: 1.8rem;
+  ol,
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  li {
+    display: inline-block;
+  }
+}

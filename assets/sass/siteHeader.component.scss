@@ -1,0 +1,68 @@
+.site-header {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  padding: 1rem 0;
+
+  &__content {
+    @extend .site-wrapper;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  a {
+    color: var(--color-white);
+    font-weight: var(--font-weight-heavy);
+    text-decoration: none;
+  }
+
+  h1 {
+    flex: 1 0 auto;
+    margin-right: 2.4rem;
+  }
+
+  nav {
+    flex: 1 1 auto;
+  }
+
+  nav a:focus,
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: auto;
+    gap: 0.8rem;
+  }
+
+  nav li {
+    margin: 0rem 0.5rem;
+    font-size: var(--font-size-regular);
+  }
+
+  nav ol {
+    list-style-type: none;
+    text-align: left;
+    margin: 0rem;
+  }
+
+  nav ol li {
+    margin: 0rem 0.1rem;
+    padding: 0rem;
+    font-size: var(--font-size-small);
+    color: var(--font-color-orange);
+    float: left;
+  }
+
+  nav ol li a {
+    text-decoration: none;
+  }
+
+  nav li:first-child {
+    margin-left: 0rem;
+    display: inline;
+  }
+}
