@@ -14,7 +14,10 @@ import { URL } from 'url'
 const prepareLambdas = async () => {
   // __dirname trick sourced from: https://stackoverflow.com/a/66651120
   const __dirname = new URL('.', import.meta.url).pathname
-  const src = path.resolve(__dirname, 'public/version/3/0/_full/index.html')
+  const src = path.resolve(
+    __dirname,
+    'public/_build-dependency-hl-3.0/full/index.html'
+  )
   const dest = path.resolve(__dirname, 'netlify/functions/hl-full.json')
   const data = await fs.readFile(src, { encoding: 'utf-8' })
   if (!data) {
