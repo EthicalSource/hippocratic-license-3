@@ -1,8 +1,9 @@
+const { JSDOM } = require('jsdom')
 const { builder } = require('@netlify/functions')
 const { licenseHTML } = require('./hl-full.json')
 const { convert } = require('html-to-text')
 const { NodeHtmlMarkdown } = require('node-html-markdown')
-const cheerio = require('cheerio')
+const { incrementAndLinkify } = require('../incrementedLinks.dist.js')
 
 async function downloadLicenseHandler(event, context) {
   // Disallow going to the .netlify function directly,
@@ -72,38 +73,57 @@ function convertToContentType({ html, contentType }) {
 function getConfiguredLicenseHTML(urlPath) {
   const { isFull, isCore, activeModules, fileTypeEnding } =
     parseActiveModules(urlPath)
+  const licenseSelector = '[data-license-text=true]'
+  const dom = new JSDOM(licenseHTML)
+  const modules = dom.window.document.body.querySelectorAll('license-module')
+  Array.from(modules).forEach((module) => {
+    if (isFull) {
+      return // do nothing.
+    } else if (isCore) {
+      module.remove()
+    } else if (!activeModules.includes(module.getAttribute('mod-id'))) {
+      module.remove()
+    }
+  })
+  incrementAndLinkify({
+    nodes: [dom.window.document.body.querySelector(licenseSelector)],
+    window: dom.window,
+  })
+  return embedLicenseLink({
+    license: fileTypeEnding.endsWith('.html')
+      ? dom.serialize()
+      : dom.window.document.querySelector(licenseSelector).outerHTML,
+    activeModules,
+    fileTypeEnding,
+  })
+}
+
+/**
+ * embedLicenseLink replaces the text [Hyperlink] with a fitting link
+ * based on the active modules and the requested filetype.
+ */
+function embedLicenseLink({ license, activeModules, fileTypeEnding }) {
   const licenseURL = `https://firstdonoharm.dev/version/3/0/${activeModules.join(
     '-'
   )}${fileTypeEnding}`
-  const licenseLink = `<a href="${licenseURL}">${licenseURL}</a>`
-  const $ = cheerio.load(licenseHTML.replace('[Hyperlink]', licenseLink))
-  const licenseSelector = ['.md', '.txt'].includes(fileTypeEnding)
-    ? // For markdown and plaintext we return a subset of the HTML page.
-      '[data-license-text=true]'
-    : // Otherwise return HTML page including top header.
-      '*'
-  if (isFull) {
-    return $(licenseSelector).html()
-  } else if (isCore) {
-    // Remove all module sections
-    $('license-module').remove()
-    return $(licenseSelector).html()
+  // Special-casing the plaintext version because otherwise the link will
+  // look repeated.
+  if (fileTypeEnding.endsWith('.txt')) {
+    const updatedLicense = license.replace('[Hyperlink]', licenseURL)
+    return updatedLicense
+  } else {
+    const licenseLink = `<a href="${licenseURL}">${licenseURL}</a>`
+    const updatedLicense = license.replace('[Hyperlink]', licenseLink)
+    return updatedLicense
   }
-  $('license-module').each(function (index, elem) {
-    if (!activeModules.includes($(this).attr('mod-id'))) {
-      $(this).remove()
-    }
-  })
-  return $(licenseSelector).html()
 }
 
 function getAvailableModules() {
-  const $ = cheerio.load(licenseHTML)
-  const modules = []
-  $('license-module').each(function (index, elem) {
-    modules.push($(this).attr('mod-id').toLocaleLowerCase())
-  })
-  return modules
+  const dom = new JSDOM(licenseHTML)
+  const nodes = dom.window.document.body.querySelectorAll('license-module')
+  return Array.from(nodes).map((node) =>
+    node.getAttribute('mod-id').toLowerCase()
+  )
 }
 
 function getContentType(urlPath) {
