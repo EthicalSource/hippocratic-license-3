@@ -1,5 +1,5 @@
 {{ $filename := lower (.Get "file") }}
-{{ with .Site.GetPage (print "version/3/0/modules/" $filename ".md") }}
+{{ with .Site.GetPage (print "_build-dependency-hl-3.0/modules/" $filename ".md") }}
   <license-module mod-id="{{ .Params.id }}" title="{{ .Title }}" helpText="{{ .Params.helpText }}">
     {{ .Content }}
   </license-module>

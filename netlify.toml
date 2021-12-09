@@ -1,6 +1,8 @@
 [build]
   publish = "public/"
-  command = "hugo && npm run build && npm test"
+  # Removing _build-dependency-hl-3.0/ folder because it's just used as source for 'npm run build'
+  # and other Hugo pages.
+  command = "hugo && npm run build && npm test && rm -rf public/_build-dependency-hl-3.0"
 
 [build.environment]
   HUGO_VERSION = "0.88.1"
