@@ -1,0 +1,16 @@
+.no-bullet ul {
+  list-style-type: none;
+  margin: 1rem;
+}
+
+.no-bullet-wrapper ul {
+  margin-left: 0;
+}
+
+.no-bullet-wrapper ul li {
+  list-style: none;
+}
+
+.no-bullet-wrapper ul li li {
+  margin-left: 1.5rem;
+}

@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: var(--font-size-base);
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-regular);
+  font-family: 'source-sans-pro', sans-serif;
+  font-synthesis: none;
+  min-height: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}

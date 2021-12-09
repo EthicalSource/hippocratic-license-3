@@ -13,15 +13,15 @@ summary = "Version 3.0 of the Hippocratic License, an Ethical Source license cre
 <verify-custom-elements>
   <noscript><p>JavaScript needs to be enabled to use the license builder.</p></noscript>
   <div style="display: none;">
-    <aside id="summary">
+    <section id="summary" class="license-builder">
       <h3>
-        {{< icon icon="clipboard-check" class="fill-black icon-large" >}}
+        {{< icon icon="clipboard-check" class="license-icon license-icon--large license-icon--black" >}}
         Your license configuration
       </h3>
 
       <ol class="no-bullet">
-        <li><a href="#HL3">{{< icon icon="shield-check" class="fill=orange icon-normal" >}}Hippocratic License 3.0 (Core)</a></li>
-        <!-- <li><a href="#LABOR">{{< icon icon="shield-check" class="fill-orange icon-normal" >}}Labor Rights Module</a></li> -->
+        <li><a href="#HL3">{{< icon icon="shield-check" class="license-icon license-icon--orange" >}}Hippocratic License 3.0 (Core)</a></li>
+        <!-- <li><a href="#LABOR">{{< icon icon="shield-check" class="license-icon license-icon--orange" >}}Labor Rights Module</a></li> -->
       </ol>
 
       <license-module-list type="active"></license-module-list>
@@ -35,7 +35,7 @@ summary = "Version 3.0 of the Hippocratic License, an Ethical Source license cre
           License text: <license-link type="html">HTML</license-link>, <license-link type="markdown">Markdown</license-link> and <license-link type="plaintext">plaintext</license-link>.
         </li>
         <li>
-          License badge: <img class="badge-inline" src="https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C">
+          License badge: <img class="license-badge" src="https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C">
         </li>
         <li>
           Badge markdown:
@@ -51,7 +51,7 @@ summary = "Version 3.0 of the Hippocratic License, an Ethical Source license cre
 
       <license-module-list type="inactive"></license-module-list>
 
-    </aside>
+    </section>
 
     <div class="no-bullet-wrapper">
     {{< hl3-full-license >}}

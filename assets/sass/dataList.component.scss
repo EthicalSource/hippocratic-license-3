@@ -1,0 +1,18 @@
+.data-list {
+  list-style: none;
+  -moz-column-count: 1;
+  -ms-column-count: 1;
+  -webkit-column-count: 1;
+  column-count: 1;
+  -moz-column-fill: balance;
+  -ms-column-fill: balance;
+  -webkit-column-fill: balance;
+  column-fill: balance;
+  margin-left: 0;
+}
+
+.data-list li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,62 @@
+@import 'variables.scss';
+// Styling that goes directly on HTML elements
+@import 'htmlAndBody.element.scss';
+@import 'typography.element.scss';
+@import 'lists.element.scss';
+// Components (anything .class based)
+@import 'siteHeader.component.scss';
+@import 'siteWrapper.component.scss';
+@import 'breadcrumbs.component.scss';
+@import 'lists.component.scss';
+@import 'licenseBuilder.component.scss';
+@import 'footer.component.scss';
+@import 'dataList.component.scss';
+@import 'formats.component.scss';
+
+// TODO consider moving the styles below into either element or components files, or delete them if not used.
+
+blockquote {
+  border-left: 0.25rem solid var(--color-green);
+  padding-left: 1.25rem;
+}
+
+pre {
+  padding-left: 1.5rem;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+code,
+kbd {
+  letter-spacing: 0.0625rem;
+}
+
+cite {
+  font-style: italic;
+}
+
+cite::before {
+  content: '— ';
+}
+
+abbr {
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .site-header {
+    nav {
+      text-align: right;
+    }
+    nav ul {
+      justify-content: end;
+    }
+  }
+
+  .data-list {
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}

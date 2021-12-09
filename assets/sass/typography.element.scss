@@ -1,0 +1,46 @@
+h1 {
+  font-size: var(--font-size-xlarge);
+  font-weight: var(--font-weight-heavy);
+  line-height: 3rem;
+  margin: 1rem 0;
+  text-align: left;
+  display: block;
+}
+
+h2 {
+  color: var(--color-orange);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-heavy);
+}
+
+* + h2 {
+  margin-top: 2rem;
+}
+
+h3 {
+  color: var(--color-black);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-heavy);
+  margin-bottom: 1rem;
+}
+
+h4 {
+  color: var(--color-black);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-heavy);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 1.5rem 0;
+}
+
+a {
+  color: var(--color-orange);
+  font-weight: var(--font-weight-regular);
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: var(--font-weight-heavy);
+}

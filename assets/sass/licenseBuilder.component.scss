@@ -1,0 +1,33 @@
+.license-builder {
+  border: 3px solid var(--color-orange);
+  padding: 1rem;
+  margin: 1rem 0rem;
+}
+
+.license-badge {
+  vertical-align: text-top;
+}
+
+.license-icon {
+  display: inline-block;
+  height: var(--font-size-regular);
+  width: var(--font-size-regular);
+  margin-right: 0.125rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.375rem;
+  vertical-align: text-top;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  &--large {
+    height: var(--font-size-medium);
+    width: var(--font-size-medium);
+  }
+  &--black {
+    fill: var(--color-black);
+  }
+  &--orange {
+    fill: var(--color-orange);
+  }
+}
