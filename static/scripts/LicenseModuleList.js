@@ -2,7 +2,7 @@ import {
   isModuleActive,
   createModuleLink,
   cr,
-} from './licenseBuilder.helpers.mjs'
+} from './licenseBuilder.helpers.js'
 
 /**
  * Purpose: This web component searches for all modules on the

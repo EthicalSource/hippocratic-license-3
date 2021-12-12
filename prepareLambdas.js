@@ -18,12 +18,12 @@ const prepareLambdas = async () => {
     __dirname,
     'public/_build-dependency-hl-3.0/full/index.html'
   )
-  const dest = path.resolve(__dirname, 'netlify/functions/hl-full.json')
+  const dest = path.resolve(__dirname, 'netlify/functions/hl-full.js')
   const data = await fs.readFile(src, { encoding: 'utf-8' })
   if (!data) {
     throw new Error('No source text found')
   }
-  await fs.writeFile(dest, JSON.stringify({ licenseHTML: data }, null, 2))
+  await fs.writeFile(dest, `export const licenseHTML = \`${data}\` `)
   console.log('Done with work')
 }
 prepareLambdas().catch((err) =>
