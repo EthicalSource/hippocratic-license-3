@@ -13,7 +13,7 @@ builderLicense = true
 
 TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK, REPRODUCTION, AND DISTRIBUTION:
 
-1.  **DEFINITIONS:**
+  **1. DEFINITIONS:**
 
   *This section defines certain terms used throughout this license agreement.*
 
@@ -33,15 +33,15 @@ TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK
 
   1.8.  "Worker" is defined to include any and all permanent, temporary, and agency workers, as well as piece-rate, salaried, hourly paid, legal young (minors), part-time, night, and migrant workers.
 
-2.  **INTELLECTUAL PROPERTY GRANTS:**
+  **2. INTELLECTUAL PROPERTY GRANTS:**
 
   *This section identifies intellectual property rights granted to a Licensee*.
 
   2.1.  *Grant of Copyright License*: Subject to the terms and conditions of this License, Licensor hereby grants to Licensee a worldwide, non-exclusive, no-charge, royalty-free copyright license to use, copy, modify, prepare derivative work, reproduce, or distribute the Software, Licensor authored modified software, or other work derived from the Software.
 
-  2.2  *Grant of Patent License*: Subject to the terms and conditions of this License, Licensor hereby grants Licensee a worldwide, non-exclusive, no-charge, royalty-free patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer Software.
+  2.2.  *Grant of Patent License*: Subject to the terms and conditions of this License, Licensor hereby grants Licensee a worldwide, non-exclusive, no-charge, royalty-free patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer Software.
 
-3.  **ETHICAL STANDARDS:**
+  **3. ETHICAL STANDARDS:**
 
   *This section lists conditions the Licensee must comply with in order to have rights under this License.*
 
@@ -130,7 +130,7 @@ TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK
     - 3.2.5.  Allow for reasonable limitation of working hours and periodic holidays with pay
     (See Article 24, *United Nations Universal Declaration of Human Rights*; Article 7, *International Covenant on Economic, Social and Cultural Rights*).
 
-4.  **SUPPLY CHAIN IMPACTED PARTIES:**
+  **4. SUPPLY CHAIN IMPACTED PARTIES:**
 
   *This section identifies additional individuals or entities that a Licensee could harm as a result of violating the Ethical Standards section, the condition that the Licensee must voluntarily accept a Duty of Care for those individuals or entities, and the right to a private right of action that those individuals or entities possess as a result of violations of the Ethical Standards section.*
 
@@ -138,7 +138,7 @@ TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK
 
   4.2.  Breaches of the Duty of Care, as stated within this section, shall create a private right of action, allowing any Supply Chain Impacted Party harmed by the Licensee to take legal action against the Licensee in accordance with applicable negligence laws, whether they be in tort law, delict law, and/or similar bodies of law closely related to tort and/or delict law, regardless if Licensee is directly responsible for the harms suffered by a Supply Chain Impacted Party. Nothing in this section shall be interpreted to include acts committed by individuals outside of the scope of his/her/their employment.
 
-5.  **NOTICE:**
+5\.  **NOTICE:**
   *This section explains when a Licensee must notify others of the License.*
 
   5.1.  *Distribution of Notice*: Licensee must ensure that everyone who receives a copy of or uses any part of Software from Licensee, with or without changes, also receives the License and the copyright notice included with Software (and if included by the Licensor, patent, trademark, and attribution notice). Licensee must ensure that License is prominently displayed so that any individual or entity seeking to download, copy, use, or otherwise receive any part of Software from Licensee is notified of this License and its terms and conditions. Licensee must cause any modified versions of the Software to carry prominent notices stating that Licensee changed the Software.
@@ -147,13 +147,13 @@ TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK
 
   5.3.  *Recipients as Licensees*: Any individual or entity that uses, copies, modifies, reproduces, distributes, or prepares derivative work based upon the Software, all or part of the Software's code, or a derivative work developed by using the Software, including a portion of its code, is a Licensee as defined above and is subject to the terms and conditions of this License.
 
-6.  **REPRESENTATIONS AND WARRANTIES:**
+  **6. REPRESENTATIONS AND WARRANTIES:**
 
   6.1.  *Disclaimer of Warranty*: TO THE FULL EXTENT ALLOWED BY LAW, THIS SOFTWARE COMES "AS IS," WITHOUT ANY WARRANTY, EXPRESS OR IMPLIED, AND LICENSOR SHALL NOT BE LIABLE TO ANY PERSON OR ENTITY FOR ANY DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THIS LICENSE, UNDER ANY LEGAL CLAIM.
 
   6.2.  *Limitation of Liability*: LICENSEE SHALL HOLD LICENSOR HARMLESS AGAINST ANY AND ALL CLAIMS, DEBTS, DUES, LIABILITIES, LIENS, CAUSES OF ACTION, DEMANDS, OBLIGATIONS, DISPUTES, DAMAGES, LOSSES, EXPENSES, ATTORNEYS' FEES, COSTS, LIABILITIES, AND ALL OTHER CLAIMS OF EVERY KIND AND NATURE WHATSOEVER, WHETHER KNOWN OR UNKNOWN, ANTICIPATED OR UNANTICIPATED, FORESEEN OR UNFORESEEN, ACCRUED OR UNACCRUED, DISCLOSED OR UNDISCLOSED, ARISING OUT OF OR RELATING TO LICENSEE'S USE OF THE SOFTWARE. NOTHING IN THIS SECTION SHOULD BE INTERPRETED TO REQUIRE LICENSEE TO INDEMNIFY LICENSOR, NOR REQUIRE LICENSOR TO INDEMNIFY LICENSEE.
 
-7.  **TERMINATION**
+  **7. TERMINATION**
 
   7.1.  *Violations of Ethical Standards or Breaching Duty of Care*: If Licensee violates the Ethical Standards section or Licensee, or any other person or entity within the Supply Chain prior to a good or service reaching the Licensee, breaches its Duty of Care to Supply Chain Impacted Parties, Licensee must remedy the violation or harm caused by Licensee within 30 days of being notified of the violation or harm. If Licensee fails to remedy the violation or harm within 30 days, all rights in the Software granted to Licensee by License will be null and void as between Licensor and Licensee.
 
@@ -165,7 +165,7 @@ TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK
 
   7.5.  *Additional Remedies*: Termination of the License by failing to remedy harms in no way prevents Licensor or Supply Chain Impacted Party from seeking appropriate remedies at law or in equity.
 
-8.  **MISCELLANEOUS:**
+  **8.  MISCELLANEOUS:**
 
   8.1.  *Conditions*: Sections 3, 4.1, 5.1, 5.2, 7.1, 7.2, 7.3, and 7.4 are conditions of the rights granted to Licensee in the License.
 

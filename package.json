@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "node prepareLambdas.mjs",
+    "build": "node prepareLambdas.mjs && esbuild static/scripts/incrementedLinks.helpers.mjs --bundle --platform=node --target=node14 > netlify/incrementedLinks.dist.js",
     "test": "ava",
     "test:watch": "ava --watch"
   },
@@ -9,7 +9,7 @@
   "devDependencies": {
     "@netlify/functions": "^0.10.0",
     "ava": "^3.15.0",
-    "cheerio": "^1.0.0-rc.10",
+    "esbuild": "^0.14.2",
     "html-to-text": "^8.1.0",
     "node-html-markdown": "^1.1.3",
     "prettier": "^2.4.1"
@@ -26,5 +26,8 @@
       "netlify/**/*.test.js",
       "!public/"
     ]
+  },
+  "dependencies": {
+    "jsdom": "^19.0.0"
   }
 }

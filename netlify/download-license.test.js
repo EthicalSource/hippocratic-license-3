@@ -27,8 +27,21 @@ test('using core or full cancels other module IDs', async (t) => {
 })
 
 test('unknown module id throws 404 error', async (t) => {
-  const result = await downloadLicenseHandler({ path: '/version/3/0/abcd-efg' })
+  const result = await downloadLicenseHandler({
+    path: '/version/3/0/abcd-efg.html',
+  })
   t.is(result.statusCode, 404)
+})
+
+test('is able to remove modules v2', async (t) => {
+  const { body } = await downloadLicenseHandler({
+    path: '/version/3/0/bds.html',
+  })
+  t.true(body.toLowerCase().includes('bds'), 'BDS module was not included')
+  t.true(
+    !body.toLowerCase().includes('ecocide'),
+    'Ecocide module was not removed properly'
+  )
 })
 
 test('can handle markdown requests', async (t) => {
