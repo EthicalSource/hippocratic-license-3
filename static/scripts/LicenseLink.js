@@ -1,4 +1,4 @@
-import { getActiveModules, cr } from './licenseBuilder.helpers.js'
+import { getActiveModules, cr } from './licenseBuilder.helpers.mjs'
 
 /**
  * Purpose: Dynamically create a link to the configured

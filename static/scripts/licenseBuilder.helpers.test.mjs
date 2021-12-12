@@ -3,7 +3,7 @@ import {
   isModuleActive,
   getActiveModules,
   createModuleLink,
-} from './licenseBuilder.helpers.js'
+} from './licenseBuilder.helpers.mjs'
 
 test('should be able to detect active module', (t) => {
   const id = 'myan'

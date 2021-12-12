@@ -3,7 +3,7 @@ import { JSDOM } from 'jsdom'
 import {
   incrementAndLinkify,
   buildNextSequenceItem,
-} from './incrementedLinks.helpers.js'
+} from './incrementedLinks.helpers.mjs'
 
 test('should be able to increment and linkify sections', (t) => {
   const sourceDOM = new JSDOM(`
