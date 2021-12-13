@@ -2,8 +2,8 @@
   border: 3px solid var(--color-orange);
   padding: 1rem;
   margin: 1rem 0rem;
-  top: 20px;
   position: sticky;
+  top: -3px;
 }
 
 .license-badge {
@@ -46,6 +46,10 @@
       flex: auto 1 1;
       width: 250px;
       order: 1;
+    }
+    &__menu > * {
+      height: calc(100vh + 6px);
+      overflow-y: scroll;
     }
     &__license {
       flex: 40% 1 1;
