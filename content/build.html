@@ -2,61 +2,65 @@
 title = "Hippocratic License 3.0"
 breadcrumb = "Hippocratic License 3.0"
 summary = "Version 3.0 of the Hippocratic License, an Ethical Source license created by the Organization for Ethical Source."
+wideLayout = true
 +++
-
 <script type="module" src="/scripts/licenseBuilder.js"></script>
-
-<h1>Build Your Hippocratic License</h1>
-
-<p>Instructions here.</p>
 
 <verify-custom-elements>
   <noscript><p>JavaScript needs to be enabled to use the license builder.</p></noscript>
   <div style="display: none;">
-    <section id="summary" class="license-builder">
-      <h3>
-        {{< icon icon="clipboard-check" class="license-icon license-icon--large license-icon--black" >}}
-        Your license configuration
-      </h3>
+    <div class="site-wrapper-builder">
+      <div class="site-wrapper-builder__header">
+        <h1>Build Your Hippocratic License</h1>
+      </div>
 
-      <ol class="no-bullet">
-        <li><a href="#HL3">{{< icon icon="shield-check" class="license-icon license-icon--orange" >}}Hippocratic License 3.0 (Core)</a></li>
-        <!-- <li><a href="#LABOR">{{< icon icon="shield-check" class="license-icon license-icon--orange" >}}Labor Rights Module</a></li> -->
-      </ol>
+      <div class="site-wrapper-builder__menu">
+        <section class="license-builder">
+          <h3>
+            {{< icon icon="clipboard-check" class="license-icon license-icon--large license-icon--black" >}}
+            Your license configuration
+          </h3>
 
-      <license-module-list type="active"></license-module-list>
+          <ol class="no-bullet">
+            <li><a href="#HL3">{{< icon icon="shield-check" class="license-icon license-icon--orange" >}}Hippocratic License 3.0 (Core)</a></li>
+            <!-- <li><a href="#LABOR">{{< icon icon="shield-check" class="license-icon license-icon--orange" >}}Labor Rights Module</a></li> -->
+          </ol>
 
-      <h3>
-        Start using your license
-      </h3>
+          <license-module-list type="active"></license-module-list>
 
-      <ul class="no-bullet">
-        <li>
-          License text: <license-link type="html">HTML</license-link>, <license-link type="markdown">Markdown</license-link> and <license-link type="plaintext">plaintext</license-link>.
-        </li>
-        <li>
-          License badge: <img class="license-badge" src="https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C">
-        </li>
-        <li>
-          Badge markdown:
-          <code>
-            ![https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C)
-          </code>
-        </li>
-      </ul>
+          <h3>
+            Start using your license
+          </h3>
+          <ul class="no-bullet">
+            <li>
+              License text: <license-link type="html">HTML</license-link>, <license-link type="markdown">Markdown</license-link> and <license-link type="plaintext">plaintext</license-link>.
+            </li>
+            <li>
+              License badge: <img class="license-badge" src="https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C">
+            </li>
+            <li>
+              Badge markdown:
+              <code>
+                ![https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C)
+              </code>
+            </li>
+          </ul>
+          <h3>
+            Available modules
+          </h3>
+          <license-module-list type="inactive"></license-module-list>
+        </section>
+      </div>
 
-      <h3>
-        Available modules
-      </h3>
+      <div class="site-wrapper-builder__license">
+        <div class="no-bullet-wrapper">
+          <incremented-links>
+            {{< hl3-full-license >}}
+          </incremented-links>
+        </div>
+      </div>
 
-      <license-module-list type="inactive"></license-module-list>
 
-    </section>
-
-    <div class="no-bullet-wrapper">
-    <incremented-links>
-      {{< hl3-full-license >}}
-    </incremented-links>
     </div>
   </div>
 </verify-custom-elements>
