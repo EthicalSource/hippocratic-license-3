@@ -9,23 +9,3 @@
 .site-wrapper--wide {
   max-width: 100rem;
 }
-
-.site-wrapper-builder {
-  //display: flex;
-  flex-flow: row wrap;
-  gap: 5rem;
-  &__header {
-    flex: 100% 1 1;
-  }
-  &__menu {
-    // flex: 300px 0 1;
-    top: 20px;
-    position: sticky;
-  }
-  &__license {
-    flex: 50% 1 1;
-  }
-}
-
-@media (min-width: 640px) {
-}
