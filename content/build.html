@@ -16,39 +16,21 @@ wideLayout = true
 
       <div class="license-page__menu">
         <section class="license-builder">
-          <h3>
-            {{< icon icon="clipboard-check" class="license-icon license-icon--large license-icon--black" >}}
+          <h2 class="license-builder__title">
             Your license configuration
-          </h3>
-
-          <ol class="no-bullet">
-            <li><a href="#HL3">{{< icon icon="shield-check" class="license-icon license-icon--orange" >}}Hippocratic License 3.0 (Core)</a></li>
-            <!-- <li><a href="#LABOR">{{< icon icon="shield-check" class="license-icon license-icon--orange" >}}Labor Rights Module</a></li> -->
-          </ol>
-
-          <license-module-list type="active"></license-module-list>
-
-          <h3>
-            Start using your license
-          </h3>
-          <ul class="no-bullet">
-            <li>
-              License text: <license-link type="html">HTML</license-link>, <license-link type="markdown">Markdown</license-link> and <license-link type="plaintext">plaintext</license-link>.
-            </li>
-            <li>
-              License badge: <img class="license-badge" src="https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C">
-            </li>
-            <li>
-              Badge markdown:
-              <code>
-                ![https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-ECO-LR&color=D44F2C)
-              </code>
-            </li>
-          </ul>
+          </h2>
           <h3>
             Available modules
           </h3>
           <license-module-list type="inactive"></license-module-list>
+          <h3>
+            Start using your license
+          </h3>
+          
+          <p>
+            License text: <license-link type="html">HTML</license-link>, <license-link type="markdown">Markdown</license-link> and <license-link type="plaintext">plaintext</license-link>.
+          </p>
+          
         </section>
       </div>
 

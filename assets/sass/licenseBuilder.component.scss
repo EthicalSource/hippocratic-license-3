@@ -4,6 +4,9 @@
   margin: 1rem 0rem;
   position: sticky;
   top: -3px;
+  &__title {
+    margin-bottom: 2rem;
+  }
 }
 
 .license-badge {
