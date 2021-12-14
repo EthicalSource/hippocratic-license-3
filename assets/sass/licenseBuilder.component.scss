@@ -37,6 +37,15 @@
   }
 }
 
+:host(.license-module-list) {
+  background-color: red;
+}
+
+.license-module {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 @media (min-width: 850px) {
   .license-page {
     display: flex;
@@ -51,7 +60,6 @@
       order: 1;
     }
     &__menu > * {
-      height: calc(100vh + 6px);
       overflow-y: scroll;
     }
     &__license {
