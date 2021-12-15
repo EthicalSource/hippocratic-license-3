@@ -51,14 +51,13 @@ export class LicenseModuleList extends HTMLElement {
     )
     const list = cr('ul')
     modules.forEach((m) => {
-      const li = cr('li')
-      li.classList.add('list-item')
-      li.appendChild(buildModuleButton(m))
-      const p = cr('p')
-      p.textContent = m.title
-      li.appendChild(p)
-
-      list.appendChild(li)
+      // const li = cr('li')
+      // li.classList.add('list-item')
+      // li.appendChild(buildModuleButton(m))
+      // const p = cr('p')
+      // p.textContent = m.title
+      // li.appendChild(p)
+      // list.appendChild(li)
     })
     this.list.replaceWith(list)
     this.list = list
@@ -75,21 +74,4 @@ export class LicenseModuleList extends HTMLElement {
   disconnectedCallback() {
     window.removeEventListener('locationchange', this.render)
   }
-}
-
-function buildModuleButton({ id }) {
-  const btn = cr('button')
-  // Activate / deactivate modules without page refresh.
-  btn.setAttribute('data-module-target', id)
-  btn.classList.add('license-module__btn')
-  btn.innerHTML = isModuleActive({ id }) ? 'Remove' : 'Add'
-  btn.onclick = (e) => {
-    e.preventDefault()
-    const destination = isModuleActive({ id })
-      ? createModuleLink({ removeModule: id })
-      : createModuleLink({ addModule: id })
-    history.replaceState(null, '', destination)
-    btn.innerHTML = isModuleActive({ id }) ? 'Remove' : 'Add'
-  }
-  return btn
 }

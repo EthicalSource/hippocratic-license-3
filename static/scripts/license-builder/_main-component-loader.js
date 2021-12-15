@@ -4,8 +4,10 @@ import { VerifyCustomElements } from './verify-custom-elements.js'
 import { enableLocationChangeEvent } from './locationchange-polyfill.js'
 import { ConfiguredLicenseLink } from './configured-license-link.js'
 import { IncrementedLinks } from './incremented-links.js'
+import { ModuleToggler } from './module-toggler.js'
 
 export const webComponents = {
+  'module-toggler': ModuleToggler,
   'license-module-list': LicenseModuleList,
   'license-module': LicenseModule,
   'configured-license-link': ConfiguredLicenseLink,
