@@ -1,8 +1,4 @@
-import {
-  isModuleActive,
-  createModuleLink,
-  cr,
-} from './license-builder.helpers.mjs'
+import { buildHTML, cr } from './license-builder.helpers.mjs'
 
 const template = document.createElement('template')
 
@@ -27,7 +23,7 @@ template.innerHTML = `
  * type can be set to: 'active', 'inactive'. If not set it
  * will simply list all modules found on the page.
  */
-export class LicenseModuleList extends HTMLElement {
+export class ModuleList extends HTMLElement {
   constructor() {
     super()
     this.root = this.attachShadow({ mode: 'open' })
@@ -51,13 +47,12 @@ export class LicenseModuleList extends HTMLElement {
     )
     const list = cr('ul')
     modules.forEach((m) => {
-      // const li = cr('li')
-      // li.classList.add('list-item')
-      // li.appendChild(buildModuleButton(m))
-      // const p = cr('p')
-      // p.textContent = m.title
-      // li.appendChild(p)
-      // list.appendChild(li)
+      const listItem = buildHTML(/* HTML */ `<li>
+        <module-toggler mod-id="${m.id}"></module-toggler>
+        <div><a href="#${m.id}">${m.title}</a></div>
+        <module-tooltip mod-id-"${m.id}"></module-tooltip>
+      </li> `)
+      list.appendChild(listItem)
     })
     this.list.replaceWith(list)
     this.list = list

@@ -5,7 +5,7 @@ import { isModuleActive, cr } from './license-builder.helpers.mjs'
  * the HL license text that are modules.
  *
  * Example:
- * <license-module mod-id="fsl" title="Fossil">
+ * <license-module mod-id="fsl" title="Fossil" help-text="">
  *  <li>The actual license clause</li>
  * </license-module>
  *

@@ -43,3 +43,14 @@ export const createModuleLink = ({
 
 // cr is just a shortform for document.createElement
 export const cr = (...args) => document.createElement(...args)
+
+/**
+ * buildHTML instantiates HTML nodes from a string.
+ * @param {string} htmlString Any valid html.
+ * @returns {Object[]} proper HTML nodes.
+ */
+export const buildHTML = (htmlString) => {
+  const template = cr('template')
+  template.innerHTML = htmlString
+  return template.content.cloneNode(true)
+}
