@@ -2,13 +2,13 @@ import { LicenseModule } from './license-module.js'
 import { LicenseModuleList } from './license-module-list.js'
 import { VerifyCustomElements } from './verify-custom-elements.js'
 import { enableLocationChangeEvent } from './locationchange-polyfill.js'
-import { LicenseLink } from './license-link.js'
+import { ConfiguredLicenseLink } from './configured-license-link.js'
 import { IncrementedLinks } from './incremented-links.js'
 
 export const webComponents = {
   'license-module-list': LicenseModuleList,
   'license-module': LicenseModule,
-  'license-link': LicenseLink,
+  'configured-license-link': ConfiguredLicenseLink,
   'incremented-links': IncrementedLinks,
   'verify-custom-elements': VerifyCustomElements,
 }

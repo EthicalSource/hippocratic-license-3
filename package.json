@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "node prepare-netlify-functions.mjs && esbuild static/scripts/incremented-links.helpers.mjs --bundle --platform=node --target=node14 > netlify/incremented-links.dist.js",
+    "build": "node prepare-netlify-functions.mjs && esbuild static/scripts/license-builder/incremented-links.helpers.mjs --bundle --platform=node --target=node14 > netlify/incremented-links.dist.js",
     "test": "ava",
     "test:watch": "ava --watch"
   },

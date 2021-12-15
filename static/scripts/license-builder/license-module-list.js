@@ -36,7 +36,6 @@ export class LicenseModuleList extends HTMLElement {
     this.root.appendChild(this.list)
     this.render()
     this.render = this.render.bind(this)
-    this.initialized = littlefoot.littlefoot()
   }
 
   render() {

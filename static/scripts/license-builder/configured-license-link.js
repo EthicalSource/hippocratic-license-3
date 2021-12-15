@@ -4,7 +4,7 @@ import { getActiveModules, cr } from './license-builder.helpers.mjs'
  * Purpose: Dynamically create a link to the configured
  * license version according to the specified type.
  */
-export class LicenseLink extends HTMLElement {
+export class ConfiguredLicenseLink extends HTMLElement {
   constructor() {
     super()
     this.root = this.attachShadow({ mode: 'open' })
