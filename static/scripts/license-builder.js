@@ -1,9 +1,9 @@
-import { LicenseModule } from './LicenseModule.js'
-import { LicenseModuleList } from './LicenseModuleList.js'
-import { VerifyCustomElements } from './VerifyCustomElements.js'
-import { enableLocationChangeEvent } from './locationchangePolyfill.js'
-import { LicenseLink } from './LicenseLink.js'
-import { IncrementedLinks } from './IncrementedLinks.js'
+import { LicenseModule } from './license-module.js'
+import { LicenseModuleList } from './license-module-list.js'
+import { VerifyCustomElements } from './verify-custom-elements.js'
+import { enableLocationChangeEvent } from './locationchange-polyfill.js'
+import { LicenseLink } from './license-link.js'
+import { IncrementedLinks } from './incremented-links.js'
 
 export const webComponents = {
   'license-module-list': LicenseModuleList,

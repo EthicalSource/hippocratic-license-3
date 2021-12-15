@@ -2,7 +2,7 @@ import {
   isModuleActive,
   createModuleLink,
   cr,
-} from './licenseBuilder.helpers.mjs'
+} from './license-builder.helpers.mjs'
 
 const template = document.createElement('template')
 
