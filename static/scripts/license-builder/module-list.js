@@ -16,12 +16,7 @@ template.innerHTML = `
 
 /**
  * Purpose: This web component searches for all modules on the
- * page and builds a list of active/inactive modules determined
- * by the last part of the url.
- *
- * Available params:
- * type can be set to: 'active', 'inactive'. If not set it
- * will simply list all modules found on the page.
+ * page and builds a list of available modules.
  */
 export class ModuleList extends HTMLElement {
   constructor() {
@@ -49,7 +44,11 @@ export class ModuleList extends HTMLElement {
     modules.forEach((m) => {
       const listItem = buildHTML(/* HTML */ `<li>
         <module-toggler mod-id="${m.id}"></module-toggler>
-        <div><a href="#${m.id}">${m.title}</a></div>
+        <div>
+          <module-show-onclick mod-id="${m.id}">
+            <a href="#${m.id}">${m.title}</a>
+          </module-show-onclick>
+        </div>
         <module-tooltip mod-id-"${m.id}"></module-tooltip>
       </li> `)
       list.appendChild(listItem)

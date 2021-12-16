@@ -24,7 +24,7 @@ export class LicenseModule extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['mod-id', 'title']
+    return ['mod-id', 'title', 'help-text']
   }
 
   render() {
