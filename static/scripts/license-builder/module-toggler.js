@@ -4,6 +4,19 @@ import {
   cr,
 } from './license-builder.helpers.mjs'
 
+const template = document.createElement('template')
+
+const html = (str) => str
+
+// Triggers prettier formatting
+template.innerHTML = html`
+  <style>
+    img {
+      margin-bottom: -3px;
+    }
+  </style>
+`
+
 /**
  * Purpose: This custom element is a button
  * that toggles whether or not a module should
@@ -14,6 +27,7 @@ export class ModuleToggler extends HTMLElement {
     super()
     this.root = this.attachShadow({ mode: 'open' })
     this.btn = cr('button')
+    this.root.appendChild(template.content.cloneNode(true))
     this.root.appendChild(this.btn)
     this.render = this.render.bind(this)
     this.buttonOnClick = this.buttonOnClick.bind(this)
@@ -31,7 +45,10 @@ export class ModuleToggler extends HTMLElement {
     const id = this.getAttribute('mod-id')
     this.btn.setAttribute('data-module-target', id)
     this.btn.classList.add('module-toggler')
-    this.btn.innerHTML = isModuleActive({ id }) ? 'Remove' : 'Add'
+    const svgIcon = isModuleActive({ id })
+      ? '<img width="20" src="/icons/check-circle.svg" />'
+      : `<img width="20" src="/icons/plus-circle.svg" />`
+    this.btn.innerHTML = svgIcon
   }
 
   buttonOnClick(e) {
