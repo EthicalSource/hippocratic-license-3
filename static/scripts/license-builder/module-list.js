@@ -2,14 +2,23 @@ import { buildHTML, cr } from './license-builder.helpers.mjs'
 
 const template = document.createElement('template')
 
-template.innerHTML = `
+const html = (str) => str
+
+// Triggers prettier formatting
+template.innerHTML = html`
   <style>
     ul {
       margin: 0;
       padding: 0;
     }
-    .list-item {
+    li {
       display: flex;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      align-items: center;
+    }
+    .module-link {
+      flex-grow: 1;
     }
   </style>
 `
@@ -42,30 +51,22 @@ export class ModuleList extends HTMLElement {
     )
     const list = cr('ul')
     modules.forEach((m) => {
-      const listItem = buildHTML(/* HTML */ `<li>
-        <module-toggler mod-id="${m.id}"></module-toggler>
-        <div>
+      const listItem = buildHTML(`<li>
+        <div clas="module-toggler">
+          <module-toggler mod-id="${m.id}"></module-toggler>
+        </div>
+        <div class="module-link">
           <module-show-onclick mod-id="${m.id}">
             <a href="#${m.id}">${m.title}</a>
           </module-show-onclick>
         </div>
-        <module-tooltip mod-id-"${m.id}"></module-tooltip>
+        <div class="module-tooltip">
+          <module-tooltip mod-id-"${m.id}"></module-tooltip>
+        </div>
       </li> `)
       list.appendChild(listItem)
     })
     this.list.replaceWith(list)
     this.list = list
-  }
-
-  attributeChangedCallback() {
-    this.render()
-  }
-
-  connectedCallback() {
-    window.addEventListener('locationchange', this.render)
-  }
-
-  disconnectedCallback() {
-    window.removeEventListener('locationchange', this.render)
   }
 }
