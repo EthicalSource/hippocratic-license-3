@@ -53,6 +53,7 @@ export class ModuleListItem extends HTMLElement {
     // Bind this.
     this.render = this.render.bind(this)
     this.checkboxHandler = this.checkboxHandler.bind(this)
+    this.findButtonHandler = this.findButtonHandler.bind(this)
   }
 
   static get observedAttributes() {
@@ -93,15 +94,34 @@ export class ModuleListItem extends HTMLElement {
     this.render()
   }
 
-  findButtonHandler(e) {}
+  /**
+   * Scrolls the relevant module into view, and
+   * makes it visible if it's not visible already.
+   */
+  findButtonHandler(e) {
+    const id = this.getAttribute('mod-id')
+    if (isModuleActive({ id })) {
+      location.hash = id
+    } else {
+      const linkWithModules = createModuleLink({ addModule: id })
+      history.replaceState(null, '', `${linkWithModules}#${id}`)
+      this.render()
+    }
+    const targetNode = document.querySelector(`#${id}`)
+    if (targetNode) {
+      targetNode.scrollIntoView()
+    }
+  }
 
   connectedCallback() {
     window.addEventListener('locationchange', this.render)
     this.checkbox.addEventListener('click', this.checkboxHandler)
+    this.findButton.addEventListener('click', this.findButtonHandler)
   }
 
   disconnectedCallback() {
     window.removeEventListener('locationchange', this.render)
-    this.checkbox.addEventListener('click', this.checkboxHandler)
+    this.checkbox.removeEventListener('click', this.checkboxHandler)
+    this.findButton.removeEventListener('click', this.findButtonHandler)
   }
 }
