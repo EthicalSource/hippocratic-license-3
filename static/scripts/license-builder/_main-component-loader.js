@@ -4,11 +4,9 @@ import { VerifyCustomElements } from './verify-custom-elements.js'
 import { enableLocationChangeEvent } from './locationchange-polyfill.js'
 import { ConfiguredLicenseLink } from './configured-license-link.js'
 import { IncrementedLinks } from './incremented-links.js'
-import { ModuleTooltip } from './module-tooltip.js'
 import { ModuleListItem } from './module-list-item.js'
 
 export const webComponents = {
-  'module-tooltip': ModuleTooltip,
   'module-list-item': ModuleListItem,
   'module-list': ModuleList,
   'license-module': LicenseModule,

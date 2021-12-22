@@ -10,8 +10,6 @@ template.innerHTML = html`
     ul {
       margin: 0;
       padding: 0;
-      display: grid;
-      grid-auto-rows: 1fr;
     }
     li {
       margin-bottom: 1rem;
@@ -41,9 +39,26 @@ export class ModuleList extends HTMLElement {
   }
 
   render() {
+    const list = cr('ul')
+    // Add buttons for activating / deactivating all options.
+    const resetOrAddAllLi = cr('li')
+    resetOrAddAllLi.classList.add('reset-or-add-all-modules')
+    if (!this.resetModulesButton) {
+      this.resetModulesButton = cr('button')
+      this.resetModulesButton.innerHTML = 'Deactivate all modules'
+      this.resetModulesButton.addEventListener('click', this.resetModules)
+    }
+    resetOrAddAllLi.appendChild(this.resetModulesButton)
+    if (!this.addAllModulesButton) {
+      this.addAllModulesButton = cr('button')
+      this.addAllModulesButton.innerHTML = 'Activate all modules'
+      this.addAllModulesButton.addEventListener('click', this.addAllModules)
+    }
+    resetOrAddAllLi.appendChild(this.addAllModulesButton)
+    list.appendChild(resetOrAddAllLi)
+
     // Get available modules.
     const modules = getAllModules()
-    const list = cr('ul')
     modules.forEach((m) => {
       const listItem = buildHTML(`
         <li>
@@ -52,23 +67,7 @@ export class ModuleList extends HTMLElement {
       `)
       list.appendChild(listItem)
     })
-    // Finally add buttons for activating / deactivating all options.
-    const lastListItem = cr('li')
-    lastListItem.classList.add('reset-or-add-all-modules')
-    if (!this.resetModulesButton) {
-      this.resetModulesButton = cr('button')
-      this.resetModulesButton.innerHTML = 'Deactivate all modules'
-      this.resetModulesButton.addEventListener('click', this.resetModules)
-    }
-    lastListItem.appendChild(this.resetModulesButton)
-    if (!this.addAllModulesButton) {
-      this.addAllModulesButton = cr('button')
-      this.addAllModulesButton.innerHTML = 'Activate all modules'
-      this.addAllModulesButton.addEventListener('click', this.addAllModules)
-    }
-    lastListItem.appendChild(this.addAllModulesButton)
 
-    list.appendChild(lastListItem)
     this.list.replaceWith(list)
     this.list = list
   }
