@@ -42,15 +42,16 @@ export class StickyMobileHeader extends HTMLElement {
   }
 
   connectedCallback() {
+    // Listen for custom event triggered by find-module button.
     document.addEventListener(
-      'finding-license-module',
+      'clicked-find-license',
       this.findingLicenseHandler
     )
   }
 
   disconnectedCallback() {
     document.removeEventListener(
-      'finding-license-module',
+      'clicked-find-license',
       this.findingLicenseHandler
     )
   }

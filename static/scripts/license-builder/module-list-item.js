@@ -159,13 +159,16 @@ export class ModuleListItem extends HTMLElement {
       if (width > 850) {
         targetNode.scrollIntoView({ block: 'start' })
       } else {
+        // On mobile the browser gets confused by the sticky menu and its
+        // contents. To ensure that the user see the scrolled to content
+        // we must calculate a good offset to scroll to.
         const heightOfMenu = document.querySelector(
           'sticky-mobile-header'
         ).offsetHeight
         window.scrollTo({ top: targetNode.offsetTop - heightOfMenu })
       }
       targetNode.focus()
-      document.dispatchEvent(new CustomEvent('finding-license-module'))
+      document.dispatchEvent(new CustomEvent('clicked-find-license'))
     }
   }
 
