@@ -1,4 +1,4 @@
-import { buildHTML, cr } from './license-builder.helpers.mjs'
+import { buildHTML, cr, getAllModules } from './license-builder.helpers.mjs'
 
 const template = document.createElement('template')
 
@@ -10,10 +10,17 @@ template.innerHTML = html`
     ul {
       margin: 0;
       padding: 0;
+      display: grid;
+      grid-auto-rows: 1fr;
     }
     li {
       margin-bottom: 1rem;
       list-style: none;
+    }
+    .reset-or-add-all-modules {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
     }
   </style>
 `
@@ -35,15 +42,7 @@ export class ModuleList extends HTMLElement {
 
   render() {
     // Get available modules.
-    const modules = Array.from(document.querySelectorAll('license-module')).map(
-      (node) => {
-        return {
-          id: node.getAttribute('mod-id'),
-          title: node.getAttribute('title'),
-          helpText: node.getAttribute('helpText'),
-        }
-      }
-    )
+    const modules = getAllModules()
     const list = cr('ul')
     modules.forEach((m) => {
       const listItem = buildHTML(`
@@ -53,22 +52,23 @@ export class ModuleList extends HTMLElement {
       `)
       list.appendChild(listItem)
     })
-
+    // Finally add buttons for activating / deactivating all options.
     const lastListItem = cr('li')
-    if (!this.addAllModulesButton) {
-      this.addAllModulesButton = cr('button')
-      this.addAllModulesButton.innerHTML = 'Add all modules'
-      this.addAllModulesButton.addEventListener('click', this.addAllModules)
-    }
-    lastListItem.appendChild(this.addAllModulesButton)
+    lastListItem.classList.add('reset-or-add-all-modules')
     if (!this.resetModulesButton) {
       this.resetModulesButton = cr('button')
-      this.resetModulesButton.innerHTML = 'Reset'
+      this.resetModulesButton.innerHTML = 'Deactivate all modules'
       this.resetModulesButton.addEventListener('click', this.resetModules)
     }
     lastListItem.appendChild(this.resetModulesButton)
-    list.appendChild(lastListItem)
+    if (!this.addAllModulesButton) {
+      this.addAllModulesButton = cr('button')
+      this.addAllModulesButton.innerHTML = 'Activate all modules'
+      this.addAllModulesButton.addEventListener('click', this.addAllModules)
+    }
+    lastListItem.appendChild(this.addAllModulesButton)
 
+    list.appendChild(lastListItem)
     this.list.replaceWith(list)
     this.list = list
   }

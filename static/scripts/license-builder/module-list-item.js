@@ -17,6 +17,7 @@ template.innerHTML = html`
       gap: 1rem;
       align-items: center;
       width: 100%;
+      height: 100%;
     }
     label {
       flex-grow: 1;

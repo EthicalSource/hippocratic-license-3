@@ -11,7 +11,12 @@ export const getActiveModules = ({ sourceUrl = window.location.href } = {}) => {
   if (!modulesStr) {
     return []
   }
-  return modulesStr.split(',')
+  const allModules = getAllModules().map(({ id }) => id)
+  const activeModules = modulesStr.split(',')
+  if (activeModules.includes('full')) {
+    return allModules
+  }
+  return activeModules
 }
 
 /**
@@ -36,9 +41,29 @@ export const createModuleLink = ({
   if (updatedModules.length === 0) {
     return `${url.origin}${url.pathname}`
   }
+  const allModules = getAllModules().map(({ id }) => id)
+  if (updatedModules.length === allModules.length) {
+    return `${url.origin}${url.pathname}?modules=full`
+  }
   return `${url.origin}${url.pathname}?modules=${updatedModules
     .sort()
     .join(',')}`
+}
+
+export const getAllModules = () => {
+  // When testing there's no global window.document
+  // so we simply return an empty list here. If we actually
+  // want to test this we should make this data mockable.
+  if (typeof document === 'undefined') {
+    return []
+  }
+  return Array.from(document.querySelectorAll('license-module')).map((node) => {
+    return {
+      id: node.getAttribute('mod-id'),
+      title: node.getAttribute('title'),
+      helpText: node.getAttribute('helpText'),
+    }
+  })
 }
 
 // cr is just a shortform for document.createElement
