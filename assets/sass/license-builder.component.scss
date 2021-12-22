@@ -1,5 +1,11 @@
+/*
+This component is only responsible for styling itself,
+and makes no assumptions about it's width. Layout and such is 
+handled by the .license-page component.
+*/
 .license-builder {
   border: 3px solid var(--color-orange);
+  background-color: var(--color-white);
   padding: 1rem;
   margin: 1rem 0rem;
   position: sticky;
@@ -23,11 +29,9 @@
   margin-right: 0.125rem;
   padding: 0.25rem 0.25rem 0.25rem 0.375rem;
   vertical-align: text-top;
-
   a {
     text-decoration: none !important;
   }
-
   &--large {
     height: var(--font-size-medium);
     width: var(--font-size-medium);
@@ -37,31 +41,5 @@
   }
   &--orange {
     fill: var(--color-orange);
-  }
-}
-
-@media (min-width: 850px) {
-  .license-page {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 5rem;
-    &__header {
-      flex: 100% 1 1;
-    }
-    &__menu {
-      flex: auto 1 1;
-      width: 250px;
-      order: 1;
-    }
-    &__license {
-      flex: 40% 1 1;
-      margin-right: 1rem;
-    }
-  }
-  .license-builder__modules {
-    overflow-y: scroll;
-    max-height: 50vh;
-    padding: 2rem 0;
-    margin: -1rem 0;
   }
 }

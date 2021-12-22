@@ -155,8 +155,17 @@ export class ModuleListItem extends HTMLElement {
     // Find license-module and focus first child link
     const targetNode = document.querySelector(`#${id}`)
     if (targetNode) {
-      targetNode.scrollIntoView()
+      const { width } = document.body.getBoundingClientRect()
+      if (width > 850) {
+        targetNode.scrollIntoView({ block: 'start' })
+      } else {
+        const heightOfMenu = document.querySelector(
+          'sticky-mobile-header'
+        ).offsetHeight
+        window.scrollTo({ top: targetNode.offsetTop - heightOfMenu })
+      }
       targetNode.focus()
+      document.dispatchEvent(new CustomEvent('finding-license-module'))
     }
   }
 

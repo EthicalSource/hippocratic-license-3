@@ -5,8 +5,10 @@ import { enableLocationChangeEvent } from './locationchange-polyfill.js'
 import { ConfiguredLicenseLink } from './configured-license-link.js'
 import { IncrementedLinks } from './incremented-links.js'
 import { ModuleListItem } from './module-list-item.js'
+import { StickyMobileHeader } from './sticky-mobile-header.js'
 
 export const webComponents = {
+  'sticky-mobile-header': StickyMobileHeader,
   'module-list-item': ModuleListItem,
   'module-list': ModuleList,
   'license-module': LicenseModule,
