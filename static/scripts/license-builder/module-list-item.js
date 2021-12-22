@@ -42,7 +42,12 @@ template.innerHTML = html`
 
 /**
  * Purpose: This components presents one or more actions
- * for a given module.
+ * for a given module such as
+ * - toggling the module,
+ * - locating it in the text and
+ * - reading the help text information.
+ *
+ * It also tries to manage focus to help screen readers.
  */
 export class ModuleListItem extends HTMLElement {
   constructor() {
