@@ -1,16 +1,17 @@
 @import 'variables.scss';
 // Styling that goes directly on HTML elements
-@import 'htmlAndBody.element.scss';
+@import 'html-and-body.element.scss';
 @import 'typography.element.scss';
 @import 'lists.element.scss';
 // Components (anything .class based)
-@import 'siteHeader.component.scss';
-@import 'siteWrapper.component.scss';
+@import 'site-header.component.scss';
+@import 'site-wrapper.component.scss';
 @import 'breadcrumbs.component.scss';
 @import 'lists.component.scss';
-@import 'licenseBuilder.component.scss';
+@import 'license-builder.component.scss';
+@import 'license-page.component.scss';
 @import 'footer.component.scss';
-@import 'dataList.component.scss';
+@import 'data-list.component.scss';
 @import 'formats.component.scss';
 
 // TODO consider moving the styles below into either element or components files, or delete them if not used.

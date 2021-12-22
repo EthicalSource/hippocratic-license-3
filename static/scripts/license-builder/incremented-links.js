@@ -1,5 +1,5 @@
-import { cr } from './licenseBuilder.helpers.mjs'
-import { incrementAndLinkify } from './incrementedLinks.helpers.mjs'
+import { cr } from './license-builder.helpers.mjs'
+import { incrementAndLinkify } from './incremented-links.helpers.mjs'
 
 /**
  * Purpose: When adding/removing modules we need to dynamically

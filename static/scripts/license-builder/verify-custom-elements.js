@@ -1,4 +1,4 @@
-import { webComponents } from './licenseBuilder.js'
+import { webComponents } from './_main-component-loader.js'
 
 /**
  * Purpose: Avoid showing content unless specified custom elements

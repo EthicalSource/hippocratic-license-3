@@ -32,23 +32,22 @@
   <body{{ with .Section }} id="{{ . }}"{{ end }}>
 
     <header class="site-header">
-      <div class="site-header__content">
+      <div class="site-header__content site-wrapper{{ if .Params.wideLayout }} site-wrapper--wide{{ end }}">
         {{ partial "header"}}
         {{ partial "navigation" . }}
       </div>
     </header>
 
-    <div class="site-wrapper">
-
+    <div class="site-wrapper{{ if .Params.wideLayout }} site-wrapper--wide{{ end }}">
       {{ partial "breadcrumbs" . }}
-
       {{ block "main" . }}
       {{ end }}
+    </div>
 
+    <div class="site-wrapper{{ if .Params.wideLayout }} site-wrapper--wide{{ end }}">
       <footer class="footer">
         {{ partial "footer" }}
       </footer>
-
     </div>
   </body>
 </html>

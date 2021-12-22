@@ -4,7 +4,6 @@
   padding: 1rem 0;
 
   &__content {
-    @extend .site-wrapper;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;

@@ -3,7 +3,7 @@ const { builder } = require('@netlify/functions')
 const { licenseHTML } = require('./hl-full.json')
 const { convert } = require('html-to-text')
 const { NodeHtmlMarkdown } = require('node-html-markdown')
-const { incrementAndLinkify } = require('../incrementedLinks.dist.js')
+const { incrementAndLinkify } = require('../incremented-links.dist.js')
 
 async function downloadLicenseHandler(event, context) {
   // Disallow going to the .netlify function directly,
