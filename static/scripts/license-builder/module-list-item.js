@@ -1,5 +1,4 @@
 import {
-  buildHTML,
   cr,
   isModuleActive,
   createModuleLink,
@@ -7,9 +6,9 @@ import {
 
 const template = document.createElement('template')
 
+// Hack for triggering Prettier formatting.
 const html = (str) => str
 
-// Triggers prettier formatting
 template.innerHTML = html`
   <style>
     label {
@@ -42,8 +41,8 @@ template.innerHTML = html`
 `
 
 /**
- * Purpose: This web component renders the available options
- * for each module.
+ * Purpose: This components presents one or more actions
+ * for a given module.
  */
 export class ModuleListItem extends HTMLElement {
   constructor() {
