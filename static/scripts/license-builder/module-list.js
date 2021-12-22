@@ -51,19 +51,9 @@ export class ModuleList extends HTMLElement {
     )
     const list = cr('ul')
     modules.forEach((m) => {
-      const listItem = buildHTML(`<li>
-        <div clas="module-toggler">
-          <module-toggler mod-id="${m.id}"></module-toggler>
-        </div>
-        <div class="module-link">
-          <module-show-onclick mod-id="${m.id}">
-            <a href="#${m.id}">${m.title}</a>
-          </module-show-onclick>
-        </div>
-        <div class="module-tooltip">
-          <module-tooltip mod-id-"${m.id}"></module-tooltip>
-        </div>
-      </li> `)
+      const listItem = buildHTML(`
+        <module-list-item mod-id="${m.id}"></module-list-item>
+      `)
       list.appendChild(listItem)
     })
     this.list.replaceWith(list)

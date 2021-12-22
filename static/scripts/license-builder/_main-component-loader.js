@@ -7,11 +7,13 @@ import { IncrementedLinks } from './incremented-links.js'
 import { ModuleToggler } from './module-toggler.js'
 import { ModuleTooltip } from './module-tooltip.js'
 import { ModuleShowOnclick } from './module-show-onclick.js'
+import { ModuleListItem } from './module-list-item.js'
 
 export const webComponents = {
   'module-toggler': ModuleToggler,
   'module-tooltip': ModuleTooltip,
   'module-show-onclick': ModuleShowOnclick,
+  'module-list-item': ModuleListItem,
   'module-list': ModuleList,
   'license-module': LicenseModule,
   'configured-license-link': ConfiguredLicenseLink,
