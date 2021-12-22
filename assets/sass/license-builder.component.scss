@@ -40,15 +40,6 @@
   }
 }
 
-:host(.license-module-list) {
-  background-color: red;
-}
-
-.license-module {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
 @media (min-width: 850px) {
   .license-page {
     display: flex;
