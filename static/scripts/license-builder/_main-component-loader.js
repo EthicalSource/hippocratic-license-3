@@ -5,12 +5,10 @@ import { enableLocationChangeEvent } from './locationchange-polyfill.js'
 import { ConfiguredLicenseLink } from './configured-license-link.js'
 import { IncrementedLinks } from './incremented-links.js'
 import { ModuleTooltip } from './module-tooltip.js'
-import { ModuleShowOnclick } from './module-show-onclick.js'
 import { ModuleListItem } from './module-list-item.js'
 
 export const webComponents = {
   'module-tooltip': ModuleTooltip,
-  'module-show-onclick': ModuleShowOnclick,
   'module-list-item': ModuleListItem,
   'module-list': ModuleList,
   'license-module': LicenseModule,

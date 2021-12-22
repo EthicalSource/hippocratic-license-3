@@ -12,13 +12,13 @@ const html = (str) => str
 // Triggers prettier formatting
 template.innerHTML = html`
   <style>
-    li {
+    :host {
       display: flex;
-      margin-bottom: 1rem;
       gap: 1rem;
       align-items: center;
+      width: 100%;
     }
-    li label {
+    label {
       flex-grow: 1;
     }
     .module-link {
@@ -37,18 +37,16 @@ export class ModuleListItem extends HTMLElement {
 
     this.root = this.attachShadow({ mode: 'open' })
     this.root.appendChild(template.content.cloneNode(true))
-    const listItem = cr('li')
     this.checkbox = cr('input')
     this.checkbox.type = 'checkbox'
     this.checkboxLabel = cr('label')
     this.findButton = cr('button')
     this.infoButton = cr('button')
 
-    listItem.appendChild(this.checkbox)
-    listItem.appendChild(this.checkboxLabel)
-    listItem.appendChild(this.findButton)
-    listItem.appendChild(this.infoButton)
-    this.root.appendChild(listItem)
+    this.root.appendChild(this.checkbox)
+    this.root.appendChild(this.checkboxLabel)
+    this.root.appendChild(this.findButton)
+    this.root.appendChild(this.infoButton)
 
     // Bind this.
     this.render = this.render.bind(this)

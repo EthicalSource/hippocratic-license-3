@@ -12,13 +12,8 @@ template.innerHTML = html`
       padding: 0;
     }
     li {
-      display: flex;
       margin-bottom: 1rem;
-      gap: 1rem;
-      align-items: center;
-    }
-    .module-link {
-      flex-grow: 1;
+      list-style: none;
     }
   </style>
 `
@@ -52,11 +47,37 @@ export class ModuleList extends HTMLElement {
     const list = cr('ul')
     modules.forEach((m) => {
       const listItem = buildHTML(`
-        <module-list-item mod-id="${m.id}"></module-list-item>
+        <li>
+          <module-list-item mod-id="${m.id}"></module-list-item>
+        </li>
       `)
       list.appendChild(listItem)
     })
+
+    const lastListItem = cr('li')
+    if (!this.addAllModulesButton) {
+      this.addAllModulesButton = cr('button')
+      this.addAllModulesButton.innerHTML = 'Add all modules'
+      this.addAllModulesButton.addEventListener('click', this.addAllModules)
+    }
+    lastListItem.appendChild(this.addAllModulesButton)
+    if (!this.resetModulesButton) {
+      this.resetModulesButton = cr('button')
+      this.resetModulesButton.innerHTML = 'Reset'
+      this.resetModulesButton.addEventListener('click', this.resetModules)
+    }
+    lastListItem.appendChild(this.resetModulesButton)
+    list.appendChild(lastListItem)
+
     this.list.replaceWith(list)
     this.list = list
+  }
+
+  resetModules() {
+    history.replaceState(null, '', '/build')
+  }
+
+  addAllModules() {
+    history.replaceState(null, '', `/build?modules=full`)
   }
 }

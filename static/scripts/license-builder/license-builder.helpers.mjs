@@ -3,7 +3,7 @@ export const isModuleActive = ({
   sourceUrl = window.location.href,
 } = {}) => {
   const modules = getActiveModules({ sourceUrl })
-  return modules.includes(id)
+  return modules.includes('full') || modules.includes(id)
 }
 
 export const getActiveModules = ({ sourceUrl = window.location.href } = {}) => {
