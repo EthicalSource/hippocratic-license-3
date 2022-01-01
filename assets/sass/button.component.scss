@@ -1,0 +1,30 @@
+.c-button {
+  border: 2px solid var(--color-orange);
+  background-color: transparent;
+  padding: 1rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  border-radius: 10px;
+  &:hover {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+  }
+  &:active {
+    border-color: var(--color-white);
+  }
+  &:disabled {
+    background-color: transparent;
+    color: #606060;
+    border-color: #606060;
+    box-shadow: initial;
+  }
+}
+
+module-list-item::part(button) {
+  @extend .c-button;
+  background-color:red;
+}
+
+module-list-item {
+  background-color:red;
+}
