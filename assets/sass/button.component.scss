@@ -5,11 +5,7 @@
   font-weight: 700;
   color: var(--color-orange);
   border-radius: 10px;
-  svg {
-    vertical-align: middle;
-  }
 }
-
 @mixin button-hover {
   background-color: var(--color-orange);
   color: var(--color-white);
@@ -38,7 +34,7 @@
   &:disabled {
     @include button-disabled;
   }
-  svg {
+  svg  {
     @include button-icon;
   }
 }
