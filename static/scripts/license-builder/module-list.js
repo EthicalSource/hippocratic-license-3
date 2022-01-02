@@ -47,12 +47,14 @@ export class ModuleList extends HTMLElement {
       this.resetModulesButton = cr('button')
       this.resetModulesButton.innerHTML = 'Deactivate all modules'
       this.resetModulesButton.addEventListener('click', this.resetModules)
+      this.resetModulesButton.setAttribute('part', 'button')
     }
     resetOrAddAllLi.appendChild(this.resetModulesButton)
     if (!this.addAllModulesButton) {
       this.addAllModulesButton = cr('button')
       this.addAllModulesButton.innerHTML = 'Activate all modules'
       this.addAllModulesButton.addEventListener('click', this.addAllModules)
+      this.addAllModulesButton.setAttribute('part', 'button')
     }
     resetOrAddAllLi.appendChild(this.addAllModulesButton)
     list.appendChild(resetOrAddAllLi)
@@ -62,7 +64,7 @@ export class ModuleList extends HTMLElement {
     modules.forEach((m) => {
       const listItem = buildHTML(`
         <li>
-          <module-list-item mod-id="${m.id}"></module-list-item>
+          <module-list-item exportparts="button,button-icon" mod-id="${m.id}"></module-list-item>
         </li>
       `)
       list.appendChild(listItem)
