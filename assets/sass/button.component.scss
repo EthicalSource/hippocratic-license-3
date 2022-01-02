@@ -1,0 +1,59 @@
+@mixin button-base {
+  border: 2px solid var(--color-orange);
+  background-color: transparent;
+  padding: 0.6rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  border-radius: 10px;
+}
+@mixin button-hover {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+@mixin button-active {
+  border-color: var(--color-white);
+}
+@mixin button-disabled {
+  background-color: transparent;
+  color: #606060;
+  border-color: #606060;
+  box-shadow: initial;
+}
+@mixin button-icon {
+  vertical-align: middle;
+}
+
+.c-button {
+  @include button-base;
+  &:hover {
+    @include button-hover;
+  }
+  &:active {
+    @include button-active;
+  }
+  &:disabled {
+    @include button-disabled;
+  }
+  svg  {
+    @include button-icon;
+  }
+}
+
+module-list::part(button),
+module-list-item::part(button) {
+  @include button-base;
+  &:hover {
+    @include button-hover;
+  }
+  &:active {
+    @include button-active;
+  }
+  &:disabled {
+    @include button-disabled;
+  }
+}
+
+module-list::part(button-icon),
+module-list-item::part(button-icon) {
+  @include button-icon;
+}
