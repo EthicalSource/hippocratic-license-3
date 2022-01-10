@@ -28,6 +28,9 @@
       flex: auto 1 1;
       width: 250px;
       order: 1;
+      border: 3px solid var(--color-orange);
+      background-color: var(--color-white);
+      padding: 1rem;
     }
     &__menu-on-mobile {
       display: none;
