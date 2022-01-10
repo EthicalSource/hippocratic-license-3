@@ -1,5 +1,5 @@
 +++
-title = "Boycott/Divestment/Sanctions module"
+title = "Boycott / Divestment / Sanctions module"
 breadcrumb = "BDS"
 id = "bds"
 section = "ethical-standards"

@@ -1,5 +1,12 @@
 <template id="module-list-item">
   <style>
+    input[type="checkbox"] {
+      width: 3em;
+      height: 3rem;
+      margin: 0;
+      accent-color: var(--color-orange);
+      flex-shrink: 0;
+    }
     label {
       flex-grow: 1;
     }
@@ -9,6 +16,7 @@
       gap: 1rem;
       align-items: center;
       width: 100%;
+      justify-content: space-between;
       flex-flow: row nowrap;
     }
     .help-text {
