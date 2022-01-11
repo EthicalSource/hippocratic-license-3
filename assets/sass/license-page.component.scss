@@ -28,6 +28,8 @@
       flex: auto 1 1;
       width: 250px;
       order: 1;
+    }
+    &__menu > * {
       border: 3px solid var(--color-orange);
       background-color: var(--color-white);
       padding: 1rem;
@@ -42,8 +44,11 @@
   }
   .license-builder__modules {
     overflow-y: scroll;
-    max-height: 50vh;
-    padding: 2rem 0;
-    margin: -1rem 0;
+    max-height: 48vh;
+  }
+  .license-builder__modules:after {
+    content: '_';
+    visibility: hidden;
+    min-width: 0.1px;
   }
 }

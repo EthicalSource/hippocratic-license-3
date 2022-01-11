@@ -34,11 +34,12 @@
   &:disabled {
     @include button-disabled;
   }
-  svg  {
+  svg {
     @include button-icon;
   }
 }
 
+module-button::part(button),
 module-list::part(button),
 module-list-item::part(button) {
   @include button-base;
