@@ -5,6 +5,9 @@
     position: relative;
     z-index: 10;
   }
+  &__menu {
+    display: none;
+  }
   &__menu-on-mobile {
     margin-top: -100px;
     position: sticky;
@@ -25,6 +28,7 @@
       flex: 100% 1 1;
     }
     &__menu {
+      display: block;
       flex: auto 1 1;
       width: 250px;
       order: 1;
