@@ -1,8 +1,9 @@
 <template id="mobile-menu-template">
+  {{ $style := resources.Get "sass/button.component.scss" | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
   <style>
     .top-bar {
       padding: 1rem;
-      border: 3px solid var(--color-orange);
       background-color: var(--color-white);
     }
     .menu-overlay {
@@ -15,15 +16,20 @@
       overflow-y: scroll;
     }
     .menu-content {
-      padding: 0 2rem 2rem 2rem;
+      /* Add extra padding at the bottom to make it easier for users to see where the
+         actual content ends.
+      */
+      padding: 0 2rem 12rem 2rem;
     }
   </style>
   <div class="top-bar">
-    <button data-role="open-button">Configure your license</button>
+    <button class="c-button" data-role="open-button">
+      Configure your Hippocratic license
+    </button>
   </div>
   <div class="menu-overlay">
     <div class="top-bar">
-      <button data-role="close-button">Close menu</button>
+      <button class="c-button" data-role="close-button">Close menu</button>
     </div>
     <div class="menu-content">
       <slot></slot>
@@ -32,6 +38,10 @@
 </template>
 
 <script type="module">
+  import {
+    lock,
+    unlock,
+  } from '/scripts/license-builder/tua-body-scroll-lock/dist/tua-bsl.esm.browser.min.js'
   import { cr } from '/scripts/license-builder/license-builder.helpers.mjs'
 
   export class MobileMenu extends HTMLElement {
@@ -51,27 +61,14 @@
     }
 
     openBtnHandler() {
-      this.scrollY = window.scrollY
       this.menuOpen = true
-      const body = document.body
-      body.style.position = 'fixed'
-      body.style.top = `-${this.scrollY}px`
+      lock(this.menuOverlay)
       this.render()
     }
 
     closeBtnHandler() {
       this.menuOpen = false
-      const body = document.body
-      const scrollY = body.style.top
-      body.style.position = ''
-      body.style.top = ''
-      const html = document.querySelector('html')
-      html.style.scrollBehavior = 'auto'
-      window.scrollTo({
-        top: parseInt(scrollY || '0') * -1,
-        left: 0,
-      })
-      html.style.scrollBehavior = 'smooth'
+      unlock(this.menuOverlay)
       this.render()
     }
 

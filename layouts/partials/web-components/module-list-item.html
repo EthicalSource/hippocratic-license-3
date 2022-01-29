@@ -166,13 +166,16 @@
       }
       // Dispatch event so that mobile-menu can react and close, before scrolling.
       document.dispatchEvent(new CustomEvent('clicked-find-license'))
-      // Find license-module and focus first child link
-      const targetNode = document.querySelector(`#${id}`)
-      if (targetNode) {
-        const { width } = document.body.getBoundingClientRect()
+      // Find license-module and focus first child link,
+      // waiting a bit
+      setTimeout(() => {
+        const targetNode = document.querySelector(`#${id}`)
+        if (!targetNode) {
+          return // nothing to scroll to
+        }
         targetNode.scrollIntoView({ block: 'start' })
         targetNode.focus()
-      }
+      }, 200)
     }
 
     infoButtonHandler(e) {

@@ -10,6 +10,24 @@ html {
   scroll-behavior: smooth;
 }
 
+// Couple of CSS tricks to ensure that in-page anchor
+// tags don't move target content below the mobile-menu
+// Sources:
+// https://spigotdesign.com/smooth-scroll-offset-anchor-links-with-css
+// https://css-tricks.com/hash-tag-links-padding/
+@media (max-width: 850px) {
+  :target:before {
+    content: '';
+    display: block;
+    height: 50px;
+    margin: -50px 0 0;
+  }
+  license-module {
+    margin-top: -50px;
+    padding-top: 50px;
+  }
+}
+
 body {
   background-color: var(--color-white);
   color: var(--color-black);
