@@ -1,0 +1,102 @@
+<template id="mobile-menu-template">
+  <style>
+    .top-bar {
+      padding: 1rem;
+      border: 3px solid var(--color-orange);
+      background-color: var(--color-white);
+    }
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      display: block;
+      background-color: var(--color-white);
+      overflow-y: scroll;
+    }
+    .menu-content {
+      padding: 0 2rem 2rem 2rem;
+    }
+  </style>
+  <div class="top-bar">
+    <button data-role="open-button">Configure your license</button>
+  </div>
+  <div class="menu-overlay">
+    <div class="top-bar">
+      <button data-role="close-button">Close menu</button>
+    </div>
+    <div class="menu-content">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<script type="module">
+  import { cr } from '/scripts/license-builder/license-builder.helpers.mjs'
+
+  export class MobileMenu extends HTMLElement {
+    constructor() {
+      super()
+      this.menuOpen = false
+      this.attachShadow({ mode: 'open' })
+      const root = this.shadowRoot
+      const template = document.getElementById('mobile-menu-template')
+      root.appendChild(template.content.cloneNode(true))
+      this.openBtn = root.querySelector('[data-role="open-button"]')
+      this.closeBtn = root.querySelector('[data-role="close-button"]')
+      this.menuOverlay = root.querySelector('.menu-overlay')
+      this.openBtnHandler = this.openBtnHandler.bind(this)
+      this.closeBtnHandler = this.closeBtnHandler.bind(this)
+      this.render = this.render.bind(this)
+    }
+
+    openBtnHandler() {
+      this.scrollY = window.scrollY
+      this.menuOpen = true
+      const body = document.body
+      body.style.position = 'fixed'
+      body.style.top = `-${this.scrollY}px`
+      this.render()
+    }
+
+    closeBtnHandler() {
+      this.menuOpen = false
+      const body = document.body
+      const scrollY = body.style.top
+      body.style.position = ''
+      body.style.top = ''
+      const html = document.querySelector('html')
+      html.style.scrollBehavior = 'auto'
+      window.scrollTo({
+        top: parseInt(scrollY || '0') * -1,
+        left: 0,
+      })
+      html.style.scrollBehavior = 'smooth'
+      this.render()
+    }
+
+    findBtnHandler() {}
+
+    render() {
+      this.menuOverlay.style = this.menuOpen
+        ? 'display:block;'
+        : 'display:none;'
+    }
+
+    connectedCallback() {
+      // Listen for custom event triggered by find-module button.
+      document.addEventListener('clicked-find-license', this.closeBtnHandler)
+      this.openBtn.addEventListener('click', this.openBtnHandler)
+      this.closeBtn.addEventListener('click', this.closeBtnHandler)
+      this.render()
+    }
+
+    disconnectedCallback() {
+      document.removeEventListener('clicked-find-license', this.closeBtnHandler)
+      this.openBtn.removeEventListener('click', this.openBtnHandler)
+      this.closeBtn.removeEventListener('click', this.closeBtnHandler)
+    }
+  }
+
+  customElements.define('mobile-menu', MobileMenu)
+</script>

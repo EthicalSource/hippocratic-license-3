@@ -1,6 +1,7 @@
 // license-page handles the overall layout of the build-page
 
 .license-page {
+  margin: 0 1.5rem;
   &__menu {
     position: relative;
     z-index: 10;
@@ -9,13 +10,11 @@
     display: none;
   }
   &__menu-on-mobile {
-    margin-top: -100px;
     position: sticky;
     z-index: 9;
     top: 0;
-    bottom: 0;
     display: block;
-    background-color: var(--color-white);
+    margin: 0 -1.5rem;
   }
 }
 

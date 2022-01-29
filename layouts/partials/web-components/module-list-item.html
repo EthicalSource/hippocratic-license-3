@@ -164,23 +164,14 @@
         history.replaceState(null, '', `${linkWithModules}#${id}`)
         this.render()
       }
+      // Dispatch event so that mobile-menu can react and close, before scrolling.
+      document.dispatchEvent(new CustomEvent('clicked-find-license'))
       // Find license-module and focus first child link
       const targetNode = document.querySelector(`#${id}`)
       if (targetNode) {
         const { width } = document.body.getBoundingClientRect()
-        if (width > 850) {
-          targetNode.scrollIntoView({ block: 'start' })
-        } else {
-          // On mobile the browser gets confused by the sticky menu and its
-          // contents. To ensure that the user see the scrolled to content
-          // we must calculate a good offset to scroll to.
-          const heightOfMenu = document.querySelector(
-            'sticky-mobile-header'
-          ).offsetHeight
-          window.scrollTo({ top: targetNode.offsetTop - heightOfMenu })
-        }
+        targetNode.scrollIntoView({ block: 'start' })
         targetNode.focus()
-        document.dispatchEvent(new CustomEvent('clicked-find-license'))
       }
     }
 
