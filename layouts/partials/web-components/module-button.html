@@ -1,5 +1,7 @@
 <template id="module-button">
-  <button part="button"><slot></slot></button>
+  {{ $style := resources.Get "sass/button.component.scss" | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+  <button class="c-button"><slot></slot></button>
 </template>
 
 <script type="module">

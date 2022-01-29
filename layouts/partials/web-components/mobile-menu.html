@@ -10,14 +10,19 @@
       display: none;
       position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       bottom: 0;
       display: block;
       background-color: var(--color-white);
       overflow-y: scroll;
     }
     .menu-content {
-      /* Add extra padding at the bottom to make it easier for users to see where the
-         actual content ends.
+      max-width: 500px;
+      margin: 0 auto;
+      /* 
+        Add extra padding at the bottom to make it easier for users to see where the
+        actual content ends.
       */
       padding: 0 2rem 12rem 2rem;
     }

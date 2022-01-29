@@ -1,5 +1,5 @@
-<template id="module-list-item">
-  <style>
+<template id="module-list-item"
+  >  <style>
     input[type='checkbox'] {
       width: 2rem;
       height: 2rem;
@@ -35,13 +35,14 @@
       height: 24px;
     }
   </style>
+  {{ $style := resources.Get "sass/button.component.scss" | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
   <div class="module-row">
     <input type="checkbox" />
     <label></label>
-    <button part="button" data-function="find">
+    <button class="c-button" data-function="find">
       <svg
-        part="button-icon"
         title=""
         xmlns="http://www.w3.org/2000/svg"
         class=""
@@ -55,9 +56,8 @@
           d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
     </button>
-    <button part="button" data-function="help-text">
+    <button class="c-button" data-function="help-text">
       <svg
-        part="button-icon"
         style="fill:currentColor;"
         title=""
         xmlns="http://www.w3.org/2000/svg"
@@ -203,3 +203,4 @@
 
   customElements.define('module-list-item', ModuleListItem)
 </script>
+</template>
