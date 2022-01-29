@@ -1,0 +1,55 @@
+<template id="sticky-mobile-header-template">
+  <style>
+    summary {
+      padding: 2rem;
+      border-bottom: 3px solid var(--color-orange);
+    }
+    .content {
+      height: 60vh;
+      overflow-y: scroll;
+    }
+  </style>
+  <details>
+    <summary>License menu</summary>
+    <div class="content">
+      <slot></slot>
+    </div>
+  </details>
+</template>
+
+<script type="module">
+  import { cr } from '/scripts/license-builder/license-builder.helpers.mjs'
+
+  export class StickyMobileHeader extends HTMLElement {
+    constructor() {
+      super()
+      this.root = this.attachShadow({ mode: 'open' })
+      const template = document.getElementById('sticky-mobile-header-template')
+      this.root.appendChild(template.content.cloneNode(true))
+      this.summary = this.root.querySelector('summary')
+      this.details = this.root.querySelector('details')
+      this.findingLicenseHandler = this.findingLicenseHandler.bind(this)
+    }
+
+    findingLicenseHandler(e) {
+      this.details.open = false
+    }
+
+    connectedCallback() {
+      // Listen for custom event triggered by find-module button.
+      document.addEventListener(
+        'clicked-find-license',
+        this.findingLicenseHandler
+      )
+    }
+
+    disconnectedCallback() {
+      document.removeEventListener(
+        'clicked-find-license',
+        this.findingLicenseHandler
+      )
+    }
+  }
+
+  customElements.define('sticky-mobile-header', StickyMobileHeader)
+</script>

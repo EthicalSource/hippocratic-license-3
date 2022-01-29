@@ -3,47 +3,42 @@ title = "Hippocratic License 3.0"
 breadcrumb = "Hippocratic License 3.0"
 summary = "Version 3.0 of the Hippocratic License, an Ethical Source license created by the Organization for Ethical Source."
 wideLayout = true
+polyfills = [
+  "/scripts/license-builder/locationchange-polyfill.js"
+]
+webComponents = [
+  "configured-license-link",
+  "incremented-links",
+  "license-module",
+  "sticky-mobile-header",
+  "module-list-item",
+  "module-list",
+  "module-button"
+]
 +++
 
-<!-- Load custom elements necessary necessary for License builder. -->
-{{< wc-module-list-item >}}
-{{< wc-module-list >}}
-{{< wc-module-button >}}
-<script
-  type="module"
-  src="/scripts/license-builder/_main-component-loader.js"
-></script>
-
-<verify-custom-elements>
-  <noscript
-    ><p>JavaScript needs to be enabled to use the license builder.</p></noscript
-  >
-  <div style="display: none;">
-    <div class="license-page">
-      <div class="license-page__header">
-        <h1>Build Your Hippocratic License</h1>
-        <p>
-          Welcome to the license builder. Use the license builder menu to
-          activate or deactivate clauses. And when you're ready to use the
-          license find the heading "start using your license" and follow one of
-          the links below it.
-        </p>
-      </div>
-      <div class="license-page__menu">
-        {{< license-builder >}}
-      </div>
-      <div class="license-page__menu-on-mobile">
-        <sticky-mobile-header>
-          {{< license-builder >}}
-        </sticky-mobile-header>
-      </div>
-      <div class="license-page__license">
-        <div class="no-bullet-wrapper">
-          <incremented-links>
-            {{< hl3-full-license >}}
-          </incremented-links>
-        </div>
-      </div>
+<div class="license-page">
+  <div class="license-page__header">
+    <h1>Build Your Hippocratic License</h1>
+    <p>
+      Welcome to the license builder. Use the license builder menu to activate
+      or deactivate clauses. And when you're ready to use the license find the
+      heading "start using your license" and follow one of the links below it.
+    </p>
+  </div>
+  <div class="license-page__menu">
+    {{< license-builder >}}
+  </div>
+  <div class="license-page__menu-on-mobile">
+    <sticky-mobile-header>
+      {{< license-builder >}}
+    </sticky-mobile-header>
+  </div>
+  <div class="license-page__license">
+    <div class="no-bullet-wrapper">
+      <incremented-links>
+        {{< hl3-full-license >}}
+      </incremented-links>
     </div>
   </div>
-</verify-custom-elements>
+</div>
