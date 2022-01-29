@@ -21,10 +21,12 @@
 
     connectedCallback() {
       window.addEventListener('locationchange', this.render)
+      window.addEventListener('license-module-revealed-content', this.render)
     }
 
     disconnectedCallback() {
       window.removeEventListener('locationchange', this.render)
+      window.removeEventListener('license-module-revealed-content', this.render)
     }
   }
 

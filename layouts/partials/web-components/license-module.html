@@ -53,6 +53,9 @@
       }
       if (isModuleActive({ id })) {
         this.children[0].style = 'display: block;'
+        document.dispatchEvent(
+          new CustomEvent('license-module-revealed-content')
+        )
       }
       if (location.hash === `#${id}`) {
         this.children[0].classList.add('highlight')
