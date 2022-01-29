@@ -8,13 +8,24 @@
   "node": ">=14.x",
   "devDependencies": {
     "ava": "^3.15.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.5.1",
+    "prettier-plugin-go-template": "^0.0.11"
   },
   "prettier": {
     "trailingComma": "es5",
     "tabWidth": 2,
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "parser": "go-template"
+        }
+      }
+    ]
   },
   "ava": {
     "files": [
