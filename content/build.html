@@ -4,20 +4,30 @@ breadcrumb = "Hippocratic License 3.0"
 summary = "Version 3.0 of the Hippocratic License, an Ethical Source license created by the Organization for Ethical Source."
 wideLayout = true
 +++
+
 <!-- Load custom elements necessary necessary for License builder. -->
 {{< wc-module-list-item >}}
 {{< wc-module-list >}}
 {{< wc-module-button >}}
-<script type="module" src="/scripts/license-builder/_main-component-loader.js"></script>
+<script
+  type="module"
+  src="/scripts/license-builder/_main-component-loader.js"
+></script>
 
 <verify-custom-elements>
-  <noscript><p>JavaScript needs to be enabled to use the license builder.</p></noscript>
+  <noscript
+    ><p>JavaScript needs to be enabled to use the license builder.</p></noscript
+  >
   <div style="display: none;">
     <div class="license-page">
       <div class="license-page__header">
         <h1>Build Your Hippocratic License</h1>
-        <p>Welcome to the license builder. Use the license builder menu to activate or deactivate clauses. And when 
-          you're ready to use the license find the heading "start using your license" and follow one of the links below it.</p>
+        <p>
+          Welcome to the license builder. Use the license builder menu to
+          activate or deactivate clauses. And when you're ready to use the
+          license find the heading "start using your license" and follow one of
+          the links below it.
+        </p>
       </div>
       <div class="license-page__menu">
         {{< license-builder >}}
