@@ -79,6 +79,7 @@
     isModuleActive,
     createModuleLink,
   } from '/scripts/license-builder/license-builder.helpers.mjs'
+  import { scrollTo } from '/scripts/license-builder/scrollTo.helpers.mjs'
 
   class ModuleListItem extends HTMLElement {
     constructor() {
@@ -156,26 +157,13 @@
      * makes it visible if it's not visible already.
      */
     findButtonHandler(e) {
-      const id = this.getAttribute('mod-id')
-      if (isModuleActive({ id })) {
-        location.hash = id
-      } else {
-        const linkWithModules = createModuleLink({ addModule: id })
-        history.replaceState(null, '', `${linkWithModules}#${id}`)
-        this.render()
-      }
       // Dispatch event so that mobile-menu can react and close, before scrolling.
       document.dispatchEvent(new CustomEvent('clicked-find-license'))
-      // Find license-module and focus first child link,
-      // waiting a bit
-      setTimeout(() => {
-        const targetNode = document.querySelector(`#${id}`)
-        if (!targetNode) {
-          return // nothing to scroll to
-        }
-        targetNode.scrollIntoView({ block: 'start' })
-        targetNode.focus()
-      }, 200)
+      const id = this.getAttribute('mod-id')
+      const linkWithModules = createModuleLink({ addModule: id })
+      history.replaceState(null, '', `${linkWithModules}#${id}`)
+      this.render()
+      scrollTo({id, offset: 50})
     }
 
     infoButtonHandler(e) {

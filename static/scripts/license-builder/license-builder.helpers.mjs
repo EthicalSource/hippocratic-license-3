@@ -35,7 +35,7 @@ export const createModuleLink = ({
   const updatedModules = modules.filter(
     (m) => !removeModule || m !== removeModule
   )
-  if (addModule) {
+  if (addModule && !updatedModules.includes(addModule)) {
     updatedModules.push(addModule)
   }
   if (updatedModules.length === 0) {

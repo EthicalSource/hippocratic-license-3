@@ -15,17 +15,15 @@ html {
 // Sources:
 // https://spigotdesign.com/smooth-scroll-offset-anchor-links-with-css
 // https://css-tricks.com/hash-tag-links-padding/
-@media (max-width: 850px) {
-  :target:before {
-    content: '';
-    display: block;
-    height: 50px;
-    margin: -50px 0 0;
-  }
-  license-module {
-    margin-top: -50px;
-    padding-top: 50px;
-  }
+:target:before {
+  content: '';
+  display: block;
+  height: 50px;
+  margin: -50px 0 0;
+}
+license-module {
+  margin-top: -50px;
+  padding-top: 50px;
 }
 
 body {
