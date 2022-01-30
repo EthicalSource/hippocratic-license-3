@@ -25,6 +25,9 @@
     gap: 5rem;
     &__header {
       flex: 100% 1 1;
+      & > * {
+        max-width: 500px;
+      }
     }
     &__menu {
       display: block;
