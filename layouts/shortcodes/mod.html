@@ -1,6 +1,11 @@
 {{ $filename := lower (.Get "file") }}
 {{ with .Site.GetPage (print "_build-dependency-hl-3.0/modules/" $filename ".md") }}
-  <license-module id="{{ .Params.id }}" mod-id="{{ .Params.id }}" title="{{ .Title }}" help-text="{{ .Params.helpText }}">
+  <license-module
+    id="{{ .Params.id }}"
+    mod-id="{{ .Params.id }}"
+    title="{{ .Title }}"
+    help-text="{{ .Params.helpText }}"
+  >
     {{ .Content }}
   </license-module>
 {{ end }}

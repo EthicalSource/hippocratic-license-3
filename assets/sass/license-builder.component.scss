@@ -4,17 +4,18 @@ and makes no assumptions about it's width. Layout and such is
 handled by the .license-page component.
 */
 .license-builder {
-  border: 3px solid var(--color-orange);
-  background-color: var(--color-white);
-  padding: 1rem;
   margin: 1rem 0rem;
-  position: sticky;
-  top: 20px;
+
   &__title {
     margin-bottom: 2rem;
   }
   h3 {
     margin: 2rem 0;
+  }
+  &__module-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
   }
 }
 
@@ -41,5 +42,12 @@ handled by the .license-page component.
   }
   &--orange {
     fill: var(--color-orange);
+  }
+}
+
+@media (min-width: 850px) {
+  .license-builder {
+    position: sticky;
+    top: 20px;
   }
 }

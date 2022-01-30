@@ -1,0 +1,39 @@
+<template id="incremented-links-template">
+  <slot></slot>
+</template>
+
+<script type="module">
+  import { cr } from '/scripts/license-builder/license-builder.helpers.mjs'
+  import { incrementAndLinkify } from '/scripts/license-builder/incremented-links.helpers.mjs'
+
+  /**
+   * Purpose: When adding/removing modules we need to dynamically
+   * adjust any numberings found in the license.
+   */
+  class IncrementedLinks extends HTMLElement {
+    constructor() {
+      super()
+      const root = this.attachShadow({ mode: 'open' })
+      const template = document.getElementById('incremented-links-template')
+      root.appendChild(template.content.cloneNode(true))
+      this.render = this.render.bind(this)
+      window.addEventListener('DOMContentLoaded', this.render)
+    }
+
+    render() {
+      incrementAndLinkify({ nodes: this.children })
+    }
+
+    connectedCallback() {
+      window.addEventListener('locationchange', this.render)
+      window.addEventListener('license-module-revealed-content', this.render)
+    }
+
+    disconnectedCallback() {
+      window.removeEventListener('locationchange', this.render)
+      window.removeEventListener('license-module-revealed-content', this.render)
+    }
+  }
+
+  customElements.define('incremented-links', IncrementedLinks)
+</script>

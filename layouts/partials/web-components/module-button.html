@@ -1,0 +1,60 @@
+<template id="module-button">
+  {{ $style := resources.Get "sass/button.component.scss" | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+  <button class="c-button"><slot></slot></button>
+</template>
+
+<script type="module">
+  import {
+    buildHTML,
+    cr,
+    getAllModules,
+  } from '/scripts/license-builder/license-builder.helpers.mjs'
+
+  const validTypes = ['add-all', 'remove-all']
+
+  /**
+   * Purpose: This web component searches for all modules on the
+   * page and builds a list of available modules.
+   */
+  class ModuleButton extends HTMLElement {
+    constructor() {
+      super()
+      this.root = this.attachShadow({ mode: 'open' })
+      const template = document.querySelector('#module-button')
+      this.root.appendChild(template.content.cloneNode(true))
+      this.button = this.root.querySelector('button')
+      this.type = this.getAttribute('type')
+      if (!validTypes.includes(this.type)) {
+        alert('ModuleButton type was not one of validTypes', validTypes)
+      }
+      this.onClick = this.onClick.bind(this)
+    }
+
+    connectedCallback() {
+      this.button.addEventListener('click', this.onClick)
+    }
+
+    disconnectedCallback() {
+      this.button.removeEventListener('click', this.onClick)
+    }
+
+    onClick() {
+      if (this.type === 'add-all') {
+        return this.addAllModules()
+      } else if (this.type === 'remove-all') {
+        return this.resetModules()
+      }
+    }
+
+    resetModules() {
+      history.replaceState(null, '', '/build')
+    }
+
+    addAllModules() {
+      history.replaceState(null, '', `/build?modules=full`)
+    }
+  }
+
+  customElements.define('module-button', ModuleButton)
+</script>

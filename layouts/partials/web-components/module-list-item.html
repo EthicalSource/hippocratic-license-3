@@ -1,0 +1,179 @@
+<template id="module-list-item"
+  >  <style>
+    input[type='checkbox'] {
+      width: 2rem;
+      height: 2rem;
+      margin: 0;
+      accent-color: var(--color-orange);
+      flex-shrink: 0;
+    }
+    label {
+      flex: 100% 1 1;
+    }
+    .module-row {
+      position: relative;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      flex-flow: row nowrap;
+    }
+    .help-text {
+      position: absolute;
+      top: 40px;
+      padding: 1rem;
+      z-index: 10;
+      right: 0;
+      background-color: white;
+      width: 300px;
+      min-height: 50px;
+      box-shadow: 10px 16px 9px -9px rgba(0, 0, 0, 0.5);
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+  {{ $style := resources.Get "sass/button.component.scss" | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+  <div class="module-row">
+    <input type="checkbox" />
+    <label></label>
+    <button class="c-button" data-function="help-text">
+      {{ readFile "/static/icons/question-mark.svg" | safeHTML  }}
+    </button>
+    <div class="help-text"></div>
+    <button class="c-button" data-function="find">
+      {{ readFile "/static/icons/search.svg" | safeHTML  }}
+    </button>
+  </div>
+</template>
+
+<script type="module">
+  import {
+    cr,
+    isModuleActive,
+    createModuleLink,
+  } from '/scripts/license-builder/license-builder.helpers.mjs'
+  import { scrollTo } from '/scripts/license-builder/scrollTo.helpers.mjs'
+
+  class ModuleListItem extends HTMLElement {
+    constructor() {
+      super()
+
+      const template = document.querySelector('#module-list-item')
+
+      this.root = this.attachShadow({ mode: 'open' })
+      this.root.appendChild(template.content.cloneNode(true))
+
+      this.checkbox = this.root.querySelector('input')
+      this.checkboxLabel = this.root.querySelector('label')
+      this.findButton = this.root.querySelector('[data-function="find"]')
+      this.infoButton = this.root.querySelector('[data-function="help-text"]')
+      this.helpTextDiv = this.root.querySelector('.help-text')
+
+      // Internal state
+      this.showHelpText = false
+
+      // Bind this.
+      this.render = this.render.bind(this)
+      this.checkboxHandler = this.checkboxHandler.bind(this)
+      this.findButtonHandler = this.findButtonHandler.bind(this)
+      this.infoButtonHandler = this.infoButtonHandler.bind(this)
+    }
+
+    static get observedAttributes() {
+      return ['mod-id']
+    }
+
+    attributeChangedCallback() {
+      this.render()
+    }
+
+    render() {
+      const modId = this.getAttribute('mod-id')
+      const module = document.querySelector(`license-module[mod-id="${modId}"]`)
+      if (!module) {
+        alert(`ModuleTooltip could not find mod-id ${modId}`)
+        return
+      }
+      const title = module.getAttribute('title')
+      this.checkbox.id = `input-${modId}`
+
+      if (!module.getAttribute('help-text')) {
+        // Hide help-text button if there is no help-text
+        this.infoButton.style = 'display: none;'
+        this.helpTextDiv.style = 'display: none;'
+      } else {
+        this.infoButton.style = ''
+        this.helpTextDiv.innerHTML = `<p>${module.getAttribute('help-text')}</p>`
+        this.helpTextDiv.style = this.showHelpText
+          ? 'display: block;'
+          : 'display: none;'
+      }
+
+      this.checkbox.checked = isModuleActive({ id: modId })
+      this.checkboxLabel.setAttribute('for', `input-${modId}`)
+      this.checkboxLabel.innerText = title
+
+      const findButtonTitle = `Find module text for module ${title}`
+      this.findButton.title = findButtonTitle
+      this.findButton.setAttribute('aria-label', findButtonTitle)
+
+      const infoButtonTitle = `See helptext for module ${title}`
+      this.infoButton.title = infoButtonTitle
+      this.infoButton.setAttribute('aria-label', infoButtonTitle)
+    }
+
+    checkboxHandler(e) {
+      const isChecked = e.target.checked
+      const id = this.getAttribute('mod-id')
+      const destination = isChecked
+        ? createModuleLink({ addModule: id })
+        : createModuleLink({ removeModule: id })
+      history.replaceState(null, '', destination)
+      this.render()
+    }
+
+    /**
+     * Scrolls the relevant module into view, and
+     * makes it visible if it's not visible already.
+     */
+    findButtonHandler(e) {
+      // Dispatch event so that mobile-menu can react and close, before scrolling.
+      document.dispatchEvent(new CustomEvent('clicked-find-license'))
+      const id = this.getAttribute('mod-id')
+      const linkWithModules = createModuleLink({ addModule: id })
+      history.replaceState(null, '', `${linkWithModules}#${id}`)
+      this.render()
+      scrollTo({id, offset: 50})
+    }
+
+    infoButtonHandler(e) {
+      this.showHelpText = !this.showHelpText
+      this.render()
+      if (this.showHelpText) {
+        this.helpTextDiv.focus()
+      }
+    }
+
+    connectedCallback() {
+      window.addEventListener('locationchange', this.render)
+      this.checkbox.addEventListener('click', this.checkboxHandler)
+      this.findButton.addEventListener('click', this.findButtonHandler)
+      this.infoButton.addEventListener('click', this.infoButtonHandler)
+    }
+
+    disconnectedCallback() {
+      window.removeEventListener('locationchange', this.render)
+      this.checkbox.removeEventListener('click', this.checkboxHandler)
+      this.findButton.removeEventListener('click', this.findButtonHandler)
+      this.infoButton.removeEventListener('click', this.infoButtonHandler)
+    }
+  }
+
+  customElements.define('module-list-item', ModuleListItem)
+</script>
+</template>

@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="{{ $fonts.RelPermalink }}">
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    {{ range .Params.polyfills }}
+      <script src="{{ . }}"></script>
+    {{ end }}
   </head>
 
   <body{{ with .Section }} id="{{ . }}"{{ end }}>
@@ -40,7 +44,26 @@
 
     <div class="site-wrapper{{ if .Params.wideLayout }} site-wrapper--wide{{ end }}">
       {{ partial "breadcrumbs" . }}
-      {{ block "main" . }}
+
+      {{ if .Params.webComponents }}
+        {{/* 
+          If the page has specified one or more web components to load 
+          we include them and wrap the page with code to prevent
+          showing content unless all components are finished loading
+          */}}
+        {{ range .Params.webComponents }}
+          {{ $path := printf "web-components/%s" . }}
+          {{ partial $path . }}
+        {{ end }}
+        {{ partial "web-components/verify-custom-elements" . }}
+        <verify-custom-elements check-for='{{ delimit .Params.webComponents "," }}'>
+          <noscript><p>JavaScript needs to be enabled to view this page.</p></noscript>
+          <div style="display: none;">
+            {{ block "main" . }}{{ end }}    
+          </div>
+        </verify-custom-elements>
+      {{ else }}
+        {{ block "main" . }}{{ end }}
       {{ end }}
     </div>
 

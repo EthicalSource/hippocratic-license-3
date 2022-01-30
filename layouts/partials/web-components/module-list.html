@@ -1,0 +1,58 @@
+<template id="module-list">
+  <style>
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 1rem;
+      list-style: none;
+    }
+    .reset-or-add-all-modules {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+  </style>
+  <ul></ul>
+</template>
+
+<script type="module">
+  import {
+    buildHTML,
+    cr,
+    getAllModules,
+  } from '/scripts/license-builder/license-builder.helpers.mjs'
+
+  /**
+   * Purpose: This web component searches for all modules on the
+   * page and builds a list of available modules.
+   */
+  class ModuleList extends HTMLElement {
+    constructor() {
+      super()
+      this.root = this.attachShadow({ mode: 'open' })
+      const template = document.querySelector('#module-list')
+      this.root.appendChild(template.content.cloneNode(true))
+      this.list = this.root.querySelector('ul')
+      this.render()
+      this.render = this.render.bind(this)
+    }
+
+    render() {
+      const newListItems = []
+      const modules = getAllModules()
+      modules.forEach((m) => {
+        const listItem = buildHTML(`
+          <li>
+            <module-list-item mod-id="${m.id}"></module-list-item>
+          </li>
+        `)
+        newListItems.push(listItem)
+      })
+      this.list.replaceChildren(...newListItems)
+    }
+  }
+
+  customElements.define('module-list', ModuleList)
+</script>

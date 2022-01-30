@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>tua-body-scroll-lock demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+  </head>
+  <body>
+    <a
+      class="github-fork-ribbon right-bottom fixed"
+      target="_blank"
+      href="https://github.com/tuateam/tua-body-scroll-lock"
+      title="Fork me on GitHub"
+      data-ribbon="Fork me on GitHub"
+    >
+      Fork me on GitHub
+    </a>
+
+    <header>
+      <h1>tua-body-scroll-lock demo</h1>
+      <img src="https://img.shields.io/badge/dependencies-none-green.svg" alt="dependencies">
+      <a href="https://www.npmjs.com/package/tua-body-scroll-lock" target="_blank">
+        <img src="https://badgen.net/npm/dm/tua-body-scroll-lock" alt="Downloads per month">
+        <img src="https://img.shields.io/npm/v/tua-body-scroll-lock.svg" alt="Version">
+        <img src="https://img.shields.io/npm/v/tua-body-scroll-lock/next.svg" alt="Next Version">
+        <img src="https://img.shields.io/npm/l/tua-body-scroll-lock.svg" alt="License">
+      </a>
+    </header>
+
+    <section class="content">
+      <button id="btn">click me to <br />show dialog one</button>
+
+      <div id="modalOne" class="modal">
+        <h2>
+          dialog one
+          <button id="modalBtn">click me to show dialog two</button>
+        </h2>
+        <div id="targetOne" class="target"></div>
+        <div id="targetTwo" class="target"></div>
+      </div>
+
+      <div id="modalTwo" class="modal">
+        <h2>dialog two with scroll-x</h2>
+        <div id="targetThree" class="target">
+          <p>123456789101112131415161718192021222324252627282930</p>
+        </div>
+      </div>
+
+      <div id="list"></div>
+    </section>
+
+    <script src="./tua-bsl.umd.js"></script>
+    <script>
+      var $ = document.querySelector.bind(document)
+      var $modalOne = $('#modalOne')
+      var $modalTwo = $('#modalTwo')
+      var $targetOne = $('#targetOne')
+      var $targetTwo = $('#targetTwo')
+      var $targetThree = $('#targetThree')
+
+      // add content
+      var someText = ''
+      for (var i = 0; i < 50; i++) {
+        someText += `<p>${i} scroll me~</p>`
+      }
+      $('#list').innerHTML = someText
+      $targetOne.innerHTML = someText
+      $targetTwo.innerHTML = someText
+      $targetThree.innerHTML += someText
+
+      $('#btn').onclick = function () {
+        $modalOne.style.display = 'block'
+        bodyScrollLock.lock([$targetOne, $targetTwo])
+      }
+      $('#modalBtn').onclick = function () {
+        $modalTwo.style.display = 'block'
+        bodyScrollLock.lock($targetThree)
+      }
+
+      $modalOne.onclick = function (event) {
+        if (event.target.id === 'targetOne') return
+        if (event.target.id === 'modalBtn') return
+
+        $modalOne.style.display = 'none'
+        bodyScrollLock.unlock([$targetOne, $targetTwo])
+      }
+      $modalTwo.onclick = function (event) {
+        if (event.target.id === 'targetThree') return
+
+        $modalTwo.style.display = 'none'
+        bodyScrollLock.unlock($targetThree)
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+
+        user-select: none;
+      }
+      html,
+      body {
+        width: 100%;
+
+        text-align: center;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        right: 0;
+        left: 0;
+
+        background: #fff;
+      }
+
+      #btn {
+        position: fixed;
+        top: 150px;
+        left: 20px;
+      }
+      #list {
+        margin: 0 20px;
+      }
+      #modalTwo > h2 {
+        margin-top: 50px;
+      }
+
+      button {
+        padding: 6px;
+
+        color: #fff;
+        border-radius: 5px;
+        background-color: blue;
+      }
+      .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: none;
+
+        padding-top: 40px;
+
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+
+        color: #000;
+        background-color: #fff;
+      }
+      .target {
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+
+        width: 80%;
+        max-width: 300px;
+        height: 60%;
+        margin: 0 auto;
+
+        text-align: center;
+
+        color: #000;
+        background-color: #fff;
+      }
+      #targetOne {
+        height: 30%;
+
+        color: blue;
+        border-bottom: 1px dashed black;
+      }
+      #targetTwo {
+        height: 30%;
+
+        color: red;
+      }
+    </style>
+  </body>
+</html>

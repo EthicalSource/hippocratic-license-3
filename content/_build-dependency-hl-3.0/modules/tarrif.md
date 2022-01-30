@@ -4,7 +4,7 @@ breadcrumb = "US Tariff Act"
 id = "usta"
 section = "ethical-standards"
 summary = "TODO"
-helpText = "TODO"
+helpText = ""
 +++
 
 - 3.1.1. Be an individual or entity:

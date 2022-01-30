@@ -1,7 +1,7 @@
 // Not possible to listen for URL changes unless this is
 // added.
 // See: https://stackoverflow.com/questions/6390341/how-to-detect-if-url-has-changed-after-hash-in-javascript
-export const enableLocationChangeEvent = () => {
+const enableLocationChangeEvent = () => {
   history.pushState = ((f) =>
     function pushState() {
       var ret = f.apply(this, arguments)
@@ -22,3 +22,5 @@ export const enableLocationChangeEvent = () => {
     window.dispatchEvent(new Event('locationchange'))
   })
 }
+
+enableLocationChangeEvent()

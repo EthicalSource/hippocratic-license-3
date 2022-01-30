@@ -8,4 +8,7 @@
 
 .site-wrapper--wide {
   max-width: 100rem;
+  & > * {
+    margin: 1.5rem;
+  }
 }
