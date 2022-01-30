@@ -4,7 +4,7 @@ breadcrumb = "Supply Chain Transparency"
 id = "sup"
 section = "ethical-standards"
 summary = "TODO"
-helpText = "TODO"
+helpText = ""
 +++
 
 - 3.2.1. Provide clear, accessible supply chain data to the public in accordance with the following conditions:

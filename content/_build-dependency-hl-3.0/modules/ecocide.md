@@ -4,7 +4,7 @@ breadcrumb = "Ecocide"
 id = "eco"
 section = "ethical-standards"
 summary = "TODO"
-helpText = "TODO"
+helpText = ""
 +++
 
 - 3.1.1. Commit ecocide:
