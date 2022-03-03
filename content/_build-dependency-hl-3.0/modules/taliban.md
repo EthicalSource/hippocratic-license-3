@@ -7,7 +7,7 @@ summary = "TODO"
 helpText = ""
 +++
 
-- 3.1.1. Be an individual or entity that:
+- 3.1.1. *Taliban*: Be an individual or entity that:
 
   - 3.1.1.1.  engages in any commercial transactions with the Taliban; or
 

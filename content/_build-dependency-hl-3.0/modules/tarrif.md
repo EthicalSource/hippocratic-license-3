@@ -7,7 +7,7 @@ summary = "TODO"
 helpText = ""
 +++
 
-- 3.1.1. Be an individual or entity:
+- 3.1.1. *US Tariff Act*: Be an individual or entity:
 
   - 3.1.1.1.  which U.S. Customs and Border Protection (CBP) has currently issued a Withhold Release Order (WRO) or finding against based on reasonable suspicion of forced labor; or
 

@@ -7,7 +7,7 @@ summary = "TODO"
 helpText = ""
 +++
 
-- 3.1.1. Commit ecocide:
+- 3.1.1. *Ecocide*: Commit ecocide:
 
   - 3.1.1.1.  For the purpose of this section, "ecocide" means unlawful or wanton acts committed with knowledge that there is a substantial likelihood of severe and either widespread or long-term damage to the environment being caused by those acts;
 

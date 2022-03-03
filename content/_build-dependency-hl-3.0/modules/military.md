@@ -7,4 +7,4 @@ summary = "TODO"
 helpText = ""
 +++
 
-- 3.1.1. Be an entity or a representative, agent, affiliate, successor, attorney, or assign of an entity which conducts military activities;
+- 3.1.1. *Military Activities*: Be an entity or a representative, agent, affiliate, successor, attorney, or assign of an entity which conducts military activities;
