@@ -1,8 +1,11 @@
 <script type="module">
   import {
     getActiveModules,
+    getAllModules,
     cr,
   } from '/scripts/license-builder/license-builder.helpers.mjs'
+
+  const allModules = getAllModules()
 
   /**
    * Purpose: Dynamically create a link to the configured
@@ -33,6 +36,8 @@
       // Assume it's core license
       if (modules.length === 0) {
         this.link.href = `/version/3/0/core${fileEnding}`
+      } else if (modules.length === allModules.length) {
+        this.link.href = `/version/3/0/full${fileEnding}`
       } else {
         this.link.href = `/version/3/0/${modules
           .join('-')
