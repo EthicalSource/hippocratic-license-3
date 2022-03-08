@@ -6,6 +6,9 @@ export const isModuleActive = ({
   return modules.includes('full') || modules.includes(id)
 }
 
+/**
+ * Returns an array of all currently-selected modules.
+ */
 export const getActiveModules = ({ sourceUrl = window.location.href } = {}) => {
   const modulesStr = new URL(sourceUrl).searchParams.get('modules')
   if (!modulesStr) {
@@ -17,6 +20,46 @@ export const getActiveModules = ({ sourceUrl = window.location.href } = {}) => {
     return allModules
   }
   return activeModules
+}
+
+/**
+ * Returns a boolean indicating whether the current selection is the full license.
+ */
+export const isFullLicense = ({ sourceUrl = window.location.href } = {}) => {
+  const modulesStr = new URL(sourceUrl).searchParams.get('modules')
+  return modulesStr.split(',').includes('full')
+}
+
+/**
+ * Returns a boolean indicating whether the current selection is the core license.
+ *
+ * Search param will be null if there is no selection. This function also supports
+ * the case where the query string is `/?modules=` with no value.
+ */
+export const isCoreLicense = ({ sourceUrl = window.location.href } = {}) => {
+  const modulesStr = new URL(sourceUrl).searchParams.get('modules')
+  return !modulesStr
+}
+
+/**
+ * Returns a kebab-case string representing the license version (core, full, or
+ * custom-selected modules).
+ */
+export const getLicenseString = ({ sourceUrl = window.location.href } = {}) => {
+  let licenseStr = ``
+
+  // check if core or full license
+  // generate dynamic URL otherwise
+  if (isCoreLicense({ sourceUrl })) {
+    licenseStr = `core`
+  } else if (isFullLicense({ sourceUrl })) {
+    licenseStr = `full`
+  } else {
+    const modules = getActiveModules({ sourceUrl })
+    licenseStr = modules.join('-')
+  }
+
+  return licenseStr
 }
 
 /**
