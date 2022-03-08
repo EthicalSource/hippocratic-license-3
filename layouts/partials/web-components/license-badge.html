@@ -1,0 +1,48 @@
+<script type="module">
+  import {
+    getLicenseString,
+    cr,
+  } from '/scripts/license-builder/license-builder.helpers.mjs'
+
+  /**
+   * Purpose: This web component creates a badge that displays
+   * the chosen license version for the current user.
+   * It uses the current URL to determine the selected modules,
+   * and updates the badge display and the embed code accordingly.
+   */
+
+  export class LicenseBadge extends HTMLElement {
+    constructor() {
+      super()
+      this.attachShadow({ mode: 'open' })
+      this.render = this.render.bind(this)
+      this.render()
+    }
+
+    connectedCallback() {
+      window.addEventListener('locationchange', this.render)
+      window.addEventListener('license-module-revealed-content', this.render)
+      this.render()
+    }
+
+    disconnectedCallback() {
+      window.removeEventListener('locationchange', this.render)
+      window.removeEventListener('license-module-revealed-content', this.render)
+    }
+
+    render() {
+      const licenseStr = getLicenseString()
+
+      // update badge
+      const licenseUrl = `https:\/\/firstdonoharm.dev/version/3/0/${licenseStr}.html`
+
+      // replace hyphens with double-hyphen, per shields.io docs
+      const badgeLabel = licenseStr.replaceAll('-', '--').toUpperCase()
+      const badgeUrl = `https:\/\/img.shields.io/badge/Hippocratic_License-HL3--${badgeLabel}-D44F2C`
+      const embedCode = `<a href="${licenseUrl}" target="_blank"><img src="${badgeUrl}" /></a>`
+      this.shadowRoot.innerHTML = `<div class="license-badge-container">${embedCode}</div>`
+    }
+  }
+
+  customElements.define('license-badge', LicenseBadge)
+</script>
