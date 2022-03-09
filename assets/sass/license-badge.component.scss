@@ -1,0 +1,14 @@
+.license-badge-container {
+  vertical-align: text-top;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: var(--color-grey);
+  border: 1px solid var(--color-orange-darker);
+  border-radius: 0.25rem;
+  padding: 1rem;
+}

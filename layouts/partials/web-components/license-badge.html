@@ -1,3 +1,16 @@
+<template id="license-badge">
+  {{ $style := resources.Get "sass/license-badge.component.scss" | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+  <!-- TODO: can overflow horizontally for long licenses; possible scroll-shadow or other solution? -->
+  <div class="license-badge-container"></div>
+
+  <p><strong>Badge Markdown code:</strong></p>
+  <pre>
+    
+  </pre>
+</template>
+
 <script type="module">
   import {
     getLicenseString,
@@ -14,7 +27,15 @@
   export class LicenseBadge extends HTMLElement {
     constructor() {
       super()
-      this.attachShadow({ mode: 'open' })
+
+      const template = document.getElementById('license-badge')
+
+      this.root = this.attachShadow({ mode: 'open' })
+      this.root.appendChild(template.content.cloneNode(true))
+
+      this.badgeContainer = this.root.querySelector('.license-badge-container')
+      this.mdContainer = this.root.querySelector('pre')
+
       this.render = this.render.bind(this)
       this.render()
     }
@@ -40,9 +61,12 @@
       const badgeLabel = licenseStr.replaceAll('-', '--').toUpperCase()
       const badgeUrl = `https:\/\/img.shields.io/badge/Hippocratic_License-HL3--${badgeLabel}-D44F2C`
       const embedCode = `<a href="${licenseUrl}" target="_blank"><img src="${badgeUrl}" /></a>`
-      this.shadowRoot.innerHTML = `<div class="license-badge-container">${embedCode}</div>`
+      const badgeMarkdown = `[![Hippocratic License HL3-${licenseStr.toUpperCase()}](${badgeUrl})](${licenseUrl})`
+      this.badgeContainer.innerHTML = embedCode
+      this.mdContainer.innerHTML = badgeMarkdown
     }
   }
 
   customElements.define('license-badge', LicenseBadge)
 </script>
+</template>
