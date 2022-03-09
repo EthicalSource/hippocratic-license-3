@@ -63,6 +63,25 @@ export const getLicenseString = ({ sourceUrl = window.location.href } = {}) => {
 }
 
 /**
+ * Copies text to clipboard.
+ * Uses async browser Clipboard API.
+ * adapted from Dean Taylor, via StackOverflow
+ * @see https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
+ *
+ * @param {string} text
+ */
+export const copyToClipboard = (text = ``) => {
+  navigator.clipboard.writeText(text).then(
+    function () {
+      console.log('Async: Copied to clipboard!')
+    },
+    function (err) {
+      console.error('Async: Could not copy text: ', err)
+    }
+  )
+}
+
+/**
  * createModuleLink looks at the current
  * window url and figures out what the url
  * should be changed to if a user wants to

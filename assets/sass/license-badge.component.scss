@@ -4,11 +4,52 @@
   overflow-x: scroll;
 }
 
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  background-color: var(--color-grey);
-  border: 1px solid var(--color-orange-darker);
-  border-radius: 0.25rem;
-  padding: 1rem;
+.license-badge-md-container {
+  position: relative;
+
+  button.copy-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    border: 1px solid var(--color-orange-darker);
+    border-radius: 0.25rem;
+    background: var(--color-white);
+    color: var(--color-orange-darker);
+    font-family: system-ui, sans-serif;
+    font-size: var(--font-size-small);
+    line-height: 1.2;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem;
+    cursor: pointer;
+
+    // styles for hover and post-active state after click
+    &:hover,
+    &.post-action {
+      background: var(--color-orange);
+      color: var(--color-white);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background: var(--color-orange-darker);
+      color: var(--color-white);
+    }
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: var(--color-grey);
+    border: 1px solid var(--color-orange-darker);
+    border-radius: 0.25rem;
+    padding: 1rem;
+  }
 }
