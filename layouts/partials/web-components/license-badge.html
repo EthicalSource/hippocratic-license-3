@@ -56,7 +56,7 @@
     }
 
     copyButtonCallback() {
-      copyToClipboard(this.mdContainer.innerHTML)
+      copyToClipboard(this.mdContainer.innerText)
       this.mdCopyButton.innerHTML = 'Copied!'
       this.mdCopyButton.classList.add('post-action')
       setTimeout(() => {
