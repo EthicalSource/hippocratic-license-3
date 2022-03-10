@@ -1,0 +1,85 @@
+<template id="license-badge">
+  {{ $style := resources.Get "sass/license-badge.component.scss" | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+  <!-- TODO: can overflow horizontally for long licenses; possible scroll-shadow or other solution? -->
+  <div class="license-badge-container"></div>
+
+  <p><strong>Badge Markdown code:</strong></p>
+  <div class="license-badge-md-container">
+    <pre></pre>
+    <button class="copy-button">Copy</button>
+  </div>
+</template>
+
+<script type="module">
+  import {
+    getLicenseString,
+    copyToClipboard
+  } from '/scripts/license-builder/license-builder.helpers.mjs'
+
+  /**
+   * Purpose: This web component creates a badge that displays
+   * the chosen license version for the current user.
+   * It uses the current URL to determine the selected modules,
+   * and updates the badge display and the embed code accordingly.
+   */
+
+  export class LicenseBadge extends HTMLElement {
+    constructor() {
+      super()
+
+      const template = document.getElementById('license-badge')
+
+      this.root = this.attachShadow({ mode: 'open' })
+      this.root.appendChild(template.content.cloneNode(true))
+
+      this.badgeContainer = this.root.querySelector('.license-badge-container')
+      this.mdContainer = this.root.querySelector('pre')
+      this.mdCopyButton = this.root.querySelector('.copy-button')
+
+      this.render = this.render.bind(this)
+      this.copyButtonCallback = this.copyButtonCallback.bind(this)
+    }
+
+    connectedCallback() {
+      window.addEventListener('locationchange', this.render)
+      window.addEventListener('license-module-revealed-content', this.render)
+      this.mdCopyButton.addEventListener('click', this.copyButtonCallback)
+
+      this.render()
+    }
+
+    disconnectedCallback() {
+      window.removeEventListener('locationchange', this.render)
+      window.removeEventListener('license-module-revealed-content', this.render)
+    }
+
+    copyButtonCallback() {
+      copyToClipboard(this.mdContainer.innerText)
+      this.mdCopyButton.innerHTML = 'Copied!'
+      this.mdCopyButton.classList.add('post-action')
+      setTimeout(() => {
+        this.mdCopyButton.innerHTML = 'Copy'
+        this.mdCopyButton.classList.remove('post-action')
+      }, 2500)
+    }
+
+    render() {
+      const licenseStr = getLicenseString()
+
+      // update badge
+      const licenseURL = `https:\/\/firstdonoharm.dev/version/3/0/${licenseStr}.html`
+
+      const badgeLabel = licenseStr.toUpperCase()
+      const badgeURL = `https:\/\/img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-${badgeLabel}&labelColor=5e2751&color=bc8c3d`
+      const embedCode = `<a href="${licenseURL}" target="_blank"><img src="${badgeURL}" /></a>`
+      const badgeMarkdown = `[![Hippocratic License HL3-${badgeLabel}](${badgeURL})](${licenseURL})`
+      this.badgeContainer.innerHTML = embedCode
+      this.mdContainer.innerHTML = badgeMarkdown
+    }
+  }
+
+  customElements.define('license-badge', LicenseBadge)
+</script>
+</template>

@@ -1,6 +1,6 @@
 /*
 This component is only responsible for styling itself,
-and makes no assumptions about it's width. Layout and such is 
+and makes no assumptions about it's width. Layout and such is
 handled by the .license-page component.
 */
 .license-builder {
@@ -17,10 +17,6 @@ handled by the .license-page component.
     justify-content: flex-end;
     gap: 1rem;
   }
-}
-
-.license-badge {
-  vertical-align: text-top;
 }
 
 .license-icon {
