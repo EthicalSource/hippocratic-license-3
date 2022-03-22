@@ -1,7 +1,6 @@
 +++
 title = "Learn More about the Hippocratic License"
 breadcrumb = "Learn"
-summary = "TODO"
 +++
 
 ## Has the Hippocratic License been subject to legal review?
@@ -46,4 +45,5 @@ The Hippocratic License uses semantic versioning, and URLs for all versions are 
 Yes, and you can find its entry at [https://spdx.org/licenses/Hippocratic-3.0.html](https://spdx.org/licenses/Hippocratic-3.0.html).
 
 ## How do I annotate the Hippocratic License in project documentation?
-Use *"Hippocratic 3.0"* plus the module indicators (e.g. "Hippocratic 3.0 (HL3-ECO)") for a license configured to include the Environmental Justice module).
+Use *"Hippocratic 3.0"* plus the module indicators (e.g. "Hippocratic 3.0 (HL3-ECO)") for a license configured to include the Ecocide module). Our [license builder](/build) will provide you with the specific annotation based on your module selections.
+
