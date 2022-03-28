@@ -11,15 +11,15 @@
 
   /* Setting 62.5%, makes it easier to
   set rem units (which are relative to the
-  root font-size). This let's us convert 14px = 1.4rem.
+  root font-size). This lets us convert 14px = 1.4rem.
   See also: https://snook.ca/archives/html_and_css/font-size-with-rem
   */
   --font-size-base: 62.5%;
-  --font-size-regular: 1.6rem;
+  --font-size-regular: 1.8rem;
   --font-size-xlarge: 2.6rem;
   --font-size-large: 2.2rem;
   --font-size-medium: 1.8rem;
-  --font-size-small: 1.2rem;
+  --font-size-small: 1.5rem;
 
   --font-weight-regular: 400;
   --font-weight-heavy: 700;
