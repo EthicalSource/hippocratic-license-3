@@ -3,18 +3,19 @@ title = "Learn More about the Hippocratic License"
 breadcrumb = "Learn"
 +++
 
-## Has the Hippocratic License been subject to legal review?
-Yes. We worked with a team of talented and specialized IP lawyers to create versions 2.0 and later of the license.
 
-## Is the Hippocratic License open source?
-TODO
+[Test to external site](https://where.coraline.codes)
 
-## Doesn't the Hippocratic License violate the "No Discrimination" and "Fields of Endeavor" terms of the Open Source Definition?
-The "Open Source Definition" states that an open source license must not discriminate against any person or group of persons, or against any field of endeavor, respectively.
+## Who authored the Hippocratic License 3.0?
+The Organization for Ethical Source worked with our partner organization,
+[Corporate Accountability Lab](https://corpaccountabilitylab.org) (CAL), to create HL3.
+Its author is [Sameeul Haque](https://www.linkedin.com/in/sameeul-haque/),
+a Staff Attorney at CAL who leads their Ethical IP Program Area. HL3 was developed
+with consultation and input from IP attorneys, human rights specialists, and
+open source community leaders.
 
-No "Groups" or "Fields" are discriminated against by the Hippocratic License. People in the Groups are welcome to use software under the Hippocratic License in their Fields. The restrictions in the Hippocratic License target specific activities, and do not discriminate against groups of people or fields of endeavor. The restrictions apply equally to all people and all groups, in all fields of endeavor.
-
-However, within a strict "traditionalist" interpretation, the Hippocratic License's ethical constraints may be considered a "willful violation" of Clauses 5 and 6.
+## Is the Hippocratic License open source? Doesn't it violate the "No Discrimination" and "Fields of Endeavor" clauses of the Open Source Definition?
+The traditional "Open Source Definition" states that an open source license must not discriminate against any person or group of persons, or against any field of endeavor. Within this framing, the Hippocratic License's ethical constraints may be considered a "willful violation" of Clauses 5 and 6.
 
 ## Is the Hippocratic License enforceable?
 TODO
