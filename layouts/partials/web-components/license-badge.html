@@ -73,7 +73,10 @@
 
       const badgeLabel = licenseStr.toUpperCase()
       const badgeURL = `https:\/\/img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-${badgeLabel}&labelColor=5e2751&color=bc8c3d`
-      const embedCode = `<a href="${licenseURL}" target="_blank"><img src="${badgeURL}" /></a>`
+      const embedCode = `
+        <a aria-label="Hippocratic License HL3-${badgeLabel}" href="${licenseURL}" target="_blank">
+        <img aria-label="Hippocratic License HL3-${badgeLabel}" src="${badgeURL}" />
+        </a>`
       const badgeMarkdown = `[![Hippocratic License HL3-${badgeLabel}](${badgeURL})](${licenseURL})`
       this.badgeContainer.innerHTML = embedCode
       this.mdContainer.innerHTML = badgeMarkdown
