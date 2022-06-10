@@ -1,24 +1,18 @@
 +++
 title = "An Ethical License for Open Source"
-summary = "TODO"
+summary = "The Hippocratic License (HL3) is an ethical source license that specifically prohibits the use of open source software to violate universal standards of human rights."
 +++
 
-## HL3: An Ethical License for Open Source Communities
+## Hippocratic License 3.0 (HL3): An Ethical License for Open Source Communities
 
-For too long, we as software developers have divorced ourselves from the consequences of the code that we write. We have told ourselves that development is a pure and abstract pursuit, and have spent our careers writing programs with the goals of clarity, conciseness, readability, performance, and elegance.
+Technological advancement is often [shaped by the choices and priorities of the powerful](https://openlibrary.org/books/OL25573370M/Technoculture)— in particular, the military, governments, and corporate interests. Their distorted priorities are often at odds with the promise of technology as a force for [promoting justice and equity worldwide](https://blog.archive.org/2021/09/03/the-sacred-geometry-of-respect-trust-and-equity/), and this increasingly includes open source technologies.
 
-But we are starting to realize that the software that we create has a real and lasting impact on the world in which we live.
+Traditional open source is based on the [flawed premise that technology is fundamentally neutral](https://ieeexplore.ieee.org/document/5010049), and that [unrestricted access to source code](https://www.gnu.org/philosophy/free-sw.en.html#four-freedoms)— even for [explicitly "evil" purposes](https://opensource.org/faq#evil)— is in fact an unqualified good. But around the world, open source developers are starting to realize that the software that they create, with its tremendous potential to change the world for the better, is also being abused to sustain and promote systems of inequity and injustice, globally, and at unprecedented scale.
 
-Politics and software are so tangled that they cannot be reasonably separated. Consider the GPS software that tells you how to get to a restaurant; it's also used to direct military drones to their targets. The facial recognition software  that unlocks your phone? It's being used to record, track, and target the activities of political dissenters.
+The Hippocratic License 3.0 (HL3) aims to confront the potential harms and abuses technology can have on fundamental human rights. It empowers open source communities to establish a clear set of ethical standards that licensees must abide by in order to adopt their code. These standards are based on international agreements and authorities on fundamental human rights norms, including the [United Nations Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights), the [International Covenant on Economic, Social and Cultural Rights](https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-economic-social-and-cultural-rights), the [International Covenant on Civil and Political Rights](https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights), and the [International Labour Organization](https://www.ilo.org/).
 
-All of these technologies are inherently political. There is no neutral political position in technology. You can't build systems that can be weaponized against marginalized people and take no responsibility for them.
+HL3 also offers optional modules that focus on specific areas of concern, such as environmental justice, labor rights, and ethical supply chains. This modular approach lets open source maintainers [customize the license](/build/) to reflect the unique needs and challenges of their particular communities.
 
-One of the delightful things about code is discovering its utility in novel situations. But if those novel situations involve harming other people, we can and should feel responsible. So what can we do about it?
+Healthy open source communities don't just form around code, but also around [shared values](https://ethicalsource.dev/principles) and a vision for how their work can improve the world. The true measure of the success of open source is its impact— how the technologies we develop are leveraged to bring about positive social, cultural, and political change.
 
-Open source licenses have long been the primary tool for promoting the use of our software under our own rules and conditions. In the past these licenses were used to allow the free distribution, modification, and use of our software. But there is nothing stopping us from taking this further.
-
-Introducing the Hippocratic License: an Ethical Source license that specifically prohibits the use of software to violate universal standards of human rights, and embodying the principles of [Ethical Source Software](https://ethicalsource.dev/definition).
-
-## Using the Hippocratic License
-
-Simply make a copy of the text of the license and enter the copyright date and name of the copyright holder. Put this license file (e.g. LICENSE.md) in the root directory of your project repository and include it with the distribution of your software.
+To get started, [customize your license](/build/).

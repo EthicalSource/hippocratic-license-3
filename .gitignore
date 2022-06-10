@@ -5,4 +5,8 @@
 .hugo_build.lock
 /resources/
 /netlify/*.dist*
+<<<<<<< HEAD
 .nova/*
+=======
+/.nova/*
+>>>>>>> 54cbb0aa56fc958004167e9e8ab25f6c3ed938d1
