@@ -1,46 +1,12 @@
-# HL3 (with license builder)
-The leading ethical license for open source communities.
+# The Hippocratic License (with HL3 License Builder)
+HL3 is the leading [ethical source](https://ethicalsource.dev) license for open software communities. For an overview and usage instructions, please visit our site at [firstdonoharm.dev](https://firstdonoharm.dev/). Learn more about the license at [firstdonoharm.dev/learn](https://firstdonoharm.dev/learn).
 
-## Project Home Page
+## Adding your project to the list of adopters
 
-For an overview and usage instructions, please visit [firstdonoharm.dev](https://firstdonoharm.dev/).
-
-## Contributing
-
-Please feel free to submit pull requests or open issues to improve the language
-of this document.
-
-You should also check the [issues](https://github.com/ContributorCovenant/hippocratic-license/issues)
-for the latest discussions involving the current and future versions of the license.
-
-To build the website locally, first [install Hugo](https://gohugo.io/getting-started/installing)
-using your package manager of choice.
-For example, on Debian/Ubuntu:
-```
-apt-get install hugo
-```
-
-or if you are using Arch Linux:
-```
-pacman -S hugo
-```
-
-or using [Homebrew](https://brew.sh) on macOS:
-```
-brew install hugo
-```
-
-Then from the repository's root directory, start the development server:
-```
-hugo server -D
-```
-
-## Adding a Project to the List of Adopters
-
-* Fork the repository.
+* Fork [the repository](https://github.com/EthicalSource/hippocratic-license-3/blob/release/CONTRIBUTING.md)
 * Add a new row to the [adopters.csv](static/adopters.csv) file,
   with the project name in the first column, and the project URL in the second column.
 * Open a pull request.
 
 ## Attribution
-* Uses icon SVGs from [heroicons](https://heroicons.com)
+* This site uses icon SVGs from [heroicons](https://heroicons.com)
