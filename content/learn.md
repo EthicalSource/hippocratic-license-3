@@ -29,7 +29,7 @@ First, it is important to understand what enforcement typically looks like for a
 
 With respect to Hippocratic License 3.0, until its enforceability is tested in litigation before a court, we cannot say with absolute certainty that the license is enforceable. With that said, to the extent we can say it, Hippocratic License 3.0 is an enforceable license. It was written and reviewed by several intellectual property attorneys and enforceability was a top priority during Hippocratic License 3.0’s drafting.
 
-There is no question that there are clauses within Hippocratic License 3.0 that are more experimental than others. However, clauses such as the severability clause (Section 8.4) are designed such that if a particular clause is deemed unenforceable, that clause is stricken by the court and the remainder of the license remains intact, preserving all other rights and remedies available to the licensor.
+There is no question that there are clauses within Hippocratic License 3.0 that are more experimental than others. However, clauses such as the severability clause (Section 8.3) are designed such that if a particular clause is deemed unenforceable, that clause is stricken by the court and the remainder of the license remains intact, preserving all other rights and remedies available to the licensor.
 
 Additionally, HL3 is the only ethical open source license which creates an enforcement mechanism for victims of human rights abuses, by using licensing language to establish a private right of action for these victims, so long as those abuses are also a violation of the ethical standards section of the license.
 
