@@ -1,6 +1,7 @@
 +++
 title = "Learn More about the Hippocratic License"
 breadcrumb = "Learn"
+aliases = ["faq"]
 +++
 
 > _Disclaimer: Nothing on this website should be construed as legal advice and it is not intended to be considered legal advice. All information contained on this website is for general informational purposes only. For legal advice, contact an attorney. If you are a software developer and would like to speak to an attorney, free of charge, regarding the use of Hippocratic License 3.0, you may contact Sameeul Haque at sameeul @ corpaccountabilitylab.org._
@@ -15,11 +16,11 @@ with consultation and input from other IP attorneys, human rights specialists, a
 open source community leaders.
 
 ## Is the Hippocratic License open source? Doesn't it violate the "No Discrimination" and "Fields of Endeavor" clauses of the Open Source Definition?
+The canonical "Open Source Definition" states that an open source license must not discriminate against any person or group of persons (Clause 5), or against any field of endeavor (Clause 6). OES believes that this definition, originally written in 1998, is too narrowly focused and no longer reflects the contemporary practice of open source. However, within a traditionalist framing, the Hippocratic License's ethical constraints may be considered a "willful violation" of these clauses.
+
 For decades, social scientists have made it clear that technology does not exist in a vacuum. It has to be understood as part of an increasingly complex social, cultural, economic, and political context.
 
 In regard to software freedom, it's important to ask, to whom are we extending this freedom? OES believes that we must think beyond the freedom of developers and adopters, and consider the freedom, in fact the fundamental human rights, of the people who are most impacted by the technologies we create.
-
-The canonical "Open Source Definition" states that an open source license must not discriminate against any person or group of persons (Clause 5), or against any field of endeavor (Clause 6). OES believes that this definition, originally written in 1998, is too narrowly focused and no longer reflects the contemporary practice of open source. However, within a traditionalist framing, the Hippocratic License's ethical constraints may be considered a "willful violation" of these clauses.
 
 ## Ethics can vary from person to person and place to place, so how can the Hippocratic License be considered ethical by everyone?
 The Hippocratic License 3.0 aims to confront the potential harms and abuses technology can have on people's fundamental human rights. It provides leverage for open source communities to establish a clear set of ethical standards that licensees must abide by in order to adopt their code. These standards were derived from a variety of international agreements and authorities on international human rights norms, including the [United Nations Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights); the [International Covenant on Economic, Social and Cultural Rights](https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-economic-social-and-cultural-rights); the [International Covenant on Civil and Political Rights](https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights); and the [International Labour Organization](https://www.ilo.org/). These sources are a compilation of international ethical standards agreed upon by the vast majority of nations in the world. We’ve adopted those principles which can and should be applied to private actors.
@@ -34,10 +35,21 @@ There is no question that there are clauses within Hippocratic License 3.0 that 
 Additionally, HL3 is the only ethical open source license which creates an enforcement mechanism for victims of human rights abuses, by using licensing language to establish a private right of action for these victims, so long as those abuses are also a violation of the ethical standards section of the license.
 
 ## Why is the Hippocratic License modular?
-HL3 offers optional modules that focus on specific areas of concern, such as environmental justice, labor rights, and ethical supply chains. This modular approach is intended to empower open source communities to [customize the license](/build/) to reflect the values, needs, and challenges of their particular communities.
+While the base version of HL3 covers a broad range of ethical standards that provide a baseline for necessary human rights protections, HL3 also offers optional modules that focus on specific areas of concern, such as environmental justice, labor rights, or ethical supply chains. This modular approach empowers open source communities to [customize the license](/build/) to reflect the values, needs, and challenges of their particular communities. This approach means that HL3 not only has the most robust human rights protections in the ethical license space, but is also to be highly customizable to reflect the values of individual creators and communities.
 
 ## Will there be additional modules added to the base license?
 OES and CAL will continue to design additional HL3 modules, while also supporting the development of other ethical open source licenses to combat the widespread use and abuse of software to commit human rights abuses around the globe.
+
+## What kind of support can CAL and OES provide to adopters & potential adopters?
+There are many software developers, maintainers, and industry insiders within the OES community  that are ready to provide helpful support and advice on how to implement ethical licenses within open source projects. Additionally, Sameeul Haque is available to offer free legal advice and services to anyone interested in using an ethical license. This includes discussing the pros and cons of any ethical license, walking through the legal implications of using an ethical source license, and modifying existing licenses to suit an adopter's needs.
+
+While there are a wide range of legal services that Sameeul and CAL can offer adopters and potential adopters, at this time CAL is not able to not offer litigation services.
+
+## Can I relicense an existing open source project under HL3?
+Yes, you certainly can, but the new license will not apply to adopters who became a licensee of your software while the code was governed under a different license. This is because the legal system is designed to protect adopters from complications caused by changing the terms of a licensing agreement after the fact, and have those new terms apply to existing licensees.
+
+## What about dual-licensing?
+Licenses are legally binding contracts. So, having two contracts governing the licensing of one piece of copyrighted material, in this case code, can be very confusing and potentially lead to complications in the enforceability of either license. While dual-licensing should be examined on a case-by-case basis to determine the legal ramifications of using two licenses, it is not encouraged due to the complications it can cause.
 
 ## What projects have adopted the Hippocratic License?
 You can view a list of featured adopters [here](/adopters).

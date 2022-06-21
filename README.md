@@ -3,7 +3,7 @@ The leading ethical license for open source communities.
 
 ## Project Home Page
 
-For an overview and usage instructions, please visit [firstdonoharm.dev](https://firstdonoharm.dev/). 
+For an overview and usage instructions, please visit [firstdonoharm.dev](https://firstdonoharm.dev/).
 
 ## Contributing
 
@@ -14,7 +14,7 @@ You should also check the [issues](https://github.com/ContributorCovenant/hippoc
 for the latest discussions involving the current and future versions of the license.
 
 To build the website locally, first [install Hugo](https://gohugo.io/getting-started/installing)
-using your package manager of choice.  
+using your package manager of choice.
 For example, on Debian/Ubuntu:
 ```
 apt-get install hugo
