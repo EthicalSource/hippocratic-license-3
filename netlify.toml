@@ -10,8 +10,8 @@
 
 [functions]
   node_bundler = "esbuild"
-  # Prevent error thrown by JSDOM.
-  external_node_modules = ["canvas"]
+  # Fix esbuild warnings thrown by JSDOM.
+  external_node_modules = ["canvas", "./xhr-sync-worker.js"]
 
 # Enable SPA functionality for License builder page
 # Urls like "/build/hl-bsd-eco", should always
