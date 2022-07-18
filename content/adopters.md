@@ -6,7 +6,7 @@ summary = "The Hippocratic License has been adopted by over 300 open source proj
 
 ## Hippocratic License Adopters
 
-The Hippocratic License has been adopted by over [300 projects](https://github.com/search?l=&q=%22Hippocratic+License%22+filename%3ALICENSE&type=Code) including:
+The Hippocratic License has been adopted by [hundreds of projects](https://github.com/search?l=&q=%22Hippocratic+License%22+filename%3ALICENSE&type=Code) including:
 
 {{< data-list "static/adopters.csv" >}}
 
