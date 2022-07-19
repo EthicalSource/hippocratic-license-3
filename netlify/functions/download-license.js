@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom'
 import { builder } from '@netlify/functions'
-import { licenseHTML } from './hl-full.js'
+import { licenseHTML } from '../hl-full.js'
 import { convert } from 'html-to-text'
 import { NodeHtmlMarkdown } from 'node-html-markdown'
 import { incrementAndLinkify } from '../../static/scripts/license-builder/incremented-links.helpers.js'

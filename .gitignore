@@ -1,7 +1,7 @@
 /public
 *.DS_Store
 /node_modules/
-/netlify/functions/hl-full.*
+/netlify/hl-full.*
 .hugo_build.lock
 /resources/
 /netlify/*.dist*

@@ -18,7 +18,7 @@ const prepareLambdas = async () => {
     __dirname,
     'public/_build-dependency-hl-3.0/full/index.html'
   )
-  const dest = path.resolve(__dirname, 'netlify/functions/hl-full.js')
+  const dest = path.resolve(__dirname, 'netlify/hl-full.js')
   const data = await fs.readFile(src, { encoding: 'utf-8' })
   if (!data) {
     throw new Error('No source text found')
