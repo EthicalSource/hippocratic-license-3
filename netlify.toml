@@ -7,7 +7,7 @@
 [build.environment]
   HUGO_VERSION = "0.88.1"
   NODE_VERSION = "lts/*"
-
+  
 # Enable SPA functionality for License builder page
 # Urls like "/build/hl-bsd-eco", should always
 # hit the javascript code which will select proper

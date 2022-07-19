@@ -6,7 +6,7 @@ import {
   getLicenseString,
   isCoreLicense,
   isFullLicense,
-} from './license-builder.helpers.mjs'
+} from './license-builder.helpers.js'
 
 test('should be able to detect active module', (t) => {
   const id = 'myan'
