@@ -1,11 +1,11 @@
-const { JSDOM } = require('jsdom')
-const { builder } = require('@netlify/functions')
-const { licenseHTML } = require('./hl-full.json')
-const { convert } = require('html-to-text')
-const { NodeHtmlMarkdown } = require('node-html-markdown')
-const { incrementAndLinkify } = require('../incremented-links.dist.js')
+import { JSDOM } from 'jsdom'
+import { builder } from '@netlify/functions'
+import { licenseHTML } from './hl-full.mjs'
+import { convert } from 'html-to-text'
+import { NodeHtmlMarkdown } from 'node-html-markdown'
+import { incrementAndLinkify } from '../../static/scripts/license-builder/incremented-links.helpers.mjs'
 
-async function downloadLicenseHandler(event, context) {
+export async function downloadLicenseHandler(event, context) {
   // Disallow going to the .netlify function directly,
   // use the url proxy instead.
   if (event.path.startsWith('/.netlify/functions')) {
@@ -137,7 +137,7 @@ function getContentType(urlPath) {
   return { contentType: 'text/html' }
 }
 
-function parseActiveModules(urlPath) {
+export function parseActiveModules(urlPath) {
   // Just the license configuration url part, 'core',
   // 'full', 'bsd-ecoside' etc.
   const licenseUrlPath = urlPath
@@ -163,10 +163,5 @@ function parseActiveModules(urlPath) {
   }
 }
 
-module.exports = {
-  // Handler property is used by Netlify
-  handler: builder(downloadLicenseHandler),
-  // Exporting functions to be tested
-  downloadLicenseHandler,
-  parseActiveModules,
-}
+// Handler property is used by Netlify
+export const handler = builder(downloadLicenseHandler)

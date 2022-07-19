@@ -1,8 +1,8 @@
-const test = require('ava')
-const {
+import test from 'ava'
+import {
   downloadLicenseHandler,
   parseActiveModules,
-} = require('./functions/download-license.js')
+} from './functions/download-license.mjs'
 
 test('we are able to parse active modules from url', async (t) => {
   const exampleUrlPath = '/version/3/0/bds-ecoside'

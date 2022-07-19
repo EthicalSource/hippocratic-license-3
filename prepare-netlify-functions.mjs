@@ -3,7 +3,7 @@ import path from 'path'
 import { URL } from 'url'
 
 /**
- * Purpose: The download-license.js handler needs to have
+ * Purpose: The `download-license` handler needs to have
  * access to the full license text built by Hugo in order
  * to provide plaintext and markdown versions.
  *
@@ -18,12 +18,15 @@ const prepareLambdas = async () => {
     __dirname,
     'public/_build-dependency-hl-3.0/full/index.html'
   )
-  const dest = path.resolve(__dirname, 'netlify/functions/hl-full.json')
+  const dest = path.resolve(__dirname, 'netlify/functions/hl-full.mjs')
   const data = await fs.readFile(src, { encoding: 'utf-8' })
   if (!data) {
     throw new Error('No source text found')
   }
-  await fs.writeFile(dest, JSON.stringify({ licenseHTML: data }, null, 2))
+  await fs.writeFile(
+    dest,
+    `export const licenseHTML = ${JSON.stringify(data, null, 2)} `
+  )
   console.log('Done with work')
 }
 prepareLambdas().catch((err) =>
