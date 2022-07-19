@@ -9,9 +9,8 @@
   NODE_VERSION = "lts/*"
 
 [functions]
-  # Ignore unused JSDOM import
-  external_node_modules = [ "canvas" ]
-
+  node_bundler = "zisi"
+  
 # Enable SPA functionality for License builder page
 # Urls like "/build/hl-bsd-eco", should always
 # hit the javascript code which will select proper
