@@ -6,13 +6,7 @@
 
 [build.environment]
   HUGO_VERSION = "0.88.1"
-  NODE_VERSION = "14.18.0"
-  NPM_VERSION = "8.x"
-  # Netlify functions runtime version
-  AWS_LAMBDA_JS_RUNTIME = "nodejs14.x"
-
-[functions]
-  node_bundler = "esbuild"
+  NODE_VERSION = "lts/*"
 
 # Enable SPA functionality for License builder page
 # Urls like "/build/hl-bsd-eco", should always
