@@ -2,7 +2,7 @@ import test from 'ava'
 import {
   downloadLicenseHandler,
   parseActiveModules,
-} from './functions/download-license.mjs'
+} from './functions/download-license.js'
 
 test('we are able to parse active modules from url', async (t) => {
   const exampleUrlPath = '/version/3/0/bds-ecoside'

@@ -1,10 +1,11 @@
 {
   "scripts": {
-    "build": "node prepare-netlify-functions.mjs",
+    "build": "node prepare-netlify-functions.js",
     "test": "ava",
     "test:watch": "ava --watch",
     "prepare": "husky install"
   },
+  "type": "module",
   "private": true,
   "engines": {
     "node": ">=16.x",
@@ -45,8 +46,8 @@
   },
   "ava": {
     "files": [
-      "static/**/*.test.mjs",
-      "netlify/**/*.test.mjs",
+      "**/*.test.js",
+      "!node_modules/",
       "!public/"
     ]
   }
