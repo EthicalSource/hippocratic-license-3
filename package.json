@@ -12,15 +12,15 @@
     "npm": ">=8.x"
   },
   "devDependencies": {
-    "ava": "^4.3.1",
-    "husky": "7.0.4",
     "lint-staged": "12.3.2",
     "prettier": "2.5.1",
     "prettier-plugin-go-template": "0.0.11"
   },
   "dependencies": {
     "@netlify/functions": "0.10.0",
+    "ava": "4.3.1",
     "html-to-text": "8.1.0",
+    "husky": "8.0.1",
     "jsdom": "19.0.0",
     "node-html-markdown": "1.1.3"
   },
