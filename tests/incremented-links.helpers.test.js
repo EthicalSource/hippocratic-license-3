@@ -3,7 +3,7 @@ import { JSDOM } from 'jsdom'
 import {
   incrementAndLinkify,
   buildNextSequenceItem,
-} from './incremented-links.helpers.js'
+} from '../static/scripts/license-builder/incremented-links.helpers.js'
 
 test('should be able to increment and linkify sections', (t) => {
   const sourceDOM = new JSDOM(`
