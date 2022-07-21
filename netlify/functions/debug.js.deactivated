@@ -1,6 +1,9 @@
 import { builder } from '@netlify/functions'
 
 /**
+ * Rename this file to '.js' to use this as a useful helper
+ * when working with Netlify functions.
+ *
  * Purpose: Expose URL for easily learning what data
  * is available on the event and context objects.
  *
