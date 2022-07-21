@@ -10,7 +10,7 @@
   # Skip installing devDependencies
   NODE_ENV = "production"
   # Skip installing Husky's git hooks
-  HUSKY=0
+  HUSKY = "0"
   
 # Enable SPA functionality for License builder page
 # Urls like "/build/hl-bsd-eco", should always
