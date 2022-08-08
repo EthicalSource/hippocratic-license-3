@@ -5,6 +5,7 @@
   font-weight: 700;
   color: var(--color-orange);
   border-radius: 10px;
+  transition: var(--hover-transition);
   &:hover {
     background-color: var(--color-orange);
     color: var(--color-white);

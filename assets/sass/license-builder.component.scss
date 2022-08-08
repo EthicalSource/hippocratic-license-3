@@ -12,6 +12,9 @@ handled by the .license-page component.
   h3 {
     margin: 2rem 0;
   }
+  .h3-light {
+    font-weight: normal;
+  }
   &__module-buttons {
     display: flex;
     justify-content: flex-end;

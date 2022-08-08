@@ -13,7 +13,7 @@
     right: 0;
     z-index: 1;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: var(--hover-transition);
     border: 1px solid var(--color-orange-darker);
     border-radius: 0.25rem;
     background: var(--color-white);
@@ -52,5 +52,6 @@
     border-radius: 0.25rem;
     padding: 1rem;
     margin: 0;
+    font-size: 0.7em;
   }
 }
