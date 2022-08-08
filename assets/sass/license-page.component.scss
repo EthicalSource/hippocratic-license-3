@@ -51,10 +51,11 @@
   .license-builder__modules {
     overflow-y: scroll;
     max-height: 48vh;
-  }
-  .license-builder__modules:after {
-    content: '_';
-    visibility: hidden;
-    min-width: 0.1px;
+    position: relative;
+    width: calc(100% + 2rem); /* parent's padding-block = 1px */
+    left: -1rem;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    background-color: var(--color-white-darker);
   }
 }

@@ -3,6 +3,7 @@
 :root {
   --color-primary: #462921; /* "ground" */
   --color-white: #fdf6ec; /* "soft white" */
+  --color-white-darker: #f4ecdf; /* "slightly darker white" */
   --color-grey: #eee; /* "light grey" */
   --color-black: #1a1a1a; /* "off black" */
   --color-orange: #d44f2c; /* "terracotta" */
@@ -23,4 +24,6 @@
 
   --font-weight-regular: 400;
   --font-weight-heavy: 700;
+
+  --hover-transition: all 0.1s ease-in-out;
 }
