@@ -1,7 +1,7 @@
 # Contributing
 
 ## Getting started
-Please check the [issues](https://github.com/EthicalSource/hippocratic-license/issues)
+Please check the [issues](https://github.com/EthicalSource/hippocratic-license-3/issues)
 for the latest discussions, questions, and ideas for the Hippocratic License and this site.
 
 ## What you need to know
