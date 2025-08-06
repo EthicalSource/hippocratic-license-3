@@ -23,9 +23,9 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180.png">
-    {{ $fonts := resources.Get "sass/fonts.scss" | resources.ToCSS }}
+    {{ $fonts := resources.Get "sass/fonts.scss" | css.Sass }}
     <link rel="stylesheet" href="{{ $fonts.RelPermalink }}">
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS }}
+    {{ $style := resources.Get "sass/main.scss" | css.Sass }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
     {{ range .Params.polyfills }}

@@ -1,5 +1,5 @@
 <template id="license-badge">
-  {{ $style := resources.Get "sass/license-badge.component.scss" | resources.ToCSS }}
+  {{ $style := resources.Get "sass/license-badge.component.scss" | css.Sass }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
   <!-- TODO: can overflow horizontally for long licenses; possible scroll-shadow or other solution? -->
