@@ -2,7 +2,6 @@
 {{ $opts := dict "targetType" "map" }}
 {{ $data := resources.Get $path | transform.Unmarshal $opts }}
 
-
 <ul class="data-list">
   {{ range sort $data "Project" "asc" }}
     <li><a href="{{ trim .URL " " | safeURL }}">{{ trim .Project " " }}</a></li>
