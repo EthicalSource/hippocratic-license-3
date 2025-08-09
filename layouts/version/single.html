@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <section{{ with .Language.Get "writingDirection" }} dir="{{ . }}"{{ end }} class="no-bullet-wrapper" data-license-text="true">
+  <section{{ with .Language.LanguageDirection }} dir="{{ . }}"{{ end }} class="no-bullet-wrapper" data-license-text="true">
   {{ .Content }}
   </section>
   {{ if not .Params.builderLicense }}
@@ -8,4 +8,5 @@
   </section>
   {{ end }}
 {{ end }}
+
 
