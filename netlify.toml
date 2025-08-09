@@ -5,7 +5,7 @@
   command = "hugo && npm run build && npm test && rm -rf public/_build-dependency*"
 
 [build.environment]
-  HUGO_VERSION = "0.88.1"
+  HUGO_VERSION = "0.148.2"
   NODE_VERSION = "lts/*"
   # Skip installing devDependencies
   NODE_ENV = "production"
