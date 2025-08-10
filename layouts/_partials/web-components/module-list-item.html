@@ -35,7 +35,7 @@
       height: 24px;
     }
   </style>
-  {{ $style := resources.Get "sass/button.component.scss" | resources.ToCSS }}
+  {{ $style := resources.Get "sass/button.component.scss" | css.Sass }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
   <div class="module-row">

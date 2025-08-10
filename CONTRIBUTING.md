@@ -11,7 +11,7 @@ a useful resource.
 
 ## Adding your project to the list of adopters
 * Fork the repository.
-* Add a new row to the [adopters.csv](static/adopters.csv) file,
+* Add a new row to the [adopters.csv](assets/adopters.csv) file,
   with the project name in the first column, and the project URL in the second column.
 * Open a pull request.
 

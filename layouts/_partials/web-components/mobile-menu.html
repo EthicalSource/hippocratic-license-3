@@ -1,5 +1,5 @@
 <template id="mobile-menu-template">
-  {{ $style := resources.Get "sass/button.component.scss" | resources.ToCSS }}
+  {{ $style := resources.Get "sass/button.component.scss" | css.Sass }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
   <style>
     .top-bar {
