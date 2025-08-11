@@ -34,7 +34,7 @@ export async function downloadLicenseHandler(event, context) {
       headers: {
         'Content-Type': 'text/plain',
       },
-      body: `Uknown module "${unknownModule}" found in license-url.`,
+      body: `Unknown module "${unknownModule}" found in license-url.`,
     }
   }
   // Redirect if License ID is uppercase and/or not proper order
