@@ -1,15 +1,15 @@
 {
   "scripts": {
     "build": "node prepare-netlify-functions.js",
-    "test": "ava",
-    "test:watch": "ava --watch",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
     "prepare": "husky install"
   },
   "type": "module",
   "private": true,
   "engines": {
-    "node": ">=16.x",
-    "npm": ">=8.x"
+    "node": ">=22.x",
+    "npm": ">=10.x"
   },
   "devDependencies": {
     "lint-staged": "12.3.2",
@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@netlify/functions": "0.10.0",
-    "ava": "4.3.1",
     "html-to-text": "8.1.0",
     "husky": "8.0.1",
     "jsdom": "19.0.0",

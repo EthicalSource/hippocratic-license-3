@@ -1,73 +1,85 @@
-import test from 'ava'
+import { suite, test } from 'node:test'
+import assert from 'node:assert/strict'
 import {
   downloadLicenseHandler,
   parseActiveModules,
 } from '../netlify/functions/download-license.js'
 
-test('we are able to parse active modules from url', async (t) => {
-  const exampleUrlPath = '/version/3/0/bds-ecoside'
-  const { activeModules } = parseActiveModules(exampleUrlPath)
-  t.deepEqual(activeModules, ['bds', 'ecoside'])
-})
-
-test('wrong module id order gets sorted', async (t) => {
-  const result = await downloadLicenseHandler({
-    path: '/version/3/0/eco-bds.txt',
+suite('Download license', () => {
+  test('we are able to parse active modules from url', async (t) => {
+    const exampleUrlPath = '/version/3/0/bds-ecoside'
+    const { activeModules } = parseActiveModules(exampleUrlPath)
+    assert.deepEqual(activeModules, ['bds', 'ecoside'])
   })
-  t.is(result.headers.Location, '/version/3/0/bds-eco.txt')
-})
 
-test('using core or full cancels other module IDs', async (t) => {
-  t.deepEqual(parseActiveModules('/version/3/0/core-bds').activeModules, [
-    'core',
-  ])
-  t.deepEqual(parseActiveModules('/version/3/0/full-bds').activeModules, [
-    'full',
-  ])
-})
+  test('wrong module id order gets sorted', async (t) => {
+    const result = await downloadLicenseHandler({
+      path: '/version/3/0/eco-bds.txt',
+    })
+    assert.equal(result.headers.Location, '/version/3/0/bds-eco.txt')
+  })
 
-test('unknown module id throws 404 error', async (t) => {
-  const result = await downloadLicenseHandler({
-    path: '/version/3/0/abcd-efg.html',
+  test('using core or full cancels other module IDs', async (t) => {
+    assert.deepEqual(
+      parseActiveModules('/version/3/0/core-bds').activeModules,
+      ['core']
+    )
+    assert.deepEqual(
+      parseActiveModules('/version/3/0/full-bds').activeModules,
+      ['full']
+    )
   })
-  t.is(result.statusCode, 404)
-})
 
-test('is able to remove modules v2', async (t) => {
-  const { body } = await downloadLicenseHandler({
-    path: '/version/3/0/bds.html',
+  test('unknown module id throws 404 error', async (t) => {
+    const result = await downloadLicenseHandler({
+      path: '/version/3/0/abcd-efg.html',
+    })
+    assert.equal(result.statusCode, 404)
   })
-  t.true(body.toLowerCase().includes('bds'), 'BDS module was not included')
-  t.true(
-    !body.toLowerCase().includes('ecocide'),
-    'Ecocide module was not removed properly'
-  )
-})
 
-test('can handle markdown requests', async (t) => {
-  const result = await downloadLicenseHandler({ path: '/version/3/0/core.md' })
-  t.like(result, {
-    statusCode: 200,
-    headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
+  test('is able to remove modules v2', async (t) => {
+    const { body } = await downloadLicenseHandler({
+      path: '/version/3/0/bds.html',
+    })
+    assert.equal(
+      true,
+      body.toLowerCase().includes('bds'),
+      'BDS module was not included'
+    )
+    assert.equal(
+      false,
+      body.toLowerCase().includes('ecocide'),
+      'Ecocide module was not removed properly'
+    )
   })
-})
 
-test('can handle plaintext requests', async (t) => {
-  const result = await downloadLicenseHandler({
-    path: '/version/3/0/core.txt',
+  test('can handle markdown requests', async (t) => {
+    const result = await downloadLicenseHandler({
+      path: '/version/3/0/core.md',
+    })
+    assert.equal(result.statusCode, 200)
+    assert.deepEqual(result.headers, {
+      'Content-Type': 'text/markdown; charset=utf-8',
+    })
   })
-  t.like(result, {
-    statusCode: 200,
-    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-  })
-})
 
-test('can handle html requests', async (t) => {
-  const result = await downloadLicenseHandler({
-    path: '/version/3/0/bds-eco.html',
+  test('can handle plaintext requests', async (t) => {
+    const result = await downloadLicenseHandler({
+      path: '/version/3/0/core.txt',
+    })
+    assert.equal(result.statusCode, 200)
+    assert.deepEqual(result.headers, {
+      'Content-Type': 'text/plain; charset=utf-8',
+    })
   })
-  t.like(result, {
-    statusCode: 200,
-    headers: { 'Content-Type': 'text/html; charset=utf-8' },
+
+  test('can handle html requests', async (t) => {
+    const result = await downloadLicenseHandler({
+      path: '/version/3/0/bds-eco.html',
+    })
+    assert.equal(result.statusCode, 200)
+    assert.deepEqual(result.headers, {
+      'Content-Type': 'text/html; charset=utf-8',
+    })
   })
 })
