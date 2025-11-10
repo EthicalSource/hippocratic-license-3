@@ -8,8 +8,8 @@
   "type": "module",
   "private": true,
   "engines": {
-    "node": ">=22.x",
-    "npm": ">=10.x"
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
   },
   "devDependencies": {
     "lint-staged": "12.3.2",
