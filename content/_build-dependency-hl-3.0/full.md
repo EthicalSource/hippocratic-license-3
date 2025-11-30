@@ -103,6 +103,18 @@ TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE WORK
 
     {{< mod file="media" >}}
 
+    {{< mod file="terrorist-organizations" >}}
+
+    {{< mod file="illegal-employment" >}}
+
+    {{< mod file="impaired-driving" >}}
+
+    {{< mod file="forcible-conscription" >}}
+
+    {{< mod file="animal-cruelty" >}}
+
+    {{< mod file="israel-government" >}}
+
     - 3.1.23. Interfere with Workers' free exercise of the right to organize and associate
     (See Article 20, United Nations Universal Declaration of Human Rights; C087 - Freedom of Association and Protection of the Right to Organise Convention, 1948 (No. 87), International Labour Organization; Article 8, International Covenant on Economic, Social and Cultural Rights); and
 
