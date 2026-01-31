@@ -1,4 +1,3 @@
-declare const lock: (targetElement?: HTMLElement | HTMLElement[] | null | undefined) => void;
-declare const unlock: (targetElement?: HTMLElement | HTMLElement[] | null | undefined) => void;
-declare const clearBodyLocks: () => void;
-export { lock, unlock, clearBodyLocks };
+export * from './types';
+export * from './getLockState';
+export { lock, unlock, clearBodyLocks } from './methods';
