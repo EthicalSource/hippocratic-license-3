@@ -1,8 +1,8 @@
 {
   "scripts": {
     "build": "node prepare-netlify-functions.js",
-    "test": "node --test",
-    "test:watch": "node --test --watch",
+    "test": "node --test tests/**/*.js",
+    "test:watch": "node --test --watch tests/**/*.js",
     "prepare": "if [ \"$HUSKY\" != \"0\" ]; then husky; fi"
   },
   "type": "module",
