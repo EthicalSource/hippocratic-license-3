@@ -1,5 +1,4 @@
 import { JSDOM } from 'jsdom'
-import { builder } from '@netlify/functions'
 import { licenseHTML } from '../hl-full.js'
 import { convert } from 'html-to-text'
 import { NodeHtmlMarkdown } from 'node-html-markdown'
@@ -164,4 +163,4 @@ export function parseActiveModules(urlPath) {
 }
 
 // Handler property is used by Netlify
-export const handler = builder(downloadLicenseHandler)
+export const handler = downloadLicenseHandler
