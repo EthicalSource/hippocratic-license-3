@@ -1,5 +1,3 @@
-import { builder } from '@netlify/functions'
-
 /**
  * Rename this file to '.js' to use this as a useful helper
  * when working with Netlify functions.
@@ -38,4 +36,4 @@ async function debugHandler(event, context) {
   }
 }
 
-export const handler = builder(debugHandler)
+export const handler = debugHandler
