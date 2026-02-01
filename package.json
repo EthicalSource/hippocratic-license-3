@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "html-to-text": "^9.0.5",
-    "jsdom": "^27.4.0",
+    "jsdom": "^26.1.0",
     "node-html-markdown": "^2.0.0"
   },
   "prettier": {
