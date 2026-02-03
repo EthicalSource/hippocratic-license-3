@@ -1,26 +1,26 @@
 {
   "scripts": {
     "build": "node prepare-netlify-functions.js",
-    "test": "node --test",
-    "test:watch": "node --test --watch",
-    "prepare": "husky install"
+    "test": "node --test tests/**/*.js",
+    "test:watch": "node --test --watch tests/**/*.js",
+    "prepare": "if [ \"$HUSKY\" != \"0\" ]; then husky; fi"
   },
   "type": "module",
   "private": true,
   "engines": {
-    "node": ">=22.x",
-    "npm": ">=10.x"
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
   },
   "devDependencies": {
-    "lint-staged": "12.3.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "2.5.1",
     "prettier-plugin-go-template": "0.0.11"
   },
   "dependencies": {
-    "html-to-text": "8.1.0",
-    "husky": "8.0.1",
-    "jsdom": "19.0.0",
-    "node-html-markdown": "1.1.3"
+    "html-to-text": "^9.0.5",
+    "jsdom": "^26.1.0",
+    "node-html-markdown": "^2.0.0"
   },
   "prettier": {
     "trailingComma": "es5",
