@@ -39,3 +39,6 @@ baseName = "CODE_OF_CONDUCT"
 [outputs]
 home = ["html"]
 page = ["html", "markdown", "plaintext", "asciidoc"]
+
+[security]
+allowContent = ['^text/html$', '^text/markdown$']
